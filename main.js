@@ -1,10 +1,29 @@
 // Claude Agents Landing Page JavaScript
 
 document.addEventListener("DOMContentLoaded", function() {
+  // Initialize i18n (must run before Lucide to preserve icons)
+  if (typeof window.i18n !== "undefined" && window.i18n.initI18n) {
+    window.i18n.initI18n();
+  }
+
   // Initialize Lucide icons
   if (typeof lucide !== "undefined") {
     lucide.createIcons();
   }
+
+  // Language switcher event listeners
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const lang = this.dataset.lang;
+      if (lang && typeof window.i18n !== "undefined" && window.i18n.setLanguage) {
+        window.i18n.setLanguage(lang);
+        // Re-create icons after language change (they may have been affected)
+        if (typeof lucide !== "undefined") {
+          setTimeout(function() { lucide.createIcons(); }, 50);
+        }
+      }
+    });
+  });
 
   // Navigation scroll effect
   const nav = document.getElementById("nav");
