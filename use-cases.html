@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Agents Use Cases — 40+ Autonomous AI Capabilities</title>
+    <meta name="description" content="Complete catalog of autonomous AI agents for Swiss KMUs. 40+ use cases across construction, real estate, finance, manufacturing, logistics, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary: #FAAF4F;
+            --primary-hover: #E5A040;
+            --accent-red: #D52B1E;
+            --bg-main: #FAF9F5;
+            --bg-alt: #EBE9E1;
+            --bg-dark: #141413;
+            --text: #141413;
+            --text-muted: #5E5E5A;
+            --text-on-dark: #FAF9F5;
+            --border: #D1CDC2;
+            --radius: 12px;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: "Inter", system-ui, sans-serif;
+            color: var(--text);
+            background: var(--bg-main);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header */
+        .header {
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+        }
+        .logo span { color: var(--primary); }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text); }
+
+        /* Hero */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--bg-alt);
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* Filter tabs */
+        .filters {
+            padding: 2rem 0;
+            position: sticky;
+            top: 0;
+            background: var(--bg-main);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+        .filter-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            background: transparent;
+            border-radius: 9999px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        /* Industries */
+        .industry {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .industry:nth-child(even) { background: var(--bg-alt); }
+        .industry-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .industry-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text);
+        }
+        .industry h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
+        .industry-meta {
+            color: var(--text-muted);
+            margin-left: auto;
+            font-size: 0.875rem;
+        }
+
+        /* Use Case Cards */
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+        .use-case {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .use-case:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+        .use-case-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+        .use-case h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .fit-badge {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .fit-high {
+            background: #DCFCE7;
+            color: #166534;
+        }
+        .fit-medium {
+            background: #FEF3C7;
+            color: #92400E;
+        }
+        .use-case p {
+            color: var(--text-muted);
+            font-size: 0.9375rem;
+            margin-bottom: 1rem;
+        }
+        .use-case-footer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .tag {
+            padding: 0.25rem 0.5rem;
+            background: var(--bg-alt);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 0;
+            text-align: center;
+        }
+        .cta-box {
+            background: var(--bg-dark);
+            color: var(--text-on-dark);
+            padding: 3rem;
+            border-radius: var(--radius);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .cta-box h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .cta-box p {
+            color: var(--border);
+            margin-bottom: 2rem;
+        }
+        .btn {
+            display: inline-flex;
+            padding: 0.875rem 1.5rem;
+            background: var(--primary);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: var(--primary-hover); }
+
+        /* Footer */
+        footer {
+            padding: 2rem 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-stats { flex-direction: column; gap: 1.5rem; }
+            .use-cases-grid { grid-template-columns: 1fr; }
+            .filter-list { justify-content: flex-start; overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="#" class="logo">claude-<span>agents</span>.ch</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#construction">Construction</a></li>
+                    <li><a href="#realestate">Real Estate</a></li>
+                    <li><a href="#finance">Finance</a></li>
+                    <li><a href="#industry">Industry</a></li>
+                    <li><a href="https://claude-agents.ch">Main Site →</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge">
+                <i data-lucide="zap" style="width: 16px; height: 16px;"></i>
+                <span>40+ Autonomous AI Capabilities</span>
+            </div>
+            <h1>Every Use Case for Swiss KMU Agents</h1>
+            <p>A complete catalog of autonomous AI agents that replace administrative and coordination labor — not just assist it. Browse by industry, complexity, or business need.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">9</div>
+                    <div class="stat-label">Industries</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">40+</div>
+                    <div class="stat-label">Agent Types</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">DE/FR/IT</div>
+                    <div class="stat-label">Native Languages</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Construction -->
+    <section class="industry" id="construction">
+        <div class="container">
+            <div class="industry-header">
+                <div class="industry-icon"><i data-lucide="hard-hat" style="width: 24px; height: 24px;"></i></div>
+                <h2>Construction & Trades</h2>
+                <span class="industry-meta">5 agents • Subcontractor coordination • Site management</span>
+            </div>
+            <div class="use-cases-grid">
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Bauleiter-Koordinator</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Monitors architectural plan folders, detects changes, and automatically notifies relevant subcontractors via Telegram with change summaries and impact analysis.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Plan Monitoring</span>
+                        <span class="tag">Telegram</span>
+                        <span class="tag">Change Detection</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Offerten-Profi</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Drafts personalized, complex quotes from technical specifications and Swiss price lists. Matches project requirements to vendor catalogs and calculates margins.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Quote Generation</span>
+                        <span class="tag">Pricing</span>
+                        <span class="tag">Multi-vendor</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Material-Disponent</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Warehouse watchdog that monitors stock levels, triggers reorders before depletion, and identifies alternative EU suppliers to avoid customs delays.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Inventory</span>
+                        <span class="tag">Procurement</span>
+                        <span class="tag">Alerts</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Bauführer-Assistent</h3>
+                        <span class="fit-badge fit-medium">Medium Fit</span>
+                    </div>
+                    <p>Real-time coordination of project milestones, budget burn monitoring against plan, and daily site reporting with photo metadata extraction.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Milestones</span>
+                        <span class="tag">Budget Tracking</span>
+                        <span class="tag">Reporting</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Service-Einsatzplaner</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Scheduling and dispatching of mobile technician teams across cantons with route optimization to minimize driving time and fuel costs.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Scheduling</span>
+                        <span class="tag">Route Optimization</span>
+                        <span class="tag">Dispatch</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Estate -->
+    <section class="industry" id="realestate">
+        <div class="container">
+            <div class="industry-header">
+                <div class="industry-icon"><i data-lucide="building-2" style="width: 24px; height: 24px;"></i></div>
+                <h2>Real Estate & Property</h2>
+                <span class="industry-meta">5 agents • Tenant management • Property marketing</span>
+            </div>
+            <div class="use-cases-grid">
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Mieter-Anfragen Triage</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>24/7 classification and response to tenant maintenance requests or general inquiries. Auto-routes urgent issues to property managers, schedules routine maintenance.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">24/7 Response</span>
+                        <span class="tag">Triage</span>
+                        <span class="tag">Multilingual</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Besichtigungs-Koordinator</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Automated scheduling of property viewings across calendars with conflict detection. Personalized lead follow-up after visits with relevant property suggestions.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Scheduling</span>
+                        <span class="tag">Calendar Sync</span>
+                        <span class="tag">Lead Nurturing</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Objekt-Vermarktungs Agent</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Autonomous creation of property descriptions from images and specifications, then distribution across Homegate, ImmoScout24, and other Swiss portals.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Content Generation</span>
+                        <span class="tag">Multi-portal</span>
+                        <span class="tag">Marketing</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Hauswart-Dispatcher</h3>
+                        <span class="fit-badge fit-medium">Medium Fit</span>
+                    </div>
+                    <p>Coordination of routine maintenance tasks and external vendor management across property portfolios. Tracks completion and tenant satisfaction.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Vendor Management</span>
+                        <span class="tag">Task Tracking</span>
+                        <span class="tag">Portfolio</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Reporting-Assistent</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Preparation of periodic owner reports and financial performance summaries for property managers. Pulls data from property management systems automatically.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Financial Reports</span>
+                        <span class="tag">Owner Updates</span>
+                        <span class="tag">Automated</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Finance -->
+    <section class="industry" id="finance">
+        <div class="container">
+            <div class="industry-header">
+                <div class="industry-icon"><i data-lucide="file-text" style="width: 24px; height: 24px;"></i></div>
+                <h2>Treuhand, Legal & Finance</h2>
+                <span class="industry-meta">5 agents • Document processing • Compliance</span>
+            </div>
+            <div class="use-cases-grid">
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Beleg-Manager</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Automated extraction, categorization, and validation of QR-bills and receipts into Bexio or Abacus. Matches against chart of accounts with discrepancy flagging.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">QR-Bill</span>
+                        <span class="tag">Bexio/Abacus</span>
+                        <span class="tag">OCR</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>MwSt-Vorbereiter</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Quarterly calculation and drafting of VAT (MWST) filings based on digital transaction logs. Generates ready-to-submit documents with supporting schedules.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">VAT Filing</span>
+                        <span class="tag">MWST</span>
+                        <span class="tag">Quarterly</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Kreditoren-Buchhalter</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Cross-referencing incoming invoices with purchase orders and flagging discrepancies for human review. Matches line items and validates pricing.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Invoice Matching</span>
+                        <span class="tag">PO Validation</span>
+                        <span class="tag">Exception Handling</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Spesen-Abrechner</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Processing of employee expense reports with automated Swiss compliance and tax checks. Validates receipts against company policy and calculates reimbursable amounts.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Expense Reports</span>
+                        <span class="tag">Compliance</span>
+                        <span class="tag">Reimbursement</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Dokument-Archivator</h3>
+                        <span class="fit-badge fit-medium">Medium Fit</span>
+                    </div>
+                    <p>Managed sorting and archiving of scanned physical and digital mail for rapid retrieval. Auto-tags by document type, date, sender, and retention requirements.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Archiving</span>
+                        <span class="tag">Tagging</span>
+                        <span class="tag">Search</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- E-commerce -->
+    <section class="industry" id="ecommerce">
+        <div class="container">
+            <div class="industry-header">
+                <div class="industry-icon"><i data-lucide="shopping-cart" style="width: 24px; height: 24px;"></i></div>
+                <h2>Retail & E-Commerce</h2>
+                <span class="industry-meta">5 agents • Inventory • Customer service</span>
+            </div>
+            <div class="use-cases-grid">
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Shop-Analytics Briefing</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Nightly synthesis of GA4 data into plain-English Slack briefings for the management team. Highlights trends, anomalies, and actionable insights.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">GA4</span>
+                        <span class="tag">Analytics</span>
+                        <span class="tag">Slack</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Lager-Wächter</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Monitoring stock levels against seasonal spikes and automatically drafting procurement emails. Predicts demand from historical patterns and upcoming events.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Inventory</span>
+                        <span class="tag">Forecasting</span>
+                        <span class="tag">Procurement</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>E-Com Pocket Concierge</h3>
+                        <span class="fit-badge fit-medium">Medium Fit</span>
+                    </div>
+                    <p>Real-time personalized product advice and size recommendations to drive conversion lift. Answers product questions based on catalog and reviews.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Customer Support</span>
+                        <span class="tag">Recommendations</span>
+                        <span class="tag">Conversion</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Retouren-Assistent</h3>
+                        <span class="fit-badge fit-medium">Medium Fit</span>
+                    </div>
+                    <p>Autonomous management of returns, exchange requests, and carrier logistics updates. Coordinates pickup, refund processing, and inventory restocking.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Returns</span>
+                        <span class="tag">Logistics</span>
+                        <span class="tag">Refunds</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>PPC Performance Auditor</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Overnight auditing of Google, Meta, and LinkedIn Ads with prioritized fix lists. Identifies wasted spend, underperforming creatives, and bid optimization opportunities.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Google Ads</span>
+                        <span class="tag">Meta</span>
+                        <span class="tag">Optimization</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Services -->
+    <section class="industry" id="services">
+        <div class="container">
+            <div class="industry-header">
+                <div class="industry-icon"><i data-lucide="briefcase" style="width: 24px; height: 24px;"></i></div>
+                <h2>Professional Services & Consulting</h2>
+                <span class="industry-meta">5 agents • HR • Operations</span>
+            </div>
+            <div class="use-cases-grid">
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Recruiting-Filter</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Initial CV screening and interview scheduling based on specific KMU job profiles. Scores candidates against role requirements and company culture fit.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">CV Screening</span>
+                        <span class="tag">Scheduling</span>
+                        <span class="tag">Scoring</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Korrespondenz-Chef</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Multilingual triage and drafting of professional emails in German, French, and Italian. Adapts tone to customer relationship and urgency level.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Email</span>
+                        <span class="tag">Multilingual</span>
+                        <span class="tag">Drafting</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Reise-Koordinator</h3>
+                        <span class="fit-badge fit-medium">Medium Fit</span>
+                    </div>
+                    <p>Complete travel itinerary booking and expense preparation for executive or field teams. Optimizes for cost, time, and employee preferences.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Travel</span>
+                        <span class="tag">Booking</span>
+                        <span class="tag">Expenses</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Messe-Koordinator</h3>
+                        <span class="fit-badge fit-medium">Medium Fit</span>
+                    </div>
+                    <p>Logistics management for trade fair appearances, hotel bookings, and subcontractor coordination. Tracks booth setup, shipments, and staff schedules.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Events</span>
+                        <span class="tag">Logistics</span>
+                        <span class="tag">Coordination</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Membership-Manager</h3>
+                        <span class="fit-badge fit-medium">Medium Fit</span>
+                    </div>
+                    <p>Triage and nurturing for association members with automated renewal follow-ups. Tracks engagement and identifies at-risk memberships.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Associations</span>
+                        <span class="tag">Retention</span>
+                        <span class="tag">Nurturing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketing -->
+    <section class="industry" id="marketing">
+        <div class="container">
+            <div class="industry-header">
+                <div class="industry-icon"><i data-lucide="megaphone" style="width: 24px; height: 24px;"></i></div>
+                <h2>Marketing & Web Agencies</h2>
+                <span class="industry-meta">5 agents • Content • Analytics</span>
+            </div>
+            <div class="use-cases-grid">
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Blog-Repurposer</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Turning long-form content into multi-channel social clips and newsletter snippets. Extracts key points and reformats for LinkedIn, Twitter, email.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Content</span>
+                        <span class="tag">Repurposing</span>
+                        <span class="tag">Multi-channel</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>UTM & Tracking Generator</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Automated naming of GA4 events and conversion tracking taxonomies for client accounts. Ensures consistency across campaigns and proper attribution.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Analytics</span>
+                        <span class="tag">Tracking</span>
+                        <span class="tag">GA4</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Social Media Guardian</h3>
+                        <span class="fit-badge fit-medium">Medium Fit</span>
+                    </div>
+                    <p>Content atomization and brand sentiment monitoring across LinkedIn industry groups. Alerts to negative mentions and identifies engagement opportunities.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Monitoring</span>
+                        <span class="tag">Sentiment</span>
+                        <span class="tag">LinkedIn</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Ad Spend Allocator</h3>
+                        <span class="fit-badge fit-medium">Medium Fit</span>
+                    </div>
+                    <p>Budget reallocation recommendations across channels based on real-time ROAS data. Identifies underperforming campaigns and suggests reallocation.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">ROAS</span>
+                        <span class="tag">Budget</span>
+                        <span class="tag">Optimization</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Website QA-Agent</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Nightly crawling of client websites to detect broken links, performance regressions, and SEO issues. Prioritizes fixes by business impact.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">QA</span>
+                        <span class="tag">Monitoring</span>
+                        <span class="tag">SEO</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manufacturing -->
+    <section class="industry" id="manufacturing">
+        <div class="container">
+            <div class="industry-header">
+                <div class="industry-icon"><i data-lucide="factory" style="width: 24px; height: 24px;"></i></div>
+                <h2>Manufacturing & Industry</h2>
+                <span class="industry-meta">5 agents • Operations • Compliance</span>
+            </div>
+            <div class="use-cases-grid">
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Werkstatt-Koordinator</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Real-time tracking of job cards and parts availability across the production floor. Alerts when bottlenecks form or materials run low.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Production</span>
+                        <span class="tag">Tracking</span>
+                        <span class="tag">Alerts</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Lieferanten-Manager</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Benchmarking and scoring incoming supplier bids for best value and reliability. Analyzes proposals against historical performance and market rates.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Procurement</span>
+                        <span class="tag">Bidding</span>
+                        <span class="tag">Scoring</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Qualitätskontrolle (Reporting)</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Aggregating defect data from sensors or inspectors into decision-ready executive briefs. Identifies patterns and recommends corrective actions.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Quality</span>
+                        <span class="tag">Reporting</span>
+                        <span class="tag">Insights</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Arbeitssicherheits-Dokumentar</h3>
+                        <span class="fit-badge fit-medium">Medium Fit</span>
+                    </div>
+                    <p>Maintaining safety logs and flagging compliance gaps in industrial equipment. Tracks inspection dates and certification renewals.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Safety</span>
+                        <span class="tag">Compliance</span>
+                        <span class="tag">Tracking</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Maschinen-Status Wächter</h3>
+                        <span class="fit-badge fit-medium">Medium Fit</span>
+                    </div>
+                    <p>Predictive failure detection based on sensor metadata and maintenance history. Recommends preemptive maintenance before costly breakdowns.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Maintenance</span>
+                        <span class="tag">Prediction</span>
+                        <span class="tag">IoT</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logistics -->
+    <section class="industry" id="logistics">
+        <div class="container">
+            <div class="industry-header">
+                <div class="industry-icon"><i data-lucide="truck" style="width: 24px; height: 24px;"></i></div>
+                <h2>Logistics & Transport</h2>
+                <span class="industry-meta">5 agents • Routing • Customs</span>
+            </div>
+            <div class="use-cases-grid">
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Touren-Disponent</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Route optimization and real-time coordination of driver shifts to reduce fuel costs. Balances capacity, delivery windows, and driver hours.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Routing</span>
+                        <span class="tag">Optimization</span>
+                        <span class="tag">Dispatch</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Export-Sachbearbeiter</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Preparation of shipping documents and customs forms for EU and global trade. Ensures compliance with origin requirements and tariff codes.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Customs</span>
+                        <span class="tag">Export</span>
+                        <span class="tag">Documentation</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Fuhrpark-Planer</h3>
+                        <span class="fit-badge fit-medium">Medium Fit</span>
+                    </div>
+                    <p>Scheduling routine maintenance, repairs, and inspection dates for vehicle fleets. Tracks mileage, service history, and regulatory compliance.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Fleet</span>
+                        <span class="tag">Maintenance</span>
+                        <span class="tag">Compliance</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Fracht-Tracking Agent</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Continuous monitoring of shipments and automated customer notification of logistics delays. Integrates with carrier APIs and customer CRM.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Tracking</span>
+                        <span class="tag">Notifications</span>
+                        <span class="tag">Customer Updates</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Disposition-Assistent</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Triage of incoming transport orders and capacity matching for freight forwarding. Matches load requirements to available vehicles and routes.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Orders</span>
+                        <span class="tag">Capacity</span>
+                        <span class="tag">Matching</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Healthcare -->
+    <section class="industry" id="healthcare">
+        <div class="container">
+            <div class="industry-header">
+                <div class="industry-icon"><i data-lucide="heart-pulse" style="width: 24px; height: 24px;"></i></div>
+                <h2>Healthcare & Social Services</h2>
+                <span class="industry-meta">5 agents • Admin only • No diagnostics</span>
+            </div>
+            <div class="use-cases-grid">
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Termin-Koordinator</h3>
+                        <span class="fit-badge fit-high">High Fit</span>
+                    </div>
+                    <p>Automated scheduling of consultations and SMS reminders to reduce no-show rates. Manages patient preferences and provider availability.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Scheduling</span>
+                        <span class="tag">Reminders</span>
+                        <span class="tag">No-shows</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Praxis-Sekretär (Admin)</h3>
+                        <span class="fit-badge fit-medium">Medium Fit</span>
+                    </div>
+                    <p>Patient inquiry triage and management of medical correspondence for non-diagnostic tasks. Routes clinical questions to appropriate providers.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Triage</span>
+                        <span class="tag">Correspondence</span>
+                        <span class="tag">Admin-only</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Labor-Admin (Präanalytik)</h3>
+                        <span class="fit-badge fit-medium">Medium Fit</span>
+                    </div>
+                    <p>Coordination of sample data entry and reporting between medical clinics and labs. Tracks sample status and flags missing or delayed results.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Lab</span>
+                        <span class="tag">Tracking</span>
+                        <span class="tag">Coordination</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Kurs-Administrator</h3>
+                        <span class="fit-badge fit-medium">Medium Fit</span>
+                    </div>
+                    <p>Management of training sessions and participant documentation for NPOs or education providers. Handles registration, reminders, and certificates.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Training</span>
+                        <span class="tag">Registration</span>
+                        <span class="tag">Certificates</span>
+                    </div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <h3>Leistungs-Vorbereiter</h3>
+                        <span class="fit-badge fit-medium">Medium Fit</span>
+                    </div>
+                    <p>Pre-checking patient records against insurance billing codes for faster settlement. Identifies missing documentation and coding opportunities.</p>
+                    <div class="use-case-footer">
+                        <span class="tag">Billing</span>
+                        <span class="tag">Insurance</span>
+                        <span class="tag">Validation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <h2>See Which Agents Fit Your Business</h2>
+                <p>Book a 30-minute discovery call. We'll analyze your workflows and recommend the 2–3 highest-ROI agent deployments for your specific situation.</p>
+                <a href="#" class="btn">Schedule Discovery Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Claude Agents Switzerland · Basel, Switzerland · nFADP Compliant</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>
