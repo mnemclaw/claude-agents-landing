@@ -16,7 +16,7 @@ const i18n = {
     hero: {
       badge: 'Made in Switzerland nFADP-konform',
       title: 'Schweizer KI-Agenten für Ihr KMU',
-      subtitle: 'Wir ersetzen Arbeit, nicht nur Unterstützung. Autonome 24/7-Agenten, die echte Arbeit erledigen. Ab CHF 500/Monat. Basel-basiert. Schweizer Compliance.',
+      subtitle: 'Unsere Agenten übernehmen repetitive Aufgaben für Sie. 24/7 aktiv – Sie konzentrieren sich auf das Wesentliche. Ab CHF 500/Monat. Basel-basiert.',
       ctaPrimary: 'Agent anfragen',
       ctaSecondary: 'Anwendungsfälle',
       socialProof: '4.9/5 von Schweizer KMUs · Basel'
@@ -25,7 +25,7 @@ const i18n = {
       swissBased: 'Schweizer-basiert',
       swissBasedDesc: 'Basler Büros. nFADP- und CH-Dat-konform. Ihre Daten bleiben in der Schweiz.',
       autonomous: 'Autonom',
-      autonomousDesc: 'Kein Mensch nötig. 24/7-Ausführung, die tatsächlich Arbeit erledigt.',
+      autonomousDesc: '24/7 aktiv – Sie konzentrieren sich auf das Wesentliche.',
       flatPricing: 'Pauschalpreis',
       flatPricingDesc: 'CHF 500–5.000 pro Monat. Einmalige Setup-Gebühr. Keine Überraschungen, keine Stundenabrechnung.'
     },
@@ -118,8 +118,8 @@ const i18n = {
       iso: 'ISO 27001'
     },
     cta: {
-      title: 'Bereit, Ihren ersten Agenten zu deployen?',
-      subtitle: 'Sagen Sie uns, welchen Agenten Sie brauchen. In 3 einfachen Schritten beschreiben Sie Ihren Anwendungsfall – wir melden uns innerhalb 24h mit einem Angebot.',
+      title: 'Bereit, Ihr Team zu verstärken?',
+      subtitle: 'Sagen Sie uns, welche repetitiven Aufgaben Sie übernehmen möchten. In 3 einfachen Schritten beschreiben Sie Ihren Anwendungsfall – wir melden uns innerhalb 24h mit einem Angebot.',
       placeholder: 'ihre@email.ch',
       button: 'Agent anfragen',
       privacy: 'Kein Spam. Swiss-Datenschutz.'
@@ -145,7 +145,7 @@ const i18n = {
     hero: {
       badge: 'Fabriqué en Suisse Conforme nFADP',
       title: 'Agents IA Suisses pour Votre PME',
-      subtitle: 'Nous remplaçons le travail, pas seulement l\'assistons. Agents autonomes 24/7 qui effectuent un vrai travail. Dès CHF 500/mois. Basés à Bâle. Conformité suisse.',
+      subtitle: 'Nos agents prennent en charge les tâches répétitives pour vous. 24/7 actifs – vous vous concentrez sur l\'essentiel. Dès CHF 500/mois. Basés à Bâle.',
       ctaPrimary: 'Demander un agent',
       ctaSecondary: 'Voir les cas d\'usage',
       socialProof: '4.9/5 par les PME suisses · Bâle'
@@ -154,7 +154,7 @@ const i18n = {
       swissBased: 'Basé en Suisse',
       swissBasedDesc: 'Bureaux à Bâle. Conforme nFADP et CH-Dat. Vos données restent en Suisse.',
       autonomous: 'Autonome',
-      autonomousDesc: 'Pas besoin d\'humain. Exécution 24/7 qui fait vraiment le travail.',
+      autonomousDesc: '24/7 actifs – vous vous concentrez sur l\'essentiel.',
       flatPricing: 'Tarif fixe',
       flatPricingDesc: 'CHF 500–5\'000 par mois. Frais de configuration unique. Pas de surprises, pas de facturation horaire.'
     },
@@ -247,8 +247,8 @@ const i18n = {
       iso: 'ISO 27001'
     },
     cta: {
-      title: 'Prêt à deployer votre premier agent?',
-      subtitle: 'Dites-nous quel agent vous avez besoin. En 3 étapes simples, décrivez votre cas d\'usage – nous vous revenons sous 24h avec une offre.',
+      title: 'Prêt à renforcer votre équipe?',
+      subtitle: 'Dites-nous quelles tâches répétitives vous souhaitez déléguer. En 3 étapes simples, décrivez votre cas d\'usage – nous vous revenons sous 24h avec une offre.',
       placeholder: 'votre@email.ch',
       button: 'Demander un agent',
       privacy: 'Pas de spam. Protection suisse des données.'
@@ -274,7 +274,7 @@ const i18n = {
     hero: {
       badge: 'Made in Switzerland Conforme nFADP',
       title: 'Agenti IA Svizzeri per la Sua PMI',
-      subtitle: 'Sostituiamo il lavoro, non solo lo assistiamo. Agenti autonomi 24/7 che svolgono un lavoro concreto. Da CHF 500/mese. Basilea. Compliance svizzera.',
+      subtitle: 'I nostri agenti si occupano dei compiti ripetitivi per lei. 24/7 attivi – lei si concentra sull\'essenziale. Da CHF 500/mese. Basilea.',
       ctaPrimary: 'Richiedi agente',
       ctaSecondary: 'Vedi i casi',
       socialProof: '4.9/5 da PMI svizzere · Basilea'
@@ -283,7 +283,7 @@ const i18n = {
       swissBased: 'Basato in Svizzera',
       swissBasedDesc: 'Uffici a Basilea. Conforme nFADP e CH-Dat. I suoi dati rimangono in Svizzera.',
       autonomous: 'Autonomo',
-      autonomousDesc: 'Nessun umano necessario. Esecuzione 24/7 che fa davvero il lavoro.',
+      autonomousDesc: '24/7 attivi – lei si concentra sull\'essenziale.',
       flatPricing: 'Prezzo fisso',
       flatPricingDesc: 'CHF 500–5\'000 al mese. Setup una tantum. Nessuna sorpresa, nessuna tariffa oraria.'
     },
@@ -376,8 +376,8 @@ const i18n = {
       iso: 'ISO 27001'
     },
     cta: {
-      title: 'Pronto a deployare il suo primo agente?',
-      subtitle: 'Ci dica quale agente le serve. In 3 semplici passaggi descriva il suo caso d\'uso – le rispondiamo entro 24h con un\'offerta.',
+      title: 'Pronto a potenziare il suo team?',
+      subtitle: 'Ci dica quali compiti ripetitivi vuole delegare. In 3 semplici passaggi descriva il suo caso d\'uso – le rispondiamo entro 24h con un\'offerta.',
       placeholder: 'sua@email.ch',
       button: 'Richiedi agente',
       privacy: 'Nessuno spam. Protezione dati svizzera.'
@@ -403,7 +403,7 @@ const i18n = {
     hero: {
       badge: 'Made in Switzerland nFADP Compliant',
       title: 'Swiss AI Agents for Your KMU',
-      subtitle: 'Replace labor not just assist it. Autonomous 24/7 agents doing real work from CHF 500/month. Basel-based. Swiss compliant.',
+      subtitle: 'Our agents handle repetitive tasks for you. 24/7 active – you focus on what matters. From CHF 500/month. Basel-based.',
       ctaPrimary: 'Request Agent',
       ctaSecondary: 'View Use Cases',
       socialProof: '4.9/5 from Swiss KMUs · Basel-based'
@@ -412,7 +412,7 @@ const i18n = {
       swissBased: 'Swiss-Based',
       swissBasedDesc: 'Basel offices. nFADP and CH-Dat compliant. Your data stays in Switzerland.',
       autonomous: 'Autonomous',
-      autonomousDesc: 'No human-in-the-loop required. 24/7 execution that actually gets work done.',
+      autonomousDesc: '24/7 active – you focus on what matters.',
       flatPricing: 'Flat Pricing',
       flatPricingDesc: 'CHF 500–5,000 per month. Setup fee once. No surprises no hourly billing.'
     },
@@ -505,8 +505,8 @@ const i18n = {
       iso: 'ISO 27001'
     },
     cta: {
-      title: 'Ready to Deploy Your First Agent?',
-      subtitle: 'Tell us which agent you need. In 3 simple steps, describe your use case – we respond within 24h with a quote.',
+      title: 'Ready to Empower Your Team?',
+      subtitle: 'Tell us which repetitive tasks you want to offload. In 3 simple steps, describe your use case – we respond within 24h with a quote.',
       placeholder: 'your@email.ch',
       button: 'Request Agent',
       privacy: 'No spam. Swiss data protection.'
