@@ -437,6 +437,7 @@ p {
 
 .hero-graphic {
   margin-top: 3rem;
+  margin-bottom: -2rem;
   display: flex;
   justify-content: center;
 }
@@ -548,7 +549,7 @@ p {
    Value Props Section
    ============================================ */
 .value-props {
-  padding: var(--section-padding) 0;
+  padding: 1rem 0 var(--section-padding);
 }
 .value-grid {
   display: grid;
@@ -566,7 +567,7 @@ p {
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.25rem;
-  color: var(--primary);
+  color: #DD3123;
 }
 .value-card h3 {
   margin-bottom: 0.75rem;
