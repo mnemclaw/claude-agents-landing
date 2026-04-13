@@ -123,7 +123,7 @@
         <!-- Progress Bar Section -->
         <div class="mb-16 max-w-xl">
             <div class="flex items-center justify-between mb-4">
-                <span class="text-[0.75rem] font-bold uppercase tracking-[0.05em] text-primary" id="stepLabel">Schritt 1 von 2</span>
+                <span class="text-[0.75rem] font-bold uppercase tracking-[0.05em] text-primary" id="stepLabel">Schritt 1 von 3</span>
                 <span class="text-[0.75rem] font-semibold text-on-surface-variant">Kontaktformular</span>
             </div>
             <div class="h-1 w-full bg-surface-container-low overflow-hidden rounded-full">
@@ -606,16 +606,20 @@
                 if (response.ok) {
                     window.location.href = '/danke.html';
                 } else {
-                    alert('Ein Fehler ist aufgetreten. Bitu2026e versuchen Sie es späu2026er nochmals.');
+                    alert('Ein Fehler ist aufgetreten. Bitte versuchen Sie es später nochmals.');
                 }
             } catch (error) {
-                console.error('Error:', error);
-                alert('Ein Fehler ist aufgetreten. Bitu2026e versuchen Sie es späu2026er nochmals.');
+                console.error('Fehler:', error);
+                alert('Ein Fehler ist aufgetreten. Bitte versuchen Sie es später nochmals.');
             }
         });
 
         // Initialize
         renderIndustries();
+
+        // Always scroll to top on page load
+        if (history.scrollRestoration) history.scrollRestoration = 'manual';
+        window.scrollTo(0, 0);
     </script>
 </body>
 </html>
