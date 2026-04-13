@@ -4,132 +4,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impressum | Claude Agents Switzerland</title>
-    <meta name="description" content="Impressum von Claude Agents Switzerland - A.Y.O. (Agent You Own)">
+    <meta name="description" content="Impressum der Claude Agents Switzerland">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body { font-family: "DM Sans", system-ui, sans-serif; }
-        .legal-content { max-width: 800px; margin: 0 auto; padding: 4rem 1.5rem; }
-        .legal-content h1 { font-size: 2.5rem; margin-bottom: 2rem; }
-        .legal-content h2 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; }
-        .legal-content p { margin-bottom: 1rem; line-height: 1.7; }
-        .legal-content address { font-style: normal; line-height: 1.8; margin: 1.5rem 0; }
-        .lang-switcher { position: fixed; top: 1rem; right: 1rem; display: flex; gap: 0.5rem; }
-        .lang-btn { padding: 0.5rem 1rem; border: 1px solid var(--border); background: white; cursor: pointer; border-radius: 4px; }
-        .lang-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
-    </style>
 </head>
 <body>
-    <div class="lang-switcher">
-        <button class="lang-btn active" onclick="switchLang('de')">DE</button>
-        <button class="lang-btn" onclick="switchLang('fr')">FR</button>
-        <button class="lang-btn" onclick="switchLang('it')">IT</button>
-        <button class="lang-btn" onclick="switchLang('en')">EN</button>
-    </div>
-
-    <div class="legal-content">
-        <h1 data-i18n="title">Impressum</h1>
-
-        <div data-lang="de">
-            <h2>Angaben gemäß Art. 3 OR</h2>
-            <address>
-                <strong>A.Y.O. (Agent You Own) – Florian Oberhauser</strong><br>
-                Mörsbergerstrasse 28<br>
-                4057 Basel<br>
-                Schweiz<br><br>
-                E-Mail: <a href="mailto:hello@claude-agents.ch">hello@claude-agents.ch</a><br>
-                Website: <a href="https://claude-agents.ch">claude-agents.ch</a>
-            </address>
-
-            <h2>Verantwortlich für den Inhalt</h2>
-            <p>Florian Oberhauser</p>
-
-            <h2>Haftungsausschluss</h2>
-            <p>Die Inhalte dieser Website wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
-
-            <h2>Nicht-Affiliation</h2>
-            <p>A.Y.O. (Agent You Own) ist ein unabhängiger Implementierungspartner und steht in keiner Verbindung zu Anthropic PBC, Claude AI oder anderen genannten Dienstleistern. Wir bieten Integrations- und Implementierungsleistungen mit verschiedenen AI-Technologien an.</p>
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><img src="logo.svg" alt="Claude Agents" class="logo-img"><span class="logo-text">Claude-Agents</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+                <li><a href="index.html#process">Process</a></li>
+                <li><a href="index.html#compliance">Compliance</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <button class="lang-btn" data-lang="de" title="Deutsch">DE</button>
+                <button class="lang-btn" data-lang="fr" title="Français">FR</button>
+                <button class="lang-btn" data-lang="it" title="Italiano">IT</button>
+                <button class="lang-btn" data-lang="en" title="English">EN</button>
+            </div>
+            <a href="contact.html" class="btn btn-primary nav-cta"><span>Agent anfragen</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <i data-lucide="menu" class="icon-menu"></i>
+                <i data-lucide="x" class="icon-close"></i>
+            </button>
         </div>
+    </nav>
 
-        <div data-lang="fr" style="display:none">
-            <h2>Informations selon l'Art. 3 CO</h2>
-            <address>
-                <strong>A.Y.O. (Agent You Own) – Florian Oberhauser</strong><br>
-                Mörsbergerstrasse 28<br>
-                4057 Bâle<br>
-                Suisse<br><br>
-                E-mail: <a href="mailto:hello@claude-agents.ch">hello@claude-agents.ch</a><br>
-                Site web: <a href="https://claude-agents.ch">claude-agents.ch</a>
-            </address>
+    <section class="section" style="padding-top: 8rem;">
+        <div class="container">
+            <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 3rem;" data-i18n="imprint.title">Impressum</h1>
 
-            <h2>Responsable du contenu</h2>
-            <p>Florian Oberhauser</p>
+            <div data-lang="de">
+                <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">Angaben gemäß Art. 3 OR</h2>
+                <address style="font-style: normal; line-height: 1.8; margin: 1.5rem 0;">
+                    <strong>A.Y.O. (Agent You Own) – Florian Oberhauser</strong><br>
+                    Mörsbergerstrasse 28<br>
+                    4057 Basel<br>
+                    Schweiz<br><br>
+                    E-Mail: <a href="mailto:hello@claude-agents.ch">hello@claude-agents.ch</a><br>
+                    Website: <a href="https://claude-agents.ch">claude-agents.ch</a>
+                </address>
 
-            <h2>Clause de non-responsabilité</h2>
-            <p>Le contenu de ce site web a été créé avec le plus grand soin. Cependant, nous ne pouvons garantir l'exactitude, l'exhaustivité et l'actualité du contenu.</p>
+                <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">Verantwortlich für den Inhalt</h2>
+                <p>Florian Oberhauser</p>
 
-            <h2>Non-affiliation</h2>
-            <p>A.Y.O. (Agent You Own) est un partenaire d'implémentation indépendant et n'est affilié à aucune entreprise mentionnée, y compris Anthropic PBC et Claude AI.</p>
+                <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">Haftungsausschluss</h2>
+                <p>Die Inhalte dieser Website wurden mit grösster Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
+            </div>
+
+            <div data-lang="fr" style="display:none">
+                <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">Informations selon l'Art. 3 CO</h2>
+                <address style="font-style: normal; line-height: 1.8; margin: 1.5rem 0;">
+                    <strong>A.Y.O. (Agent You Own) – Florian Oberhauser</strong><br>
+                    Mörsbergerstrasse 28<br>
+                    4057 Bâle<br>
+                    Suisse<br><br>
+                    E-mail: <a href="mailto:hello@claude-agents.ch">hello@claude-agents.ch</a><br>
+                    Site web: <a href="https://claude-agents.ch">claude-agents.ch</a>
+                </address>
+
+                <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">Responsable du contenu</h2>
+                <p>Florian Oberhauser</p>
+
+                <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">Clause de non-responsabilité</h2>
+                <p>Le contenu de ce site web a été créé avec le plus grand soin. Cependant, nous ne pouvons garantir l'exactitude, l'exhaustivité et l'actualité du contenu.</p>
+            </div>
+
+            <div data-lang="it" style="display:none">
+                <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">Informazioni secondo l'Art. 3 CO</h2>
+                <address style="font-style: normal; line-height: 1.8; margin: 1.5rem 0;">
+                    <strong>A.Y.O. (Agent You Own) – Florian Oberhauser</strong><br>
+                    Mörsbergerstrasse 28<br>
+                    4057 Basilea<br>
+                    Svizzera<br><br>
+                    Email: <a href="mailto:hello@claude-agents.ch">hello@claude-agents.ch</a><br>
+                    Sito web: <a href="https://claude-agents.ch">claude-agents.ch</a>
+                </address>
+
+                <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">Responsabile del contenuto</h2>
+                <p>Florian Oberhauser</p>
+
+                <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">Esclusione di responsabilità</h2>
+                <p>I contenuti di questo sito web sono stati creati con la massima cura. Tuttavia, non possiamo garantire l'accuratezza, la completezza e l'attualità dei contenuti.</p>
+            </div>
+
+            <div data-lang="en" style="display:none">
+                <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">Information according to Art. 3 OR</h2>
+                <address style="font-style: normal; line-height: 1.8; margin: 1.5rem 0;">
+                    <strong>A.Y.O. (Agent You Own) – Florian Oberhauser</strong><br>
+                    Mörsbergerstrasse 28<br>
+                    4057 Basel<br>
+                    Switzerland<br><br>
+                    Email: <a href="mailto:hello@claude-agents.ch">hello@claude-agents.ch</a><br>
+                    Website: <a href="https://claude-agents.ch">claude-agents.ch</a>
+                </address>
+
+                <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">Responsible for content</h2>
+                <p>Florian Oberhauser</p>
+
+                <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">Liability Disclaimer</h2>
+                <p>The contents of this website have been created with the utmost care. However, we cannot guarantee the accuracy, completeness, and timeliness of the content.</p>
+            </div>
+
+            <h2 style="font-size: 1.5rem; margin: 3rem 0 1rem;" data-i18n="imprint.nonAffiliationTitle">Nicht-Affiliation</h2>
+            <p data-i18n="imprint.nonAffiliation">A.Y.O. (Agent You Own) ist ein unabhängiger Implementierungspartner und steht in keiner Verbindung zu Anthropic PBC, Claude AI oder anderen genannten Dienstleistern. Wir bieten Integrations- und Implementierungsleistungen für verschiedene KI-Technologien an.</p>
         </div>
+    </section>
 
-        <div data-lang="it" style="display:none">
-            <h2>Informazioni secondo l'Art. 3 CO</h2>
-            <address>
-                <strong>A.Y.O. (Agent You Own) – Florian Oberhauser</strong><br>
-                Mörsbergerstrasse 28<br>
-                4057 Basilea<br>
-                Svizzera<br><br>
-                Email: <a href="mailto:hello@claude-agents.ch">hello@claude-agents.ch</a><br>
-                Sito web: <a href="https://claude-agents.ch">claude-agents.ch</a>
-            </address>
-
-            <h2>Responsabile del contenuto</h2>
-            <p>Florian Oberhauser</p>
-
-            <h2>Esclusione di responsabilità</h2>
-            <p>I contenuti di questo sito web sono stati creati con la massima cura. Tuttavia, non possiamo garantire l'accuratezza, la completezza e l'attualità dei contenuti.</p>
-
-            <h2>Non-affiliazione</h2>
-            <p>A.Y.O. (Agent You Own) è un partner di implementazione indipendente e non è affiliato ad alcuna azienda menzionata, inclusi Anthropic PBC e Claude AI.</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo"><img src="logo.svg" alt="Claude Agents" class="footer-logo-img"><span>Claude-Agents</span></a>
+                    <p>Swiss AI Agents for KMUs</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="index.html#services">Use Cases</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="index.html#compliance">Compliance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html#cta">Contact</a></li>
+                        <li><a href="use-cases.html">Use Cases</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="imprint.html">Impressum</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="index.html#compliance">nFADP</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Claude Agents Switzerland · Handelsregister Basel-Stadt</p>
+                <p>Made with Swiss precision · Powered by Anthropic</p>
+            </div>
         </div>
+    </footer>
 
-        <div data-lang="en" style="display:none">
-            <h2>Information according to Art. 3 OR</h2>
-            <address>
-                <strong>A.Y.O. (Agent You Own) – Florian Oberhauser</strong><br>
-                Mörsbergerstrasse 28<br>
-                4057 Basel<br>
-                Switzerland<br><br>
-                Email: <a href="mailto:hello@claude-agents.ch">hello@claude-agents.ch</a><br>
-                Website: <a href="https://claude-agents.ch">claude-agents.ch</a>
-            </address>
-
-            <h2>Responsible for content</h2>
-            <p>Florian Oberhauser</p>
-
-            <h2>Liability Disclaimer</h2>
-            <p>The contents of this website have been created with the utmost care. However, we cannot guarantee the accuracy, completeness, and timeliness of the content.</p>
-
-            <h2>Non-Affiliation</h2>
-            <p>A.Y.O. (Agent You Own) is an independent implementation partner and is not affiliated with any mentioned companies, including Anthropic PBC and Claude AI.</p>
-        </div>
-
-        <p style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">
-            <a href="index.html">← Back to Homepage</a>
-        </p>
-    </div>
-
+    <script src="main.js"></script>
     <script>
-        function switchLang(lang) {
-            document.querySelectorAll('[data-lang]').forEach(el => {
-                el.style.display = el.dataset.lang === lang ? 'block' : 'none';
-            });
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
-            });
-        }
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+        if (history.scrollRestoration) history.scrollRestoration = 'manual';
+        window.scrollTo(0, 0);
     </script>
 </body>
 </html>

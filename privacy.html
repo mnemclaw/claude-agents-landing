@@ -4,276 +4,307 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datenschutzerklärung | Claude Agents Switzerland</title>
-    <meta name="description" content="Datenschutzerklärung von Claude Agents Switzerland - A.Y.O. (Agent You Own)">
+    <meta name="description" content="Datenschutzerklärung der Claude Agents Switzerland">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body { font-family: "DM Sans", system-ui, sans-serif; }
-        .legal-content { max-width: 800px; margin: 0 auto; padding: 4rem 1.5rem; }
-        .legal-content h1 { font-size: 2.5rem; margin-bottom: 2rem; }
-        .legal-content h2 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 1rem; }
-        .legal-content p, .legal-content li { margin-bottom: 1rem; line-height: 1.7; }
-        .legal-content ul { margin-left: 1.5rem; margin-bottom: 1rem; }
-        .lang-switcher { position: fixed; top: 1rem; right: 1rem; display: flex; gap: 0.5rem; }
-        .lang-btn { padding: 0.5rem 1rem; border: 1px solid var(--border); background: white; cursor: pointer; border-radius: 4px; }
-        .lang-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
-    </style>
 </head>
 <body>
-    <div class="lang-switcher">
-        <button class="lang-btn active" onclick="switchLang('de')">DE</button>
-        <button class="lang-btn" onclick="switchLang('fr')">FR</button>
-        <button class="lang-btn" onclick="switchLang('it')">IT</button>
-        <button class="lang-btn" onclick="switchLang('en')">EN</button>
-    </div>
-
-    <div class="legal-content">
-        <h1 data-i18n="title">Datenschutzerklärung</h1>
-
-        <div data-lang="de">
-            <h2>1. Einleitung</h2>
-            <p>Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Diese Datenschutzerklärung informiert Sie darüber, welche Daten wir erheben, wie wir sie verwenden und welche Rechte Sie haben.</p>
-
-            <h2>2. Verantwortlicher</h2>
-            <p>Verantwortlich für die Datenverarbeitung:<br>
-            A.Y.O. (Agent You Own) – Florian Oberhauser<br>
-            Mörsbergerstrasse 28, 4057 Basel, Schweiz<br>
-            hello@claude-agents.ch</p>
-
-            <h2>3. Erhobene Daten</h2>
-            <p>Wir erheben folgende Daten:</p>
-            <ul>
-                <li>Kontaktdaten über das Kontaktformular (Name, E-Mail, Firma, Telefon)</li>
-                <li>Nutzungsdaten via Google Analytics (anonymisiert)</li>
-                <li>Tracking-Daten via Meta Pixel und Microsoft Clarity</li>
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><img src="logo.svg" alt="Claude Agents" class="logo-img"><span class="logo-text">Claude-Agents</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+                <li><a href="index.html#process">Process</a></li>
+                <li><a href="index.html#compliance">Compliance</a></li>
             </ul>
-
-            <h2>4. Zweck der Verarbeitung</h2>
-            <p>Wir verwenden Ihre Daten für:</p>
-            <ul>
-                <li>Beantwortung von Anfragen</li>
-                <li>Zusendung von Angeboten</li>
-                <li>Verbesserung unseres Website-Angebots</li>
-                <li>Analyse des Nutzerverhaltens</li>
-            </ul>
-
-            <h2>5. Drittparteien</h2>
-            <p>Wir verwenden folgende Dienstleister:</p>
-            <ul>
-                <li><strong>Resend</strong> – E-Mail-Versand</li>
-                <li><strong>Google Analytics</strong> – Webanalyse</li>
-                <li><strong>Meta Pixel</strong> – Tracking</li>
-                <li><strong>Microsoft Clarity</strong> – Nutzerverhalten</li>
-                <li><strong>Claude AI (Anthropic)</strong> – KI-Implementierungen für Kundenprojekte</li>
-            </ul>
-
-            <h2>6. Speicherdauer</h2>
-            <p>Wir speichern Ihre Kontaktdaten für die Dauer der Geschäftsbeziehung plus 2 Jahre gemäss schweizerischem Obligationenrecht.</p>
-
-            <h2>7. Ihre Rechte</h2>
-            <p>Sie haben das Recht auf:</p>
-            <ul>
-                <li>Auskunft über Ihre gespeicherten Daten</li>
-                <li>Berichtigung unrichtiger Daten</li>
-                <li>Löschung Ihrer Daten (Recht auf Vergessenwerden)</li>
-                <li>Widerspruch gegen die Verarbeitung</li>
-                <li>Datenübertragbarkeit</li>
-            </ul>
-
-            <h2>8. Kontakt für Datenschutz</h2>
-            <p>Bei Fragen zum Datenschutz kontaktieren Sie uns unter: <a href="mailto:hello@claude-agents.ch">hello@claude-agents.ch</a></p>
-
-            <h2>9. Nicht-Affiliation</h2>
-            <p>A.Y.O. (Agent You Own) ist ein unabhängiger Implementierungspartner. Wir stehen in keiner Verbindung zu Anthropic PBC, Claude AI, Google, Meta oder Microsoft.</p>
+            <div class="lang-switcher">
+                <button class="lang-btn" data-lang="de" title="Deutsch">DE</button>
+                <button class="lang-btn" data-lang="fr" title="Français">FR</button>
+                <button class="lang-btn" data-lang="it" title="Italiano">IT</button>
+                <button class="lang-btn" data-lang="en" title="English">EN</button>
+            </div>
+            <a href="contact.html" class="btn btn-primary nav-cta"><span>Agent anfragen</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <i data-lucide="menu" class="icon-menu"></i>
+                <i data-lucide="x" class="icon-close"></i>
+            </button>
         </div>
+    </nav>
 
-        <div data-lang="fr" style="display:none">
-            <h2>1. Introduction</h2>
-            <p>Nous prenons la protection de vos données personnelles très au sérieux. Cette politique de confidentialité vous informe sur les données que nous collectons, comment nous les utilisons et quels sont vos droits.</p>
+    <section class="section" style="padding-top: 8rem;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 3rem;" data-i18n="privacy.title">Datenschutzerklärung</h1>
 
-            <h2>2. Responsable</h2>
-            <p>Responsable du traitement des données:<br>
-            A.Y.O. (Agent You Own) – Florian Oberhauser<br>
-            Mörsbergerstrasse 28, 4057 Bâle, Suisse<br>
-            hello@claude-agents.ch</p>
+                <div data-lang="de">
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">1. Einleitung</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Diese Datenschutzerklärung informiert Sie darüber, welche Daten wir erheben, wie wir sie verwenden und welche Rechte Sie haben.</p>
 
-            <h2>3. Données Collectées</h2>
-            <p>Nous collectons les données suivantes :</p>
-            <ul>
-                <li>Données de contact via le formulaire (nom, e-mail, entreprise, téléphone)</li>
-                <li>Données d'utilisation via Google Analytics (anonymisées)</li>
-                <li>Données de tracking via Meta Pixel et Microsoft Clarity</li>
-            </ul>
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">2. Verantwortlicher</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Verantwortlich für die Datenverarbeitung:<br>
+                    A.Y.O. (Agent You Own) – Florian Oberhauser<br>
+                    Mörsbergerstrasse 28, 4057 Basel, Schweiz<br>
+                    hello@claude-agents.ch</p>
 
-            <h2>4. Finalité du Traitement</h2>
-            <p>Nous utilisons vos données pour :</p>
-            <ul>
-                <li>Répondre aux demandes</li>
-                <li>Envoyer des offres</li>
-                <li>Améliorer notre site web</li>
-                <li>Analyser le comportement des utilisateurs</li>
-            </ul>
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">3. Erhobene Daten</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Wir erheben folgende Daten:</p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; line-height: 1.7;">
+                        <li>Kontaktdaten über das Kontaktformular (Name, E-Mail, Firma, Telefon)</li>
+                        <li>Nutzungsdaten via Google Analytics (anonymisiert)</li>
+                        <li>Tracking-Daten via Meta Pixel und Microsoft Clarity</li>
+                    </ul>
 
-            <h2>5. Tiers</h2>
-            <p>Nous utilisons les services suivants :</p>
-            <ul>
-                <li><strong>Resend</strong> – Envoi d'e-mails</li>
-                <li><strong>Google Analytics</strong> – Analyse web</li>
-                <li><strong>Meta Pixel</strong> – Tracking</li>
-                <li><strong>Microsoft Clarity</strong> – Comportement utilisateur</li>
-                <li><strong>Claude AI (Anthropic)</strong> – Implémentations IA pour projets clients</li>
-            </ul>
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">4. Zweck der Verarbeitung</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Wir verwenden Ihre Daten für:</p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; line-height: 1.7;">
+                        <li>Beantwortung von Anfragen</li>
+                        <li>Zusendung von Angeboten</li>
+                        <li>Verbesserung unseres Website-Angebots</li>
+                        <li>Analyse des Nutzerverhaltens</li>
+                    </ul>
 
-            <h2>6. Durée de Conservation</h2>
-            <p>Nous conservons vos données de contact pendant la durée de la relation commerciale plus 2 ans conformément au droit suisse.</p>
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">5. Drittparteien</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Wir verwenden folgende Dienstleister:</p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; line-height: 1.7;">
+                        <li><strong>Resend</strong> – E-Mail-Versand</li>
+                        <li><strong>Google Analytics</strong> – Webanalyse</li>
+                        <li><strong>Meta Pixel</strong> – Tracking</li>
+                        <li><strong>Microsoft Clarity</strong> – Nutzerverhalten</li>
+                        <li><strong>Claude AI (Anthropic)</strong> – KI-Implementierungen für Kundenprojekte</li>
+                    </ul>
 
-            <h2>7. Vos Droits</h2>
-            <p>Vous avez le droit à :</p>
-            <ul>
-                <li>Accès à vos données stockées</li>
-                <li>Rectification des données incorrectes</li>
-                <li>Suppression de vos données (droit à l'oubli)</li>
-                <li>Opposition au traitement</li>
-                <li>Portabilité des données</li>
-            </ul>
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">6. Speicherdauer</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Wir speichern Ihre Kontaktdaten für die Dauer der Geschäftsbeziehung plus 2 Jahre gemäss schweizerischem Obligationenrecht.</p>
 
-            <h2>8. Contact Confidentialité</h2>
-            <p>Pour toute question : <a href="mailto:hello@claude-agents.ch">hello@claude-agents.ch</a></p>
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">7. Ihre Rechte</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Sie haben das Recht auf:</p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; line-height: 1.7;">
+                        <li>Auskunft über Ihre gespeicherten Daten</li>
+                        <li>Berichtigung unrichtiger Daten</li>
+                        <li>Löschung Ihrer Daten (Recht auf Vergessenwerden)</li>
+                        <li>Widerspruch gegen die Verarbeitung</li>
+                        <li>Datenübertragbarkeit</li>
+                    </ul>
 
-            <h2>9. Non-Affiliation</h2>
-            <p>A.Y.O. est un partenaire d'implémentation indépendant, non affilié à Anthropic PBC, Claude AI ou autres services mentionnés.</p>
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">8. Kontakt für Datenschutz</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Bei Fragen zum Datenschutz kontaktieren Sie uns unter: <a href="mailto:hello@claude-agents.ch">hello@claude-agents.ch</a></p>
+                </div>
+
+                <div data-lang="fr" style="display:none">
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">1. Introduction</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Nous prenons la protection de vos données personnelles très au sérieux. Cette politique de confidentialité vous informe sur les données que nous collectons, comment nous les utilisons et quels sont vos droits.</p>
+
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">2. Responsable</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Responsable du traitement des données:<br>
+                    A.Y.O. (Agent You Own) – Florian Oberhauser<br>
+                    Mörsbergerstrasse 28, 4057 Bâle, Suisse<br>
+                    hello@claude-agents.ch</p>
+
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">3. Données Collectées</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Nous collectons les données suivantes:</p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; line-height: 1.7;">
+                        <li>Données de contact via le formulaire (nom, e-mail, entreprise, téléphone)</li>
+                        <li>Données d'utilisation via Google Analytics (anonymisées)</li>
+                        <li>Données de tracking via Meta Pixel et Microsoft Clarity</li>
+                    </ul>
+
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">4. Finalité du Traitement</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Nous utilisons vos données pour:</p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; line-height: 1.7;">
+                        <li>Répondre aux demandes</li>
+                        <li>Envoyer des offres</li>
+                        <li>Améliorer notre site web</li>
+                        <li>Analyser le comportement des utilisateurs</li>
+                    </ul>
+
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">5. Tiers</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Nous utilisons les services suivants:</p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; line-height: 1.7;">
+                        <li><strong>Resend</strong> – Envoi d'e-mails</li>
+                        <li><strong>Google Analytics</strong> – Analyse web</li>
+                        <li><strong>Meta Pixel</strong> – Tracking</li>
+                        <li><strong>Microsoft Clarity</strong> – Comportement utilisateur</li>
+                        <li><strong>Claude AI (Anthropic)</strong> – Implémentations IA pour projets clients</li>
+                    </ul>
+
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">6. Durée de Conservation</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Nous conservons vos données de contact pendant la durée de la relation commerciale plus 2 ans conformément au droit suisse.</p>
+
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">7. Vos Droits</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Vous avez le droit à:</p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; line-height: 1.7;">
+                        <li>Accès à vos données stockées</li>
+                        <li>Rectification des données incorrectes</li>
+                        <li>Suppression de vos données (droit à l'oubli)</li>
+                        <li>Opposition au traitement</li>
+                        <li>Portabilité des données</li>
+                    </ul>
+
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">8. Contact Confidentialité</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Pour toute question : <a href="mailto:hello@claude-agents.ch">hello@claude-agents.ch</a></p>
+                </div>
+
+                <div data-lang="it" style="display:none">
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">1. Introduzione</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Prendiamo molto sul serio la protezione dei tuoi dati personali. Questa informativa ti informa su quali dati raccogliamo, come li utilizziamo e quali sono i tuoi diritti.</p>
+
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">2. Responsabile</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Responsabile del trattamento dei dati:<br>
+                    A.Y.O. (Agent You Own) – Florian Oberhauser<br>
+                    Mörsbergerstrasse 28, 4057 Basilea, Svizzera<br>
+                    hello@claude-agents.ch</p>
+
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">3. Dati Raccolti</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Raccogliamo i seguenti dati:</p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; line-height: 1.7;">
+                        <li>Dati di contatto tramite il modulo (nome, email, azienda, telefono)</li>
+                        <li>Dati di utilizzo tramite Google Analytics (anonimizzati)</li>
+                        <li>Dati di tracciamento tramite Meta Pixel e Microsoft Clarity</li>
+                    </ul>
+
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">4. Finalità del Trattamento</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Utilizziamo i tuoi dati per:</p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; line-height: 1.7;">
+                        <li>Rispondere alle richieste</li>
+                        <li>Inviare offerte</li>
+                        <li>Migliorare il nostro sito web</li>
+                        <li>Analizzare il comportamento degli utenti</li>
+                    </ul>
+
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">5. Terze Parti</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Utilizziamo i seguenti fornitori:</p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; line-height: 1.7;">
+                        <li><strong>Resend</strong> – Invio email</li>
+                        <li><strong>Google Analytics</strong> – Analisi web</li>
+                        <li><strong>Meta Pixel</strong> – Tracciamento</li>
+                        <li><strong>Microsoft Clarity</strong> – Comportamento utente</li>
+                        <li><strong>Claude AI (Anthropic)</strong> – Implementazioni AI per progetti clienti</li>
+                    </ul>
+
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">6. Durata di Conservazione</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Conserviamo i tuoi dati di contatto per la durata del rapporto commerciale più 2 anni secondo il diritto svizzero.</p>
+
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">7. I Tuoi Diritti</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Hai diritto a:</p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; line-height: 1.7;">
+                        <li>Accesso ai tuoi dati memorizzati</li>
+                        <li>Rettifica dei dati errati</li>
+                        <li>Cancellazione dei tuoi dati (diritto all'oblio)</li>
+                        <li>Opposizione al trattamento</li>
+                        <li>Portabilità dei dati</li>
+                    </ul>
+
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">8. Contatto Privacy</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Per domande: <a href="mailto:hello@claude-agents.ch">hello@claude-agents.ch</a></p>
+                </div>
+
+                <div data-lang="en" style="display:none">
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">1. Introduction</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">We take the protection of your personal data very seriously. This privacy policy informs you about what data we collect, how we use it, and what rights you have.</p>
+
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">2. Data Controller</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">Responsible for data processing:<br>
+                    A.Y.O. (Agent You Own) – Florian Oberhauser<br>
+                    Mörsbergerstrasse 28, 4057 Basel, Switzerland<br>
+                    hello@claude-agents.ch</p>
+
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">3. Collected Data</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">We collect the following data:</p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; line-height: 1.7;">
+                        <li>Contact data via the contact form (name, email, company, phone)</li>
+                        <li>Usage data via Google Analytics (anonymized)</li>
+                        <li>Tracking data via Meta Pixel and Microsoft Clarity</li>
+                    </ul>
+
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">4. Purpose of Processing</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">We use your data for:</p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; line-height: 1.7;">
+                        <li>Responding to inquiries</li>
+                        <li>Sending offers</li>
+                        <li>Improving our website</li>
+                        <li>Analyzing user behavior</li>
+                    </ul>
+
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">5. Third Parties</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">We use the following service providers:</p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; line-height: 1.7;">
+                        <li><strong>Resend</strong> – Email delivery</li>
+                        <li><strong>Google Analytics</strong> – Web analytics</li>
+                        <li><strong>Meta Pixel</strong> – Tracking</li>
+                        <li><strong>Microsoft Clarity</strong> – User behavior</li>
+                        <li><strong>Claude AI (Anthropic)</strong> – AI implementations for client projects</li>
+                    </ul>
+
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">6. Storage Duration</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">We retain your contact data for the duration of the business relationship plus 2 years according to Swiss law.</p>
+
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">7. Your Rights</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">You have the right to:</p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem; line-height: 1.7;">
+                        <li>Access your stored data</li>
+                        <li>Rectification of incorrect data</li>
+                        <li>Erasure of your data (right to be forgotten)</li>
+                        <li>Objection to processing</li>
+                        <li>Data portability</li>
+                    </ul>
+
+                    <h2 style="font-size: 1.5rem; margin: 2rem 0 1rem;">8. Privacy Contact</h2>
+                    <p style="margin-bottom: 1rem; line-height: 1.7;">For questions contact: <a href="mailto:hello@claude-agents.ch">hello@claude-agents.ch</a></p>
+                </div>
+
+                <h2 style="font-size: 1.5rem; margin: 3rem 0 1rem;" data-i18n="privacy.nonAffiliationTitle">Nicht-Affiliation</h2>
+                <p style="margin-bottom: 1rem; line-height: 1.7;" data-i18n="privacy.nonAffiliation">A.Y.O. (Agent You Own) ist ein unabhängiger Implementierungspartner und steht in keiner Verbindung zu Anthropic PBC, Claude AI oder anderen genannten Dienstleistern. Wir bieten Integrations- und Implementierungsleistungen für verschiedene KI-Technologien an.</p>
+            </div>
         </div>
+    </section>
 
-        <div data-lang="it" style="display:none">
-            <h2>1. Introduzione</h2>
-            <p>Prendiamo molto sul serio la protezione dei tuoi dati personali. Questa informativa ti informa su quali dati raccogliamo, come li utilizziamo e quali sono i tuoi diritti.</p>
-
-            <h2>2. Responsabile</h2>
-            <p>Responsabile del trattamento dei dati:<br>
-            A.Y.O. (Agent You Own) – Florian Oberhauser<br>
-            Mörsbergerstrasse 28, 4057 Basilea, Svizzera<br>
-            hello@claude-agents.ch</p>
-
-            <h2>3. Dati Raccolti</h2>
-            <p>Raccogliamo i seguenti dati:</p>
-            <ul>
-                <li>Dati di contatto tramite il modulo (nome, email, azienda, telefono)</li>
-                <li>Dati di utilizzo tramite Google Analytics (anonimizzati)</li>
-                <li>Dati di tracciamento tramite Meta Pixel e Microsoft Clarity</li>
-            </ul>
-
-            <h2>4. Finalità del Trattamento</h2>
-            <p>Utilizziamo i tuoi dati per:</p>
-            <ul>
-                <li>Rispondere alle richieste</li>
-                <li>Inviare offerte</li>
-                <li>Migliorare il nostro sito web</li>
-                <li>Analizzare il comportamento degli utenti</li>
-            </ul>
-
-            <h2>5. Terze Parti</h2>
-            <p>Utilizziamo i seguenti fornitori:</p>
-            <ul>
-                <li><strong>Resend</strong> – Invio email</li>
-                <li><strong>Google Analytics</strong> – Analisi web</li>
-                <li><strong>Meta Pixel</strong> – Tracciamento</li>
-                <li><strong>Microsoft Clarity</strong> – Comportamento utente</li>
-                <li><strong>Claude AI (Anthropic)</strong> – Implementazioni AI per progetti clienti</li>
-            </ul>
-
-            <h2>6. Durata di Conservazione</h2>
-            <p>Conserviamo i tuoi dati di contatto per la durata del rapporto commerciale più 2 anni secondo il diritto svizzero.</p>
-
-            <h2>7. I Tuoi Diritti</h2>
-            <p>Hai diritto a:</p>
-            <ul>
-                <li>Accesso ai tuoi dati memorizzati</li>
-                <li>Rettifica dei dati errati</li>
-                <li>Cancellazione dei tuoi dati (diritto all'oblio)</li>
-                <li>Opposizione al trattamento</li>
-                <li>Portabilità dei dati</li>
-            </ul>
-
-            <h2>8. Contatto Privacy</h2>
-            <p>Per domande: <a href="mailto:hello@claude-agents.ch">hello@claude-agents.ch</a></p>
-
-            <h2>9. Non-Affiliazione</h2>
-            <p>A.Y.O. è un partner di implementazione indipendente, non affiliato ad Anthropic PBC, Claude AI o altri servizi menzionati.</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo"><img src="logo.svg" alt="Claude Agents" class="footer-logo-img"><span>Claude-Agents</span></a>
+                    <p>Swiss AI Agents for KMUs</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="index.html#services">Use Cases</a></li>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="index.html#compliance">Compliance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html#cta">Contact</a></li>
+                        <li><a href="use-cases.html">Use Cases</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="imprint.html">Impressum</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="index.html#compliance">nFADP</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Claude Agents Switzerland · Handelsregister Basel-Stadt</p>
+                <p>Made with Swiss precision · Powered by Anthropic</p>
+            </div>
         </div>
+    </footer>
 
-        <div data-lang="en" style="display:none">
-            <h2>1. Introduction</h2>
-            <p>We take the protection of your personal data very seriously. This privacy policy informs you about what data we collect, how we use it, and what rights you have.</p>
-
-            <h2>2. Data Controller</h2>
-            <p>Responsible for data processing:<br>
-            A.Y.O. (Agent You Own) – Florian Oberhauser<br>
-            Mörsbergerstrasse 28, 4057 Basel, Switzerland<br>
-            hello@claude-agents.ch</p>
-
-            <h2>3. Collected Data</h2>
-            <p>We collect the following data:</p>
-            <ul>
-                <li>Contact data via the contact form (name, email, company, phone)</li>
-                <li>Usage data via Google Analytics (anonymized)</li>
-                <li>Tracking data via Meta Pixel and Microsoft Clarity</li>
-            </ul>
-
-            <h2>4. Purpose of Processing</h2>
-            <p>We use your data for:</p>
-            <ul>
-                <li>Responding to inquiries</li>
-                <li>Sending offers</li>
-                <li>Improving our website</li>
-                <li>Analyzing user behavior</li>
-            </ul>
-
-            <h2>5. Third Parties</h2>
-            <p>We use the following service providers:</p>
-            <ul>
-                <li><strong>Resend</strong> – Email delivery</li>
-                <li><strong>Google Analytics</strong> – Web analytics</li>
-                <li><strong>Meta Pixel</strong> – Tracking</li>
-                <li><strong>Microsoft Clarity</strong> – User behavior</li>
-                <li><strong>Claude AI (Anthropic)</strong> – AI implementations for client projects</li>
-            </ul>
-
-            <h2>6. Storage Duration</h2>
-            <p>We retain your contact data for the duration of the business relationship plus 2 years according to Swiss law.</p>
-
-            <h2>7. Your Rights</h2>
-            <p>You have the right to:</p>
-            <ul>
-                <li>Access your stored data</li>
-                <li>Rectification of incorrect data</li>
-                <li>Erasure of your data (right to be forgotten)</li>
-                <li>Objection to processing</li>
-                <li>Data portability</li>
-            </ul>
-
-            <h2>8. Privacy Contact</h2>
-            <p>For questions contact: <a href="mailto:hello@claude-agents.ch">hello@claude-agents.ch</a></p>
-
-            <h2>9. Non-Affiliation</h2>
-            <p>A.Y.O. (Agent You Own) is an independent implementation partner. We are not affiliated with Anthropic PBC, Claude AI, or any other mentioned services.</p>
-        </div>
-
-        <p style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border);">
-            <a href="index.html">← Back to Homepage</a>
-        </p>
-    </div>
-
+    <script src="main.js"></script>
     <script>
-        function switchLang(lang) {
-            document.querySelectorAll('[data-lang]').forEach(el => {
-                el.style.display = el.dataset.lang === lang ? 'block' : 'none';
-            });
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
-            });
-        }
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+        if (history.scrollRestoration) history.scrollRestoration = 'manual';
+        window.scrollTo(0, 0);
     </script>
 </body>
 </html>
