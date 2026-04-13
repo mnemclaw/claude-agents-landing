@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="contact.metaTitle">Contact — Claude Agents Switzerland</title>
+    <meta name="description" data-i18n="contact.metaDesc" content="Get in touch to discuss autonomous AI agents for your Swiss KMU.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-page { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem 6rem; }
+        .form-header { text-align: center; margin-bottom: 3rem; }
+        .form-header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .form-header p { color: var(--text-muted); }
+
+        .step-indicator { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
+        .step { width: 40px; height: 40px; border-radius: 50%; background: var(--bg-alt); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.875rem; }
+        .step.active { background: var(--primary); }
+        .step.completed { background: var(--text); color: white; }
+
+        .form-step { display: none; }
+        .form-step.active { display: block; }
+
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; font-weight: 500; margin-bottom: 0.5rem; font-size: 0.9375rem; }
+        .form-group label .required { color: var(--accent-red); margin-left: 0.25rem; }
+
+        .form-control { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; background: white; transition: border-color 0.2s; }
+        .form-control:focus { outline: none; border-color: var(--primary); }
+        .form-control::placeholder { color: var(--text-muted); }
+
+        select.form-control { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+
+        textarea.form-control { min-height: 120px; resize: vertical; }
+
+        .checkbox-group { display: flex; flex-direction: column; gap: 0.75rem; }
+        .checkbox-item { display: flex; align-items: flex-start; gap: 0.75rem; }
+        .checkbox-item input[type="checkbox"] { width: 20px; height: 20px; margin-top: 0.125rem; accent-color: var(--primary); }
+        .checkbox-item label { font-weight: normal; font-size: 0.9375rem; line-height: 1.5; margin-bottom: 0; }
+        .checkbox-item label small { display: block; color: var(--text-muted); font-size: 0.875rem; margin-top: 0.25rem; }
+
+        .form-navigation { display: flex; justify-content: space-between; margin-top: 2rem; gap: 1rem; }
+        .btn { padding: 0.875rem 1.5rem; border-radius: 9999px; font-weight: 600; cursor: pointer; transition: all 0.2s; border: none; font-size: 1rem; }
+        .btn-primary { background: var(--primary); color: var(--text); }
+        .btn-primary:hover { background: var(--primary-hover); }
+        .btn-secondary { background: var(--bg-alt); color: var(--text); }
+        .btn-secondary:hover { background: var(--border); }
+
+        .error-message { color: var(--accent-red); font-size: 0.875rem; margin-top: 0.25rem; display: none; }
+        .form-group.error .form-control { border-color: var(--accent-red); }
+        .form-group.error .error-message { display: block; }
+
+        .success-page { text-align: center; padding: 4rem 2rem; display: none; }
+        .success-page.active { display: block; }
+        .success-icon { width: 80px; height: 80px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
+        .success-icon i { width: 40px; height: 40px; color: var(--text); }
+
+        @media (max-width: 640px) {
+            .form-header h1 { font-size: 1.5rem; }
+            .step-indicator { gap: 0.5rem; }
+            .step { width: 32px; height: 32px; font-size: 0.75rem; }
+            .form-navigation { flex-direction: column-reverse; }
+            .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">claude-agents.ch</a>
+            <div class="lang-switcher">
+                <button class="lang-btn" data-lang="de">DE</button>
+                <button class="lang-btn" data-lang="fr">FR</button>
+                <button class="lang-btn" data-lang="it">IT</button>
+                <button class="lang-btn active" data-lang="en">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="contact-page">
+        <div class="form-header">
+            <h1 data-i18n="contact.title">Let's Discuss Your Agent</h1>
+            <p data-i18n="contact.subtitle">4 quick steps to get started with autonomous AI for your business</p>
+        </div>
+
+        <div class="step-indicator" id="stepIndicator">
+            <div class="step active" data-step="1">1</div>
+            <div class="step" data-step="2">2</div>
+            <div class="step" data-step="3">3</div>
+            <div class="step" data-step="4">4</div>
+        </div>
+
+        <form id="contactForm">
+            <!-- Step 1: Contact Info -->
+            <div class="form-step active" data-step="1">
+                <div class="form-group">
+                    <label data-i18n="contact.nameLabel">Full Name <span class="required">*</span></label>
+                    <input type="text" class="form-control" name="name" data-i18n-placeholder="contact.namePlaceholder" placeholder="John Doe" required>
+                    <span class="error-message" data-i18n="contact.nameError">Please enter your full name</span>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="contact.emailLabel">Email Address <span class="required">*</span></label>
+                    <input type="email" class="form-control" name="email" data-i18n-placeholder="contact.emailPlaceholder" placeholder="name@company.ch" required>
+                    <span class="error-message" data-i18n="contact.emailError">Please enter a valid email address</span>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="contact.companyLabel">Company <span class="required">*</span></label>
+                    <input type="text" class="form-control" name="company" data-i18n-placeholder="contact.companyPlaceholder" placeholder="Acme Corp" required>
+                    <span class="error-message" data-i18n="contact.companyError">Please enter your company name</span>
+                </div>
+            </div>
+
+            <!-- Step 2: Industry & Size -->
+            <div class="form-step" data-step="2">
+                <div class="form-group">
+                    <label data-i18n="contact.industryLabel">Industry <span class="required">*</span></label>
+                    <select class="form-control" name="industry" required>
+                        <option value="" data-i18n="contact.selectOption">— Select —</option>
+                        <option value="fiduciary" data-i18n="contact.industryFiduciary">Fiduciary / Financial Services</option>
+                        <option value="construction" data-i18n="contact.industryConstruction">Construction / Real Estate</option>
+                        <option value="retail" data-i18n="contact.industryRetail">Trade / Retail</option>
+                        <option value="manufacturing" data-i18n="contact.industryManufacturing">Manufacturing</option>
+                        <option value="technology" data-i18n="contact.industryTechnology">IT / Software</option>
+                        <option value="consulting" data-i18n="contact.industryConsulting">Consulting / Services</option>
+                        <option value="other" data-i18n="contact.industryOther">Other</option>
+                    </select>
+                    <span class="error-message" data-i18n="contact.industryError">Please select your industry</span>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="contact.sizeLabel">Company Size (Employees) <span class="required">*</span></label>
+                    <select class="form-control" name="companySize" required>
+                        <option value="" data-i18n="contact.selectOption">— Select —</option>
+                        <option value="under-10" data-i18n="contact.sizeUnder10">Fewer than 10</option>
+                        <option value="10-50" data-i18n="contact.size10to50">10–50</option>
+                        <option value="50-200" data-i18n="contact.size50to200">50–200</option>
+                        <option value="200-500" data-i18n="contact.size200to500">200–500</option>
+                        <option value="over-500" data-i18n="contact.sizeOver500">More than 500</option>
+                    </select>
+                    <span class="error-message" data-i18n="contact.sizeError">Please select your company size</span>
+                </div>
+            </div>
+
+            <!-- Step 3: Problem & Use Cases -->
+            <div class="form-step" data-step="3">
+                <div class="form-group">
+                    <label data-i18n="contact.problemLabel">Your Biggest Challenge (optional)</label>
+                    <textarea class="form-control" name="problem" data-i18n-placeholder="contact.problemPlaceholder" placeholder="Briefly describe where you need support..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="contact.useCasesLabel">Which Solutions Interest You? (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="useCases" value="fiduciary" id="uc-fiduciary">
+                            <label for="uc-fiduciary" data-i18n="contact.useCaseFiduciary">Digital Fiduciary — Automate accounting</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="useCases" value="construction" id="uc-construction">
+                            <label for="uc-construction" data-i18n="contact.useCaseConstruction">Construction Hub — Coordinate sites</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="useCases" value="sdr" id="uc-sdr">
+                            <label for="uc-sdr" data-i18n="contact.useCaseSDR">Multilingual SDR — Qualify leads 24/7</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="useCases" value="supply" id="uc-supply">
+                            <label for="uc-supply" data-i18n="contact.useCaseSupply">Supply Chain Watchdog — Monitor inventory</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="useCases" value="unsure" id="uc-unsure">
+                            <label for="uc-unsure" data-i18n="contact.useCaseUnsure">Unsure / Advice requested</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Budget & Consent -->
+            <div class="form-step" data-step="4">
+                <div class="form-group">
+                    <label data-i18n="contact.budgetLabel">Expected Budget Range <span class="required">*</span></label>
+                    <select class="form-control" name="budget" required>
+                        <option value="" data-i18n="contact.selectOption">— Select —</option>
+                        <option value="under-500" data-i18n="contact.budgetUnder500">Under CHF 500/month</option>
+                        <option value="500-1200" data-i18n="contact.budget500to1200">CHF 500–1,200/month</option>
+                        <option value="1200-5000" data-i18n="contact.budget1200to5000">CHF 1,200–5,000/month</option>
+                        <option value="over-5000" data-i18n="contact.budgetOver5000">CHF 5,000+/month</option>
+                        <option value="unclear" data-i18n="contact.budgetUnclear">Unclear — Advice requested</option>
+                    </select>
+                    <span class="error-message" data-i18n="contact.budgetError">Please select a budget range</span>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="dataConsent" id="dataConsent" required>
+                        <label for="dataConsent" data-i18n="contact.dataConsentLabel">I agree that my data will be processed in accordance with the privacy policy...</label>
+                    </div>
+                    <span class="error-message" data-i18n="contact.consentError">You must consent to data processing to continue</span>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="marketingConsent" id="marketingConsent">
+                        <label for="marketingConsent" data-i18n="contact.marketingLabel">I would like to receive occasional updates on AI developments...</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-navigation">
+                <button type="button" class="btn btn-secondary" id="prevBtn" style="display: none;" data-i18n="contact.prevButton">Back</button>
+                <button type="button" class="btn btn-primary" id="nextBtn" data-i18n="contact.nextButton">Next</button>
+                <button type="submit" class="btn btn-primary" id="submitBtn" style="display: none;" data-i18n="contact.submitButton">Send Request</button>
+            </div>
+        </form>
+
+        <div class="success-page" id="successPage">
+            <div class="success-icon"><i data-lucide="check"></i></div>
+            <h2 data-i18n="contact.successTitle">Thank You!</h2>
+            <p data-i18n="contact.successMessage">We'll contact you within 24 hours to discuss your agent.</p>
+            <a href="index.html" class="btn btn-primary" style="margin-top: 1.5rem;" data-i18n="contact.backHome">Back to Home</a>
+        </div>
+    </main>
+
+    <script src="i18n.js"></script>
+    <script src="contact-i18n.js"></script>
+    <script>
+        // Multi-step form logic
+        let currentStep = 1;
+        const totalSteps = 4;
+        const form = document.getElementById('contactForm');
+        const steps = document.querySelectorAll('.form-step');
+        const indicators = document.querySelectorAll('.step');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const submitBtn = document.getElementById('submitBtn');
+
+        function showStep(step) {
+            steps.forEach(s => s.classList.remove('active'));
+            document.querySelector(`.form-step[data-step="${step}"]`).classList.add('active');
+
+            indicators.forEach((ind, i) => {
+                ind.classList.remove('active', 'completed');
+                if (i + 1 < step) ind.classList.add('completed');
+                else if (i + 1 === step) ind.classList.add('active');
+            });
+
+            prevBtn.style.display = step === 1 ? 'none' : 'block';
+            if (step === totalSteps) {
+                nextBtn.style.display = 'none';
+                submitBtn.style.display = 'block';
+            } else {
+                nextBtn.style.display = 'block';
+                submitBtn.style.display = 'none';
+            }
+        }
+
+        function validateStep(step) {
+            const currentStepEl = document.querySelector(`.form-step[data-step="${step}"]`);
+            const requiredFields = currentStepEl.querySelectorAll('[required]');
+            let valid = true;
+
+            requiredFields.forEach(field => {
+                const group = field.closest('.form-group');
+                if (!field.value || (field.type === 'checkbox' && !field.checked)) {
+                    group.classList.add('error');
+                    valid = false;
+                } else {
+                    group.classList.remove('error');
+                }
+            });
+
+            return valid;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (validateStep(currentStep) && currentStep < totalSteps) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (validateStep(currentStep)) {
+                // Submit form data
+                const formData = new FormData(form);
+                console.log('Form submitted:', Object.fromEntries(formData));
+
+                // Show success
+                form.style.display = 'none';
+                document.getElementById('stepIndicator').style.display = 'none';
+                document.querySelector('.form-header').style.display = 'none';
+                document.getElementById('successPage').classList.add('active');
+
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            }
+        });
+
+        // Clear errors on input
+        form.querySelectorAll('input, select, textarea').forEach(field => {
+            field.addEventListener('input', () => {
+                field.closest('.form-group')?.classList.remove('error');
+            });
+        });
+
+        // Initialize
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+    </script>
+</body>
+</html>
