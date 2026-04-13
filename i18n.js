@@ -11,13 +11,13 @@ const i18n = {
       pricing: 'Preise',
       process: 'Prozess',
       compliance: 'Compliance',
-      bookDemo: 'Demo buchen'
+      bookDemo: 'Agent anfragen'
     },
     hero: {
       badge: 'Made in Switzerland nFADP-konform',
       title: 'Schweizer KI-Agenten für Ihr KMU',
       subtitle: 'Wir ersetzen Arbeit, nicht nur Unterstützung. Autonome 24/7-Agenten, die echte Arbeit erledigen. Ab CHF 500/Monat. Basel-basiert. Schweizer Compliance.',
-      ctaPrimary: 'Demo buchen',
+      ctaPrimary: 'Agent anfragen',
       ctaSecondary: 'Anwendungsfälle',
       socialProof: '4.9/5 von Schweizer KMUs · Basel'
     },
@@ -119,9 +119,9 @@ const i18n = {
     },
     cta: {
       title: 'Bereit, Ihren ersten Agenten zu deployen?',
-      subtitle: 'Buchen Sie eine kostenlose 30-minütige Discovery-Session. Wir analysieren Ihre Workflows und zeigen, was ein Agent für Sie tun kann.',
+      subtitle: 'Sagen Sie uns, welchen Agenten Sie brauchen. In 3 einfachen Schritten beschreiben Sie Ihren Anwendungsfall – wir melden uns innerhalb 24h mit einem Angebot.',
       placeholder: 'ihre@email.ch',
-      button: 'Demo buchen',
+      button: 'Agent anfragen',
       privacy: 'Kein Spam. Swiss-Datenschutz.'
     },
     footer: {
@@ -140,13 +140,13 @@ const i18n = {
       pricing: 'Tarifs',
       process: 'Processus',
       compliance: 'Conformité',
-      bookDemo: 'Démo'
+      bookDemo: 'Demander un agent'
     },
     hero: {
       badge: 'Fabriqué en Suisse Conforme nFADP',
       title: 'Agents IA Suisses pour Votre PME',
       subtitle: 'Nous remplaçons le travail, pas seulement l\'assistons. Agents autonomes 24/7 qui effectuent un vrai travail. Dès CHF 500/mois. Basés à Bâle. Conformité suisse.',
-      ctaPrimary: 'Réserver une démo',
+      ctaPrimary: 'Demander un agent',
       ctaSecondary: 'Voir les cas d\'usage',
       socialProof: '4.9/5 par les PME suisses · Bâle'
     },
@@ -248,9 +248,9 @@ const i18n = {
     },
     cta: {
       title: 'Prêt à deployer votre premier agent?',
-      subtitle: 'Réservez une session Discovery gratuite de 30 min. Nous analysons vos workflows et montrons ce qu\'un agent peut faire pour vous.',
+      subtitle: 'Dites-nous quel agent vous avez besoin. En 3 étapes simples, décrivez votre cas d\'usage – nous vous revenons sous 24h avec une offre.',
       placeholder: 'votre@email.ch',
-      button: 'Réserver une démo',
+      button: 'Demander un agent',
       privacy: 'Pas de spam. Protection suisse des données.'
     },
     footer: {
@@ -269,13 +269,13 @@ const i18n = {
       pricing: 'Prezzi',
       process: 'Processo',
       compliance: 'Compliance',
-      bookDemo: 'Demo'
+      bookDemo: 'Richiedi agente'
     },
     hero: {
       badge: 'Made in Switzerland Conforme nFADP',
       title: 'Agenti IA Svizzeri per la Sua PMI',
       subtitle: 'Sostituiamo il lavoro, non solo lo assistiamo. Agenti autonomi 24/7 che svolgono un lavoro concreto. Da CHF 500/mese. Basilea. Compliance svizzera.',
-      ctaPrimary: 'Prenota Demo',
+      ctaPrimary: 'Richiedi agente',
       ctaSecondary: 'Vedi i casi',
       socialProof: '4.9/5 da PMI svizzere · Basilea'
     },
@@ -377,9 +377,9 @@ const i18n = {
     },
     cta: {
       title: 'Pronto a deployare il suo primo agente?',
-      subtitle: 'Prenoti una sessione Discovery gratuita di 30 min. Analizziamo i suoi workflow e mostriamo cosa un agente può fare per lei.',
+      subtitle: 'Ci dica quale agente le serve. In 3 semplici passaggi descriva il suo caso d\'uso – le rispondiamo entro 24h con un\'offerta.',
       placeholder: 'sua@email.ch',
-      button: 'Prenota Demo',
+      button: 'Richiedi agente',
       privacy: 'Nessuno spam. Protezione dati svizzera.'
     },
     footer: {
@@ -398,13 +398,13 @@ const i18n = {
       pricing: 'Pricing',
       process: 'Process',
       compliance: 'Compliance',
-      bookDemo: 'Book Demo'
+      bookDemo: 'Request Agent'
     },
     hero: {
       badge: 'Made in Switzerland nFADP Compliant',
       title: 'Swiss AI Agents for Your KMU',
       subtitle: 'Replace labor not just assist it. Autonomous 24/7 agents doing real work from CHF 500/month. Basel-based. Swiss compliant.',
-      ctaPrimary: 'Book Demo',
+      ctaPrimary: 'Request Agent',
       ctaSecondary: 'View Use Cases',
       socialProof: '4.9/5 from Swiss KMUs · Basel-based'
     },
@@ -506,9 +506,9 @@ const i18n = {
     },
     cta: {
       title: 'Ready to Deploy Your First Agent?',
-      subtitle: 'Book a free 30-minute Discovery session. We analyze your workflows and show what an agent can do for you.',
+      subtitle: 'Tell us which agent you need. In 3 simple steps, describe your use case – we respond within 24h with a quote.',
       placeholder: 'your@email.ch',
-      button: 'Book Demo',
+      button: 'Request Agent',
       privacy: 'No spam. Swiss data protection.'
     },
     footer: {
