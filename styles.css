@@ -27,8 +27,8 @@
   --border-subtle: rgba(209, 205, 194, 0.5);
   
   /* Fonts */
-  --font-heading: "Droid Sans", system-ui, sans-serif;
-  --font-body: "Droid Sans", system-ui, sans-serif;
+  --font-heading: "DM Sans", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
   
   /* Spacing */
   --padding: clamp(1rem, 4vw, 3rem);
@@ -253,7 +253,7 @@ p {
 }
 
 .logo-text {
-  font-family: "Droid Sans", system-ui, sans-serif;
+  font-family: "DM Sans", system-ui, sans-serif;
   font-weight: 700;
   font-size: 1.75rem;
 }
