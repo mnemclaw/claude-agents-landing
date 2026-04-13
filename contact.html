@@ -526,8 +526,8 @@
                 renderUseCases();
             } else if (currentStep === 2) {
                 // Validate step 2 - use case and consent
-                if (!selectedUseCase) {
-                    alert('Bitte wählen Sie einen Anwendungsfall aus.');
+                if (selectedUseCases.length === 0) {
+                    alert('Bitte wählen Sie mindestens einen Anwendungsfall aus.');
                     return;
                 }
 
