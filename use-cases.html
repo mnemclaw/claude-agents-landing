@@ -7,7 +7,7 @@
     <meta name="description" content="Complete catalog of autonomous AI agents for Swiss KMUs. 40+ use cases across construction, real estate, finance, manufacturing, logistics, and more.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Droid+Sans:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         :root {
@@ -25,7 +25,7 @@
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: "Inter", system-ui, sans-serif;
+            font-family: "Droid Sans", system-ui, sans-serif;
             color: var(--text);
             background: var(--bg-main);
             line-height: 1.6;
@@ -47,12 +47,21 @@
             align-items: center;
         }
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
             text-decoration: none;
         }
-        .logo span { color: var(--primary); }
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+        .logo-text {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text);
+            font-family: "Droid Sans", system-ui, sans-serif;
+        }
         .nav-links {
             display: flex;
             gap: 2rem;
@@ -287,7 +296,7 @@
     <!-- Header -->
     <header class="header">
         <div class="container header-content">
-            <a href="#" class="logo">claude-<span>agents</span>.ch</a>
+            <a href="index.html" class="logo"><img src="logo.png" alt="Claude Agents"><span class="logo-text">Claude-Agents</span></a>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#construction">Construction</a></li>

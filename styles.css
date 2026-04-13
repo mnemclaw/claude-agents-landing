@@ -27,8 +27,8 @@
   --border-subtle: rgba(209, 205, 194, 0.5);
   
   /* Fonts */
-  --font-heading: "Inter", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  --font-heading: "Droid Sans", system-ui, sans-serif;
+  --font-body: "Droid Sans", system-ui, sans-serif;
   
   /* Spacing */
   --padding: clamp(1rem, 4vw, 3rem);
@@ -239,9 +239,23 @@ p {
 }
 
 .nav-logo {
-  font-weight: 600;
-  font-size: 1.125rem;
+  font-weight: 700;
+  font-size: 1.5rem;
   letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
+.logo-text {
+  font-family: "Droid Sans", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem;
 }
 
 .nav-links {
@@ -756,7 +770,8 @@ p {
 /* Footer */
 .footer { padding: var(--section-padding-compact) 0; background: var(--bg-alt); }
 .footer-grid { display: grid; grid-template-columns: 1fr;n  gap: 2rem; margin-bottom: 2.5rem; }
-.footer-logo { font-weight: 600; font-size: 1.125rem; display: block; margin-bottom: 0.5rem; }
+.footer-logo { font-weight: 700; font-size: 1.125rem; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+.footer-logo-img { height: 28px; width: auto; }
 .footer-brand p { font-size: 0.9375rem; }
 .footer-links h4 { font-size: 0.875rem; margin-bottom: 1rem; font-weight: 600; }
 .footer-links li { margin-bottom: 0.5rem; }
