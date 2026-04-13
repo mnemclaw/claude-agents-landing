@@ -509,15 +509,7 @@
         // Navigation
         document.getElementById('nextBtn').addEventListener('click', () => {
             if (currentStep === 1) {
-                // Validate step 1
-                const name = document.getElementById('fullName').value;
-                const email = document.getElementById('email').value;
-                const company = document.getElementById('company').value;
-
-                if (!name || !email || !company) {
-                    alert('Bitte füllen Sie alle Pflichtfelder aus.');
-                    return;
-                }
+                // Validate step 1 - only industry required
                 if (!selectedIndustry) {
                     alert('Bitte wählen Sie eine Branche aus.');
                     return;
@@ -527,25 +519,60 @@
                 currentStep = 2;
                 document.getElementById('step1').classList.remove('active');
                 document.getElementById('step2').classList.add('active');
-                document.getElementById('stepLabel').textContent = 'Schritt 2 von 2';
-                document.getElementById('progressBar').style.width = '100%';
+                document.getElementById('stepLabel').textContent = 'Schritt 2 von 3';
+                document.getElementById('progressBar').style.width = '66%';
                 document.getElementById('backBtn').classList.remove('hidden');
-                document.getElementById('nextBtn').classList.add('hidden');
-                document.getElementById('submitBtn').classList.remove('hidden');
 
                 renderUseCases();
+            } else if (currentStep === 2) {
+                // Validate step 2 - use case and consent
+                if (!selectedUseCase) {
+                    alert('Bitte wählen Sie einen Anwendungsfall aus.');
+                    return;
+                }
+
+                const companySize = document.getElementById('companySize').value;
+                const dataConsent = document.getElementById('dataConsent').checked;
+
+                if (!companySize) {
+                    alert('Bitte wählen Sie eine Unternehmensgrösse aus.');
+                    return;
+                }
+                if (!dataConsent) {
+                    alert('Bitte stimmen Sie der Datenverarbeitung zu.');
+                    return;
+                }
+
+                // Go to step 3
+                currentStep = 3;
+                document.getElementById('step2').classList.remove('active');
+                document.getElementById('step3').classList.add('active');
+                document.getElementById('stepLabel').textContent = 'Schritt 3 von 3';
+                document.getElementById('progressBar').style.width = '100%';
+                document.getElementById('nextBtn').classList.add('hidden');
+                document.getElementById('submitBtn').classList.remove('hidden');
             }
         });
 
         document.getElementById('backBtn').addEventListener('click', () => {
-            currentStep = 1;
-            document.getElementById('step2').classList.remove('active');
-            document.getElementById('step1').classList.add('active');
-            document.getElementById('stepLabel').textContent = 'Schritt 1 von 2';
-            document.getElementById('progressBar').style.width = '50%';
-            document.getElementById('backBtn').classList.add('hidden');
-            document.getElementById('nextBtn').classList.remove('hidden');
-            document.getElementById('submitBtn').classList.add('hidden');
+            if (currentStep === 2) {
+                // Back from step 2 to step 1
+                currentStep = 1;
+                document.getElementById('step2').classList.remove('active');
+                document.getElementById('step1').classList.add('active');
+                document.getElementById('stepLabel').textContent = 'Schritt 1 von 3';
+                document.getElementById('progressBar').style.width = '33%';
+                document.getElementById('backBtn').classList.add('hidden');
+            } else if (currentStep === 3) {
+                // Back from step 3 to step 2
+                currentStep = 2;
+                document.getElementById('step3').classList.remove('active');
+                document.getElementById('step2').classList.add('active');
+                document.getElementById('stepLabel').textContent = 'Schritt 2 von 3';
+                document.getElementById('progressBar').style.width = '66%';
+                document.getElementById('nextBtn').classList.remove('hidden');
+                document.getElementById('submitBtn').classList.add('hidden');
+            }
         });
 
         // Form submission
