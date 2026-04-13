@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Kontakt | Claude Agents Switzerland</title>
+    <title data-i18n="contact.metaTitle">Kontakt | Claude Agents Switzerland</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -102,6 +102,19 @@
             border: 2px solid #faaf4f;
             background: #efeeea;
         }
+        .lang-btn {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 0.25rem;
+            color: rgba(27, 28, 26, 0.6);
+            transition: all 0.2s;
+        }
+        .lang-btn:hover { color: #1b1c1a; }
+        .lang-btn.active {
+            background: #865300;
+            color: #ffffff;
+        }
     </style>
 </head>
 <body class="bg-surface text-on-surface antialiased">
@@ -113,6 +126,12 @@
                 <span class="text-[1.75rem] font-bold tracking-[-0.02em]">Claude-Agents</span>
             </a>
             <div class="flex items-center gap-4">
+                <div class="lang-switcher flex gap-1 mr-4">
+                    <button class="lang-btn" data-lang="de" title="Deutsch">DE</button>
+                    <button class="lang-btn" data-lang="fr" title="Français">FR</button>
+                    <button class="lang-btn" data-lang="it" title="Italiano">IT</button>
+                    <button class="lang-btn active" data-lang="en" title="English">EN</button>
+                </div>
                 <a href="index.html" class="btn btn-primary flex items-center gap-2"><span class="material-symbols-outlined text-lg">home</span></a>
             </div>
         </div>
@@ -123,8 +142,8 @@
         <!-- Progress Bar Section -->
         <div class="mb-16 max-w-xl">
             <div class="flex items-center justify-between mb-4">
-                <span class="text-[0.75rem] font-bold uppercase tracking-[0.05em] text-primary" id="stepLabel">Schritt 1 von 3</span>
-                <span class="text-[0.75rem] font-semibold text-on-surface-variant">Kontaktformular</span>
+                <span class="text-[0.75rem] font-bold uppercase tracking-[0.05em] text-primary" id="stepLabel" data-i18n="contact.stepLabel">Schritt 1 von 3</span>
+                <span class="text-[0.75rem] font-semibold text-on-surface-variant" data-i18n="contact.progressLabel">Kontaktformular</span>
             </div>
             <div class="h-1 w-full bg-surface-container-low overflow-hidden rounded-full">
                 <div class="h-full w-[33%] bg-[#DD3123] transition-all duration-500 ease-out" id="progressBar"></div>
@@ -135,10 +154,10 @@
         <div class="step-content active" id="step1">
             <div class="grid grid-cols-12 mb-16">
                 <div class="col-span-12 lg:col-span-8">
-                    <h1 class="text-[3.5rem] leading-[1.1] font-semibold tracking-[-0.02em] text-on-surface mb-6">
+                    <h1 class="text-[3.5rem] leading-[1.1] font-semibold tracking-[-0.02em] text-on-surface mb-6" data-i18n="contact.step1Title">
                         In welcher Branche<br/>sind Sie tätig?
                     </h1>
-                    <p class="text-[1.375rem] text-on-surface-variant max-w-2xl leading-relaxed">
+                    <p class="text-[1.375rem] text-on-surface-variant max-w-2xl leading-relaxed" data-i18n="contact.step1Subtitle">
                         Wählen Sie Ihre Branche, um spezialisierte Agenten-Workflows für Ihr Schweizer KMU zu sehen.
                     </p>
                 </div>
@@ -148,7 +167,7 @@
                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
                         </span>
-                        <span class="text-[0.75rem] font-semibold uppercase tracking-[0.05em]">Orchestrator Online</span>
+                        <span class="text-[0.75rem] font-semibold uppercase tracking-[0.05em]" data-i18n="contact.orchestratorOnline">Orchestrator Online</span>
                     </div>
                 </div>
             </div>
@@ -162,10 +181,10 @@
         <!-- Step 2: Use Case Selection -->
         <div class="step-content" id="step2">
             <div class="mb-12">
-                <h1 class="text-[3rem] leading-[1.1] font-semibold tracking-[-0.02em] text-on-surface mb-4">
+                <h1 class="text-[3rem] leading-[1.1] font-semibold tracking-[-0.02em] text-on-surface mb-4" data-i18n="contact.step2Title">
                     Welchen Fokusbereich<br/>sollen wir automatisieren?
                 </h1>
-                <p class="text-lg text-on-surface-variant max-w-2xl">
+                <p class="text-lg text-on-surface-variant max-w-2xl" data-i18n="contact.step2Subtitle">
                     Wählen Sie die spezifische Rolle, die am besten zu Ihrem aktuellen Engpass passt.
                 </p>
             </div>
@@ -177,27 +196,29 @@
 
             <!-- Additional Details -->
             <div class="bg-surface-container-low rounded-lg p-8 mb-8">
-                <h2 class="text-xl font-semibold mb-6">Zus��tzliche Informationen</h2>
+                <h2 class="text-xl font-semibold mb-6" data-i18n="contact.additionalInfo">Zusätzliche Informationen</h2>
                 <div class="grid grid-cols-1 gap-6">
                     <div>
-                        <label class="text-sm font-medium text-on-surface-variant mb-2 block">Unternehmensgrösse</label>
+                        <label class="text-sm font-medium text-on-surface-variant mb-2 block" data-i18n="contact.sizeLabel">Unternehmensgrösse</label>
                         <select id="companySize" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary">
-                            <option value="">Bitte wählen</option>
-                            <option value="under-10">Weniger als 10</option>
-                            <option value="10-50">10–50</option>
-                            <option value="50-200">50–200</option>
-                            <option value="200-500">200–500</option>
-                            <option value="over-500">Mehr als 500</option>
+                            <option value="" data-i18n="contact.selectOption">Bitte wählen</option>
+                            <option value="under-10" data-i18n="contact.sizeUnder10">Weniger als 10</option>
+                            <option value="10-50" data-i18n="contact.size10to50">10–50</option>
+                            <option value="50-200" data-i18n="contact.size50to200">50–200</option>
+                            <option value="200-500" data-i18n="contact.size200to500">200–500</option>
+                            <option value="over-500" data-i18n="contact.sizeOver500">Mehr als 500</option>
                         </select>
                     </div>
                     <div>
-                        <label class="text-sm font-medium text-on-surface-variant mb-2 block">Ihre grösste Herausforderung</label>
-                        <textarea id="challenge" rows="4" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary" placeholder="Beschreiben Sie kurz, wo Sie Unterstützung brauchen..."></textarea>
+                        <label class="text-sm font-medium text-on-surface-variant mb-2 block" data-i18n="contact.challengeLabel">Ihre grösste Herausforderung</label>
+                        <textarea id="challenge" rows="4" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary" data-i18n-placeholder="contact.challengePlaceholder" placeholder="Beschreiben Sie kurz, wo Sie Unterstützung brauchen..."></textarea>
                     </div>
                     <div class="flex items-start gap-3">
                         <input type="checkbox" id="dataConsent" class="mt-1 w-4 h-4 accent-primary">
                         <label for="dataConsent" class="text-sm text-on-surface-variant">
-                            Ich stimme zu, dass meine Daten gemäss der <a href="privacy.html" target="_blank" class="text-primary underline hover:no-underline">Datenschutzerklärung</a> verarbeitet werden. Dies umfasst die Speicherung meiner Kontaktdaten und die Kontaktaufnahme per E-Mail oder Telefon bezüglich KI-Agenten-Lösungen von Claude Agents.ch. *
+                            <span data-i18n="contact.dataConsentPrefix">Ich stimme zu, dass meine Daten gemäss der</span>
+                            <a href="privacy.html" target="_blank" class="text-primary underline hover:no-underline" data-i18n="contact.privacyPolicy">Datenschutzerklärung</a>
+                            <span data-i18n="contact.dataConsentSuffix">verarbeitet werden. Dies umfasst die Speicherung meiner Kontaktdaten und die Kontaktaufnahme per E-Mail oder Telefon bezüglich KI-Agenten-Lösungen von Claude Agents.ch. *</span>
                         </label>
                     </div>
                 </div>
@@ -208,10 +229,10 @@
         <div class="step-content" id="step3">
             <div class="mb-12">
                 <h1 class="text-[3rem] leading-[1.1] font-semibold tracking-[-0.02em] text-on-surface mb-4">
-                    Wie erreichen wir Sie?<br/>
-                    <span class="text-primary">Schritt 3 von 3</span>
+                    <span data-i18n="contact.step3Title">Wie erreichen wir Sie?</span><br/>
+                    <span class="text-primary" data-i18n="contact.step3Subtitle">Schritt 3 von 3</span>
                 </h1>
-                <p class="text-lg text-on-surface-variant max-w-2xl">
+                <p class="text-lg text-on-surface-variant max-w-2xl" data-i18n="contact.step3Description">
                     Ihre Kontaktdaten und Rückrufpräferenz für die Besprechung.
                 </p>
             </div>
@@ -219,61 +240,61 @@
             <!-- Contact Form -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <div>
-                    <label class="text-sm font-medium text-on-surface-variant mb-2 block">Vollständiger Name *</label>
-                    <input type="text" id="fullName" required class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary" placeholder="Max Mustermann">
+                    <label class="text-sm font-medium text-on-surface-variant mb-2 block" data-i18n="contact.nameLabel">Vollständiger Name *</label>
+                    <input type="text" id="fullName" required class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary" data-i18n-placeholder="contact.namePlaceholder" placeholder="Max Mustermann">
                 </div>
                 <div>
-                    <label class="text-sm font-medium text-on-surface-variant mb-2 block">E-Mail-Adresse *</label>
-                    <input type="email" id="email" required class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary" placeholder="max@firma.ch">
+                    <label class="text-sm font-medium text-on-surface-variant mb-2 block" data-i18n="contact.emailLabel">E-Mail-Adresse *</label>
+                    <input type="email" id="email" required class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary" data-i18n-placeholder="contact.emailPlaceholder" placeholder="max@firma.ch">
                 </div>
                 <div>
-                    <label class="text-sm font-medium text-on-surface-variant mb-2 block">Unternehmen *</label>
-                    <input type="text" id="company" required class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary" placeholder="Musterfirma AG">
+                    <label class="text-sm font-medium text-on-surface-variant mb-2 block" data-i18n="contact.companyLabel">Unternehmen *</label>
+                    <input type="text" id="company" required class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary" data-i18n-placeholder="contact.companyPlaceholder" placeholder="Musterfirma AG">
                 </div>
                 <div>
-                    <label class="text-sm font-medium text-on-surface-variant mb-2 block">Position</label>
-                    <input type="text" id="position" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary" placeholder="Geschäftsführer">
+                    <label class="text-sm font-medium text-on-surface-variant mb-2 block" data-i18n="contact.positionLabel">Position</label>
+                    <input type="text" id="position" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary" data-i18n-placeholder="contact.positionPlaceholder" placeholder="Geschäftsführer">
                 </div>
                 <div>
-                    <label class="text-sm font-medium text-on-surface-variant mb-2 block">Telefon (optional)</label>
-                    <input type="tel" id="phone" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary" placeholder="+41 44 123 45 67">
+                    <label class="text-sm font-medium text-on-surface-variant mb-2 block" data-i18n="contact.phoneLabel">Telefon (optional)</label>
+                    <input type="tel" id="phone" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary" data-i18n-placeholder="contact.phonePlaceholder" placeholder="+41 44 123 45 67">
                 </div>
                 <div>
-                    <label class="text-sm font-medium text-on-surface-variant mb-2 block">Bevorzugte Rückrufzeit *</label>
+                    <label class="text-sm font-medium text-on-surface-variant mb-2 block" data-i18n="contact.callbackLabel">Bevorzugte Rückrufzeit *</label>
                     <select id="callbackTime" required class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary">
-                        <option value="">Bitte wählen</option>
-                        <option value="morning">Vormittag (9:00–12:00)</option>
-                        <option value="afternoon">Nachmittag (13:00–17:00)</option>
-                        <option value="evening">Abend (17:00–19:00)</option>
-                        <option value="anytime">Jederzeit</option>
+                        <option value="" data-i18n="contact.selectOption">Bitte wählen</option>
+                        <option value="morning" data-i18n="contact.callbackMorning">Vormittag (9:00–12:00)</option>
+                        <option value="afternoon" data-i18n="contact.callbackAfternoon">Nachmittag (13:00–17:00)</option>
+                        <option value="evening" data-i18n="contact.callbackEvening">Abend (17:00–19:00)</option>
+                        <option value="anytime" data-i18n="contact.callbackAnytime">Jederzeit</option>
                     </select>
                 </div>
             </div>
 
             <!-- Budget & Timeline -->
             <div class="bg-surface-container-low rounded-lg p-8 mb-8">
-                <h2 class="text-xl font-semibold mb-6">Projektumfang</h2>
+                <h2 class="text-xl font-semibold mb-6" data-i18n="contact.projectScope">Projektumfang</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label class="text-sm font-medium text-on-surface-variant mb-2 block">Geschätztes Budget</label>
+                        <label class="text-sm font-medium text-on-surface-variant mb-2 block" data-i18n="contact.budgetLabel">Geschätztes Budget</label>
                         <select id="budget" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary">
-                            <option value="">Bitte wählen</option>
-                            <option value="under-1k">Unter CHF 1'000/Monat</option>
-                            <option value="1k-2k">CHF 1'000–2'000/Monat</option>
-                            <option value="2k-5k">CHF 2'000–5'000/Monat</option>
-                            <option value="over-5k">Über CHF 5'000/Monat</option>
-                            <option value="unsure">Noch unklar</option>
+                            <option value="" data-i18n="contact.selectOption">Bitte wählen</option>
+                            <option value="under-1k" data-i18n="contact.budgetUnder1k">Unter CHF 1'000/Monat</option>
+                            <option value="1k-2k" data-i18n="contact.budget1to2k">CHF 1'000–2'000/Monat</option>
+                            <option value="2k-5k" data-i18n="contact.budget2to5k">CHF 2'000–5'000/Monat</option>
+                            <option value="over-5k" data-i18n="contact.budgetOver5k">Über CHF 5'000/Monat</option>
+                            <option value="unsure" data-i18n="contact.budgetUnsure">Noch unklar</option>
                         </select>
                     </div>
                     <div>
-                        <label class="text-sm font-medium text-on-surface-variant mb-2 block">Gewünschter Start</label>
+                        <label class="text-sm font-medium text-on-surface-variant mb-2 block" data-i18n="contact.timelineLabel">Gewünschter Start</label>
                         <select id="timeline" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary">
-                            <option value="">Bitte wählen</option>
-                            <option value="asap">So schnell wie möglich</option>
-                            <option value="1-month">Innerhalb 1 Monat</option>
-                            <option value="3-months">Innerhalb 3 Monate</option>
-                            <option value="6-months">Innerhalb 6 Monate</option>
-                            <option value="exploring">Nur am Erkunden</option>
+                            <option value="" data-i18n="contact.selectOption">Bitte wählen</option>
+                            <option value="asap" data-i18n="contact.timelineASAP">So schnell wie möglich</option>
+                            <option value="1-month" data-i18n="contact.timeline1Month">Innerhalb 1 Monat</option>
+                            <option value="3-months" data-i18n="contact.timeline3Months">Innerhalb 3 Monate</option>
+                            <option value="6-months" data-i18n="contact.timeline6Months">Innerhalb 6 Monate</option>
+                            <option value="exploring" data-i18n="contact.timelineExploring">Nur am Erkunden</option>
                         </select>
                     </div>
                 </div>
@@ -282,7 +303,7 @@
             <!-- Additional Consent -->
             <div class="flex items-start gap-3 mb-8">
                 <input type="checkbox" id="marketingConsent" class="mt-1 w-4 h-4 accent-primary">
-                <label for="marketingConsent" class="text-sm text-on-surface-variant">
+                <label for="marketingConsent" class="text-sm text-on-surface-variant" data-i18n="contact.marketingConsent">
                     Ich möchte über KI-Agenten-News, Case Studies und Angebote von Claude Agents.ch informiert werden. (Optional)
                 </label>
             </div>
@@ -292,18 +313,18 @@
         <div class="flex flex-col md:flex-row items-center justify-between gap-8 pt-12 border-t border-outline-variant/15">
             <div class="flex items-center gap-4 text-on-surface-variant">
                 <span class="material-symbols-outlined text-sm">lock</span>
-                <p class="text-xs font-medium tracking-wide">Datenverarbeitung in Schweizer Servern. DSGVO & nFADP konform.</p>
+                <p class="text-xs font-medium tracking-wide" data-i18n="contact.footerSecurity">Datenverarbeitung in Schweizer Servern. DSGVO & nFADP konform.</p>
             </div>
             <div class="flex items-center gap-6">
                 <button type="button" id="backBtn" class="text-on-surface-variant hover:text-on-surface text-sm font-semibold flex items-center gap-2 group hidden">
                     <span class="material-symbols-outlined group-hover:-translate-x-1 transition-transform">arrow_back</span>
-                    Zurück
+                    <span data-i18n="contact.backButton">Zurück</span>
                 </button>
                 <button type="button" id="nextBtn" class="bg-primary text-on-primary px-12 py-4 rounded-lg font-bold text-sm tracking-wide hover:opacity-90 transition-all active:scale-95 shadow-sm">
-                    Weiter: Agent auswählen
+                    <span data-i18n="contact.nextButtonStep1">Weiter: Agent auswählen</span>
                 </button>
                 <button type="submit" id="submitBtn" class="bg-primary text-on-primary px-12 py-4 rounded-lg font-bold text-sm tracking-wide hover:opacity-90 transition-all active:scale-95 shadow-sm hidden">
-                    Anfrage senden
+                    <span data-i18n="contact.submitButton">Anfrage senden</span>
                 </button>
             </div>
         </div>
@@ -312,145 +333,774 @@
     <!-- Footer -->
     <footer class="w-full border-t border-[#D6C3B1]/15 bg-[#FAF9F5]">
         <div class="flex flex-col md:flex-row justify-between items-center px-12 py-10 gap-6 max-w-[1440px] mx-auto">
-            <div class="text-[0.75rem] font-semibold uppercase tracking-[0.05em] text-[#141413]/40">
+            <div class="text-[0.75rem] font-semibold uppercase tracking-[0.05em] text-[#141413]/40" data-i18n="contact.footerCopyright">
                 © 2025 Claude Agents Switzerland. Präzisionsverwaltete KI.
             </div>
             <div class="flex gap-8">
-                <a class="text-[0.75rem] font-semibold uppercase tracking-[0.05em] text-[#141413]/40 hover:text-[#FAAF4F] transition-colors" href="#">Datenschutz</a>
-                <a class="text-[0.75rem] font-semibold uppercase tracking-[0.05em] text-[#141413]/40 hover:text-[#FAAF4F] transition-colors" href="#">Impressum</a>
-                <a class="text-[0.75rem] font-semibold uppercase tracking-[0.05em] text-[#141413]/40 hover:text-[#FAAF4F] transition-colors" href="#">Kontakt</a>
+                <a class="text-[0.75rem] font-semibold uppercase tracking-[0.05em] text-[#141413]/40 hover:text-[#FAAF4F] transition-colors" href="privacy.html" data-i18n="contact.footerPrivacy">Datenschutz</a>
+                <a class="text-[0.75rem] font-semibold uppercase tracking-[0.05em] text-[#141413]/40 hover:text-[#FAAF4F] transition-colors" href="imprint.html" data-i18n="contact.footerImprint">Impressum</a>
+                <a class="text-[0.75rem] font-semibold uppercase tracking-[0.05em] text-[#141413]/40 hover:text-[#FAAF4F] transition-colors" href="contact.html" data-i18n="contact.footerContact">Kontakt</a>
             </div>
         </div>
     </footer>
 
     <script>
-        // Industry data
-        const industries = [
-            {
-                id: 'bau',
-                name: 'Bau & Handwerk',
-                subtitle: 'Construction & Trades',
-                icon: 'construction',
-                focus: 'Automatisierte Offertenerstellung & Terminplanung'
+        // ============================================
+        // TRANSLATIONS - All 4 Languages
+        // ============================================
+        const translations = {
+            de: {
+                contact: {
+                    metaTitle: 'Kontakt | Claude Agents Switzerland',
+                    stepLabel: 'Schritt {current} von {total}',
+                    progressLabel: 'Kontaktformular',
+                    orchestratorOnline: 'Orchestrator Online',
+                    step1Title: 'In welcher Branche\nsind Sie tätig?',
+                    step1Subtitle: 'Wählen Sie Ihre Branche, um spezialisierte Agenten-Workflows für Ihr Schweizer KMU zu sehen.',
+                    step2Title: 'Welchen Fokusbereich\nsollen wir automatisieren?',
+                    step2Subtitle: 'Wählen Sie die spezifische Rolle, die am besten zu Ihrem aktuellen Engpass passt.',
+                    additionalInfo: 'Zusätzliche Informationen',
+                    sizeLabel: 'Unternehmensgrösse',
+                    sizeUnder10: 'Weniger als 10',
+                    size10to50: '10–50',
+                    size50to200: '50–200',
+                    size200to500: '200–500',
+                    sizeOver500: 'Mehr als 500',
+                    challengeLabel: 'Ihre grösste Herausforderung',
+                    challengePlaceholder: 'Beschreiben Sie kurz, wo Sie Unterstützung brauchen...',
+                    dataConsentPrefix: 'Ich stimme zu, dass meine Daten gemäss der ',
+                    privacyPolicy: 'Datenschutzerklärung',
+                    dataConsentSuffix: ' verarbeitet werden. Dies umfasst die Speicherung meiner Kontaktdaten und die Kontaktaufnahme per E-Mail oder Telefon bezüglich KI-Agenten-Lösungen von Claude Agents.ch. *',
+                    step3Title: 'Wie erreichen wir Sie?',
+                    step3Subtitle: 'Schritt 3 von 3',
+                    step3Description: 'Ihre Kontaktdaten und Rückrufpräferenz für die Besprechung.',
+                    nameLabel: 'Vollständiger Name *',
+                    namePlaceholder: 'Max Mustermann',
+                    emailLabel: 'E-Mail-Adresse *',
+                    emailPlaceholder: 'max@firma.ch',
+                    companyLabel: 'Unternehmen *',
+                    companyPlaceholder: 'Musterfirma AG',
+                    positionLabel: 'Position',
+                    positionPlaceholder: 'Geschäftsführer',
+                    phoneLabel: 'Telefon (optional)',
+                    phonePlaceholder: '+41 44 123 45 67',
+                    callbackLabel: 'Bevorzugte Rückrufzeit *',
+                    callbackMorning: 'Vormittag (9:00–12:00)',
+                    callbackAfternoon: 'Nachmittag (13:00–17:00)',
+                    callbackEvening: 'Abend (17:00–19:00)',
+                    callbackAnytime: 'Jederzeit',
+                    projectScope: 'Projektumfang',
+                    budgetLabel: 'Geschätztes Budget',
+                    budgetUnder1k: "Unter CHF 1'000/Monat",
+                    budget1to2k: "CHF 1'000–2'000/Monat",
+                    budget2to5k: "CHF 2'000–5'000/Monat",
+                    budgetOver5k: "Über CHF 5'000/Monat",
+                    budgetUnsure: 'Noch unklar',
+                    timelineLabel: 'Gewünschter Start',
+                    timelineASAP: 'So schnell wie möglich',
+                    timeline1Month: 'Innerhalb 1 Monat',
+                    timeline3Months: 'Innerhalb 3 Monate',
+                    timeline6Months: 'Innerhalb 6 Monate',
+                    timelineExploring: 'Nur am Erkunden',
+                    marketingConsent: 'Ich möchte über KI-Agenten-News, Case Studies und Angebote von Claude Agents.ch informiert werden. (Optional)',
+                    footerSecurity: 'Datenverarbeitung in Schweizer Servern. DSGVO & nFADP konform.',
+                    backButton: 'Zurück',
+                    nextButtonStep1: 'Weiter: Agent auswählen',
+                    nextButtonStep2: 'Weiter: Kontaktdaten',
+                    submitButton: 'Anfrage senden',
+                    selectOption: 'Bitte wählen',
+                    footerCopyright: '© 2025 Claude Agents Switzerland. Präzisionsverwaltete KI.',
+                    footerPrivacy: 'Datenschutz',
+                    footerImprint: 'Impressum',
+                    footerContact: 'Kontakt',
+                    // Validation messages
+                    errorSelectIndustry: 'Bitte wählen Sie eine Branche aus.',
+                    errorSelectUseCase: 'Bitte wählen Sie mindestens einen Anwendungsfall aus.',
+                    errorSelectSize: 'Bitte wählen Sie eine Unternehmensgrösse aus.',
+                    errorConsentRequired: 'Bitte stimmen Sie der Datenverarbeitung zu.',
+                    errorEnterName: 'Bitte geben Sie Ihren vollständigen Namen ein.',
+                    errorEnterEmail: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.',
+                    errorEnterCompany: 'Bitte geben Sie Ihren Firmennamen ein.',
+                    errorSelectCallback: 'Bitte wählen Sie eine Rückrufzeit aus.',
+                    errorSubmit: 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später nochmals.',
+                    // Industry names
+                    industryBauName: 'Bau & Handwerk',
+                    industryBauSubtitle: 'Construction & Trades',
+                    industryBauFocus: 'Automatisierte Offertenerstellung & Terminplanung',
+                    industryImmoName: 'Immobilien & Liegenschaften',
+                    industryImmoSubtitle: 'Real Estate',
+                    industryImmoFocus: 'Mieter-Management & Wartungs-Triage',
+                    industryTreuName: 'Treuhand, Recht & Finanzen',
+                    industryTreuSubtitle: 'Fiduciary, Legal & Finance',
+                    industryTreuFocus: 'Compliance-Automatisierung & Datenklassifizierung',
+                    industryHandelName: 'Handel & E-Commerce',
+                    industryHandelSubtitle: 'Retail & E-commerce',
+                    industryHandelFocus: 'Bestandsprognosen & CRM-KI',
+                    industryDienstName: 'Dienstleistung & Beratung',
+                    industryDienstSubtitle: 'Professional Services',
+                    industryDienstFocus: 'Wissensabruf & Erkenntnisgewinnung',
+                    industryMarketingName: 'Marketing & Web-Agenturen',
+                    industryMarketingSubtitle: 'Marketing Agencies',
+                    industryMarketingFocus: 'Content-Pipelines & Performance-Prüfung',
+                    industryIndustrieName: 'Industrie & Fertigung',
+                    industryIndustrieSubtitle: 'Manufacturing',
+                    industryIndustrieFocus: 'Lieferkettenlogistik & Qualitäts-KI',
+                    industryLogistikName: 'Logistik & Transport',
+                    industryLogistikSubtitle: 'Logistics & Transport',
+                    industryLogistikFocus: 'Dynamische Routenplanung & Flottenoptimierung',
+                    industryGesundName: 'Gesundheit & Soziales',
+                    industryGesundSubtitle: 'Healthcare & Social',
+                    industryGesundFocus: 'Dokumentation & Ressourcenallokation',
+                    // Managed agent label
+                    managedAgentLabel: 'Managed Agent',
+                    focusLabel: 'Fokus'
+                }
             },
-            {
-                id: 'immobilien',
-                name: 'Immobilien & Liegenschaften',
-                subtitle: 'Real Estate',
-                icon: 'domain',
-                focus: 'Mieter-Management & Wartungs-Triage'
-            },
-            {
-                id: 'treuhand',
-                name: 'Treuhand, Recht & Finanzen',
-                subtitle: 'Fiduciary, Legal & Finance',
-                icon: 'account_balance',
-                focus: 'Compliance-Automatisierung & Datenklassifizierung'
-            },
-            {
-                id: 'handel',
-                name: 'Handel & E-Commerce',
-                subtitle: 'Retail & E-commerce',
-                icon: 'shopping_cart',
-                focus: 'Bestandsprognosen & CRM-KI'
-            },
-            {
-                id: 'dienstleistung',
-                name: 'Dienstleistung & Beratung',
-                subtitle: 'Professional Services',
-                icon: 'clinical_notes',
-                focus: 'Wissensabruf & Erkenntnisgewinnung'
-            },
-            {
-                id: 'marketing',
-                name: 'Marketing & Web-Agenturen',
-                subtitle: 'Marketing Agencies',
-                icon: 'campaign',
-                focus: 'Content-Pipelines & Performance-Prüfung'
-            },
-            {
-                id: 'industrie',
-                name: 'Industrie & Fertigung',
-                subtitle: 'Manufacturing',
-                icon: 'factory',
-                focus: 'Lieferkettenlogistik & Qualitäts-KI'
-            },
-            {
-                id: 'logistik',
-                name: 'Logistik & Transport',
-                subtitle: 'Logistics & Transport',
-                icon: 'local_shipping',
-                focus: 'Dynamische Routenplanung & Flottenoptimierung'
-            },
-            {
-                id: 'gesundheit',
-                name: 'Gesundheit & Soziales',
-                subtitle: 'Healthcare & Social',
-                icon: 'volunteer_activism',
-                focus: 'Dokumentation & Ressourcenallokation'
-            }
-        ];
 
-        // Use cases data by industry
-        const useCasesByIndustry = {
-            'immobilien': [
-                { id: 'mieter-triage', name: 'Mieter-Anfragen Triage', icon: 'assignment_turned_in', managed: true, description: '24/7 Klassifizierung von Mieteranfragen mit automatischem Ticketing' },
-                { id: 'besichtigungs-koord', name: 'Besichtigungs-Koordinator', icon: 'calendar_month', managed: false, description: 'Automatisierte Terminplanung und Interessenten-Qualifizierung' },
-                { id: 'vermarktungs-agent', name: 'Objekt-Vermarktungs Agent', icon: 'campaign', managed: false, description: 'Multi-Plattform-Veröffentlichung und Lead-Generierung' },
-                { id: 'hauswart-dispatcher', name: 'Hauswart-Dispatcher', icon: 'engineering', managed: false, description: 'Direkte Zuweisung von Wartungsaufträgen an lokales Personal' },
-                { id: 'reporting-assistent', name: 'Reporting-Assistent', icon: 'analytics', managed: false, description: 'Aggregierte Performance-Berichte zu Belegung und Kosten' }
-            ],
-            'bau': [
-                { id: 'bauleiter-koord', name: 'Bauleiter-Koordinator', icon: 'construction', managed: true, description: 'Planänderungs-Monitoring und Subunternehmer-Benachrichtigung' },
-                { id: 'offerten-profi', name: 'Offerten-Profi', icon: 'description', managed: false, description: 'Personalisierte Angebote aus technischen Spezifikationen' },
-                { id: 'material-disponent', name: 'Material-Disponent', icon: 'inventory', managed: false, description: 'Lagerverwaltung und automatische Nachbestellung' },
-                { id: 'baufuehrer-assist', name: 'Bauführer-Assistent', icon: 'architecture', managed: false, description: 'Meilenstein-Koordination und Budget-Monitoring' },
-                { id: 'service-planer', name: 'Service-Einsatzplaner', icon: 'schedule', managed: false, description: 'Planung mobiler Techniker-Teams mit Routenoptimierung' }
-            ],
-            'treuhand': [
-                { id: 'beleg-manager', name: 'Beleg-Manager', icon: 'receipt_long', managed: true, description: 'QR-Bill-Extraktion und automatische Kategorisierung' },
-                { id: 'mwst-vorbereiter', name: 'MwSt-Vorbereiter', icon: 'calculate', managed: false, description: 'Quartalsweise MwSt-Erklärungsvorbereitung' },
-                { id: 'kreditoren-buchhalter', name: 'Kreditoren-Buchhalter', icon: 'account_balance_wallet', managed: false, description: 'Rechnungsabgleich und Differenzenmarkierung' },
-                { id: 'spesen-abrechner', name: 'Spesen-Abrechner', icon: 'payments', managed: false, description: 'Spesenabrechnung mit Compliance-Prüfung' },
-                { id: 'dokument-archivar', name: 'Dokument-Archivator', icon: 'folder_open', managed: false, description: 'Sortierung und Archivierung gescannter Post' }
-            ]
+            fr: {
+                contact: {
+                    metaTitle: 'Contact | Claude Agents Switzerland',
+                    stepLabel: 'Étape {current} sur {total}',
+                    progressLabel: 'Formulaire de contact',
+                    orchestratorOnline: 'Orchestrateur en ligne',
+                    step1Title: 'Dans quel secteur\nexercez-vous?',
+                    step1Subtitle: 'Choisissez votre secteur pour voir des workflows d\'agents spécialisés pour votre PME suisse.',
+                    step2Title: 'Quelle zone de focus\ndevons-nous automatiser?',
+                    step2Subtitle: 'Choisissez le rôle spécifique qui correspond le mieux à votre point de blocage actuel.',
+                    additionalInfo: 'Informations complémentaires',
+                    sizeLabel: 'Taille de l\'entreprise',
+                    sizeUnder10: 'Moins de 10',
+                    size10to50: '10–50',
+                    size50to200: '50–200',
+                    size200to500: '200–500',
+                    sizeOver500: 'Plus de 500',
+                    challengeLabel: 'Votre plus grand défi',
+                    challengePlaceholder: 'Décrivez brièvement où vous avez besoin d\'aide...',
+                    dataConsentPrefix: 'J\'accepte que mes données soient traitées conformément à la ',
+                    privacyPolicy: 'politique de confidentialité',
+                    dataConsentSuffix: '. Cela inclut le stockage de mes coordonnées et le contact par e-mail ou téléphone concernant les solutions d\'agents IA de Claude Agents.ch. *',
+                    step3Title: 'Comment pouvons-nous vous joindre?',
+                    step3Subtitle: 'Étape 3 sur 3',
+                    step3Description: 'Vos coordonnées et préférence de rappel pour la discussion.',
+                    nameLabel: 'Nom complet *',
+                    namePlaceholder: 'Jean Dupont',
+                    emailLabel: 'Adresse e-mail *',
+                    emailPlaceholder: 'jean@entreprise.ch',
+                    companyLabel: 'Entreprise *',
+                    companyPlaceholder: 'Entreprise SA',
+                    positionLabel: 'Poste',
+                    positionPlaceholder: 'Directeur général',
+                    phoneLabel: 'Téléphone (optionnel)',
+                    phonePlaceholder: '+41 22 123 45 67',
+                    callbackLabel: 'Heure de rappel préférée *',
+                    callbackMorning: 'Matin (9h00–12h00)',
+                    callbackAfternoon: 'Après-midi (13h00–17h00)',
+                    callbackEvening: 'Soir (17h00–19h00)',
+                    callbackAnytime: 'N\'importe quand',
+                    projectScope: 'Portée du projet',
+                    budgetLabel: 'Budget estimé',
+                    budgetUnder1k: "Moins de CHF 1'000/mois",
+                    budget1to2k: "CHF 1'000–2'000/mois",
+                    budget2to5k: "CHF 2'000–5'000/mois",
+                    budgetOver5k: "Plus de CHF 5'000/mois",
+                    budgetUnsure: 'Pas clair encore',
+                    timelineLabel: 'Démarrage souhaité',
+                    timelineASAP: 'Dès que possible',
+                    timeline1Month: 'Dans 1 mois',
+                    timeline3Months: 'Dans 3 mois',
+                    timeline6Months: 'Dans 6 mois',
+                    timelineExploring: 'En phase d\'exploration',
+                    marketingConsent: 'Je souhaite être informé des actualités agents IA, études de cas et offres de Claude Agents.ch. (Optionnel)',
+                    footerSecurity: 'Traitement des données sur serveurs suisses. RGPD & nFADP conforme.',
+                    backButton: 'Retour',
+                    nextButtonStep1: 'Suivant: Choisir l\'agent',
+                    nextButtonStep2: 'Suivant: Coordonnées',
+                    submitButton: 'Envoyer la demande',
+                    selectOption: 'Sélectionner',
+                    footerCopyright: '© 2025 Claude Agents Switzerland. IA de précision.',
+                    footerPrivacy: 'Confidentialité',
+                    footerImprint: 'Mentions légales',
+                    footerContact: 'Contact',
+                    errorSelectIndustry: 'Veuillez sélectionner un secteur.',
+                    errorSelectUseCase: 'Veuillez sélectionner au moins un cas d\'usage.',
+                    errorSelectSize: 'Veuillez sélectionner la taille de votre entreprise.',
+                    errorConsentRequired: 'Vous devez consentir au traitement des données.',
+                    errorEnterName: 'Veuillez entrer votre nom complet.',
+                    errorEnterEmail: 'Veuillez entrer une adresse e-mail valide.',
+                    errorEnterCompany: 'Veuillez entrer le nom de votre entreprise.',
+                    errorSelectCallback: 'Veuillez sélectionner une heure de rappel.',
+                    errorSubmit: 'Une erreur s\'est produite. Veuillez réessayer plus tard.',
+                    industryBauName: 'Construction & Artisanat',
+                    industryBauSubtitle: 'Construction & Métiers',
+                    industryBauFocus: 'Offres automatisées & planification',
+                    industryImmoName: 'Immobilier & Propriétés',
+                    industryImmoSubtitle: 'Immobilier',
+                    industryImmoFocus: 'Gestion locataires & maintenance',
+                    industryTreuName: 'Fiduciaire, Droit & Finance',
+                    industryTreuSubtitle: 'Fiduciaire, Légal & Finance',
+                    industryTreuFocus: 'Automatisation compliance & classification',
+                    industryHandelName: 'Commerce & E-commerce',
+                    industryHandelSubtitle: 'Commerce & E-commerce',
+                    industryHandelFocus: 'Prévisions stocks & CRM-IA',
+                    industryDienstName: 'Services & Conseil',
+                    industryDienstSubtitle: 'Services Professionnels',
+                    industryDienstFocus: 'Accès savoir & extraction insights',
+                    industryMarketingName: 'Marketing & Agences Web',
+                    industryMarketingSubtitle: 'Agences Marketing',
+                    industryMarketingFocus: 'Pipelines contenu & vérification performance',
+                    industryIndustrieName: 'Industrie & Fabrication',
+                    industryIndustrieSubtitle: 'Fabrication',
+                    industryIndustrieFocus: 'Logistique chaîne d\'approvisionnement & qualité',
+                    industryLogistikName: 'Logistique & Transport',
+                    industryLogistikSubtitle: 'Logistique & Transport',
+                    industryLogistikFocus: 'Planification dynamique & optimisation flotte',
+                    industryGesundName: 'Santé & Social',
+                    industryGesundSubtitle: 'Santé & Social',
+                    industryGesundFocus: 'Documentation & allocation ressources',
+                    managedAgentLabel: 'Agent Géré',
+                    focusLabel: 'Focus'
+                }
+            },
+
+            it: {
+                contact: {
+                    metaTitle: 'Contatto | Claude Agents Switzerland',
+                    stepLabel: 'Passo {current} di {total}',
+                    progressLabel: 'Modulo di contatto',
+                    orchestratorOnline: 'Orchestratore Online',
+                    step1Title: 'In quale settore\nsiete attivi?',
+                    step1Subtitle: 'Selezionate il vostro settore per vedere workflow di agenti specializzati per la vostra PMI svizzera.',
+                    step2Title: 'Quale area di focus\ndobbiamo automatizzare?',
+                    step2Subtitle: 'Selezionate il ruolo specifico che si adatta meglio al vostro attuale collo di bottiglia.',
+                    additionalInfo: 'Informazioni aggiuntive',
+                    sizeLabel: 'Dimensione azienda',
+                    sizeUnder10: 'Meno di 10',
+                    size10to50: '10–50',
+                    size50to200: '50–200',
+                    size200to500: '200–500',
+                    sizeOver500: 'Più di 500',
+                    challengeLabel: 'La vostra sfida più grande',
+                    challengePlaceholder: 'Descrivete brevemente dove avete bisogno di aiuto...',
+                    dataConsentPrefix: 'Accetto che i miei dati siano trattati in conformità con l\'',
+                    privacyPolicy: 'informativa sulla privacy',
+                    dataConsentSuffix: '. Questo include la memorizzazione dei miei dati di contatto e il contatto via e-mail o telefono riguardo alle soluzioni di agenti IA di Claude Agents.ch. *',
+                    step3Title: 'Come possiamo contattarvi?',
+                    step3Subtitle: 'Passo 3 di 3',
+                    step3Description: 'I vostri dati di contatto e preferenza di richiamo per la discussione.',
+                    nameLabel: 'Nome completo *',
+                    namePlaceholder: 'Mario Rossi',
+                    emailLabel: 'Indirizzo e-mail *',
+                    emailPlaceholder: 'mario@azienda.ch',
+                    companyLabel: 'Azienda *',
+                    companyPlaceholder: 'Azienda SA',
+                    positionLabel: 'Posizione',
+                    positionPlaceholder: 'Amministratore delegato',
+                    phoneLabel: 'Telefono (opzionale)',
+                    phonePlaceholder: '+41 91 123 45 67',
+                    callbackLabel: 'Orario di richiamo preferito *',
+                    callbackMorning: 'Mattina (9:00–12:00)',
+                    callbackAfternoon: 'Pomeriggio (13:00–17:00)',
+                    callbackEvening: 'Sera (17:00–19:00)',
+                    callbackAnytime: 'Qualsiasi orario',
+                    projectScope: 'Ambito progetto',
+                    budgetLabel: 'Budget stimato',
+                    budgetUnder1k: "Meno di CHF 1'000/mese",
+                    budget1to2k: "CHF 1'000–2'000/mese",
+                    budget2to5k: "CHF 2'000–5'000/mese",
+                    budgetOver5k: "Più di CHF 5'000/mese",
+                    budgetUnsure: 'Non ancora chiaro',
+                    timelineLabel: 'Avvio desiderato',
+                    timelineASAP: 'Il prima possibile',
+                    timeline1Month: 'Entro 1 mese',
+                    timeline3Months: 'Entro 3 mesi',
+                    timeline6Months: 'Entro 6 mesi',
+                    timelineExploring: 'Solo in esplorazione',
+                    marketingConsent: 'Desidero essere informato su novità agenti IA, casi studio e offerte di Claude Agents.ch. (Opzionale)',
+                    footerSecurity: 'Elaborazione dati su server svizzeri. GDPR & nFADP conforme.',
+                    backButton: 'Indietro',
+                    nextButtonStep1: 'Avanti: Seleziona agente',
+                    nextButtonStep2: 'Avanti: Dati di contatto',
+                    submitButton: 'Invia richiesta',
+                    selectOption: 'Selezionare',
+                    footerCopyright: '© 2025 Claude Agents Switzerland. IA di precisione.',
+                    footerPrivacy: 'Privacy',
+                    footerImprint: 'Note legali',
+                    footerContact: 'Contatto',
+                    errorSelectIndustry: 'Selezionate il vostro settore.',
+                    errorSelectUseCase: 'Selezionate almeno un caso d\'uso.',
+                    errorSelectSize: 'Selezionate la dimensione della vostra azienda.',
+                    errorConsentRequired: 'Dovete acconsentire al trattamento dei dati.',
+                    errorEnterName: 'Inserite il vostro nome completo.',
+                    errorEnterEmail: 'Inserite un indirizzo e-mail valido.',
+                    errorEnterCompany: 'Inserite il nome della vostra azienda.',
+                    errorSelectCallback: 'Selezionate un orario di richiamo.',
+                    errorSubmit: 'Si è verificato un errore. Riprovate più tardi.',
+                    industryBauName: 'Costruzioni & Artigianato',
+                    industryBauSubtitle: 'Costruzioni & Mestieri',
+                    industryBauFocus: 'Offerte automatizzate & pianificazione',
+                    industryImmoName: 'Immobili & Proprietà',
+                    industryImmoSubtitle: 'Immobiliare',
+                    industryImmoFocus: 'Gestione inquilini & manutenzione',
+                    industryTreuName: 'Fiduciario, Diritto & Finanza',
+                    industryTreuSubtitle: 'Fiduciario, Legale & Finanza',
+                    industryTreuFocus: 'Automazione compliance & classificazione',
+                    industryHandelName: 'Commercio & E-commerce',
+                    industryHandelSubtitle: 'Commercio & E-commerce',
+                    industryHandelFocus: 'Previsioni scorte & CRM-IA',
+                    industryDienstName: 'Servizi & Consulenza',
+                    industryDienstSubtitle: 'Servizi Professionali',
+                    industryDienstFocus: 'Accesso conoscenza & estrazione insights',
+                    industryMarketingName: 'Marketing & Agenzie Web',
+                    industryMarketingSubtitle: 'Agenzie Marketing',
+                    industryMarketingFocus: 'Pipeline contenuti & verifica performance',
+                    industryIndustrieName: 'Industria & Produzione',
+                    industryIndustrieSubtitle: 'Produzione',
+                    industryIndustrieFocus: 'Logistica approvvigionamento & qualità',
+                    industryLogistikName: 'Logistica & Trasporto',
+                    industryLogistikSubtitle: 'Logistica & Trasporto',
+                    industryLogistikFocus: 'Pianificazione dinamica & ottimizzazione flotta',
+                    industryGesundName: 'Sanità & Sociale',
+                    industryGesundSubtitle: 'Sanità & Sociale',
+                    industryGesundFocus: 'Documentazione & allocazione risorse',
+                    managedAgentLabel: 'Agent Gestito',
+                    focusLabel: 'Focus'
+                }
+            },
+
+            en: {
+                contact: {
+                    metaTitle: 'Contact | Claude Agents Switzerland',
+                    stepLabel: 'Step {current} of {total}',
+                    progressLabel: 'Contact Form',
+                    orchestratorOnline: 'Orchestrator Online',
+                    step1Title: 'What industry\nare you in?',
+                    step1Subtitle: 'Select your industry to see specialized agent workflows for your Swiss SME.',
+                    step2Title: 'Which focus area\nshould we automate?',
+                    step2Subtitle: 'Choose the specific role that best fits your current bottleneck.',
+                    additionalInfo: 'Additional Information',
+                    sizeLabel: 'Company Size',
+                    sizeUnder10: 'Fewer than 10',
+                    size10to50: '10–50',
+                    size50to200: '50–200',
+                    size200to500: '200–500',
+                    sizeOver500: 'More than 500',
+                    challengeLabel: 'Your biggest challenge',
+                    challengePlaceholder: 'Briefly describe where you need support...',
+                    dataConsentPrefix: 'I agree that my data will be processed in accordance with the ',
+                    privacyPolicy: 'privacy policy',
+                    dataConsentSuffix: '. This includes storing my contact details and contacting me by email or phone regarding AI agent solutions from Claude Agents.ch. *',
+                    step3Title: 'How can we reach you?',
+                    step3Subtitle: 'Step 3 of 3',
+                    step3Description: 'Your contact details and callback preference for the discussion.',
+                    nameLabel: 'Full Name *',
+                    namePlaceholder: 'John Smith',
+                    emailLabel: 'Email Address *',
+                    emailPlaceholder: 'john@company.ch',
+                    companyLabel: 'Company *',
+                    companyPlaceholder: 'Example Ltd',
+                    positionLabel: 'Position',
+                    positionPlaceholder: 'Managing Director',
+                    phoneLabel: 'Phone (optional)',
+                    phonePlaceholder: '+41 44 123 45 67',
+                    callbackLabel: 'Preferred Callback Time *',
+                    callbackMorning: 'Morning (9:00–12:00)',
+                    callbackAfternoon: 'Afternoon (13:00–17:00)',
+                    callbackEvening: 'Evening (17:00–19:00)',
+                    callbackAnytime: 'Anytime',
+                    projectScope: 'Project Scope',
+                    budgetLabel: 'Estimated Budget',
+                    budgetUnder1k: "Under CHF 1'000/month",
+                    budget1to2k: "CHF 1'000–2'000/month",
+                    budget2to5k: "CHF 2'000–5'000/month",
+                    budgetOver5k: "Over CHF 5'000/month",
+                    budgetUnsure: 'Not sure yet',
+                    timelineLabel: 'Desired Start',
+                    timelineASAP: 'As soon as possible',
+                    timeline1Month: 'Within 1 month',
+                    timeline3Months: 'Within 3 months',
+                    timeline6Months: 'Within 6 months',
+                    timelineExploring: 'Just exploring',
+                    marketingConsent: 'I would like to be informed about AI agent news, case studies and offers from Claude Agents.ch. (Optional)',
+                    footerSecurity: 'Data processing on Swiss servers. GDPR & nFADP compliant.',
+                    backButton: 'Back',
+                    nextButtonStep1: 'Next: Choose Agent',
+                    nextButtonStep2: 'Next: Contact Details',
+                    submitButton: 'Send Request',
+                    selectOption: 'Select',
+                    footerCopyright: '© 2025 Claude Agents Switzerland. Precision-managed AI.',
+                    footerPrivacy: 'Privacy',
+                    footerImprint: 'Imprint',
+                    footerContact: 'Contact',
+                    errorSelectIndustry: 'Please select an industry.',
+                    errorSelectUseCase: 'Please select at least one use case.',
+                    errorSelectSize: 'Please select your company size.',
+                    errorConsentRequired: 'You must consent to data processing.',
+                    errorEnterName: 'Please enter your full name.',
+                    errorEnterEmail: 'Please enter a valid email address.',
+                    errorEnterCompany: 'Please enter your company name.',
+                    errorSelectCallback: 'Please select a callback time.',
+                    errorSubmit: 'An error occurred. Please try again later.',
+                    industryBauName: 'Construction & Trades',
+                    industryBauSubtitle: 'Construction & Trades',
+                    industryBauFocus: 'Automated quoting & scheduling',
+                    industryImmoName: 'Real Estate & Property',
+                    industryImmoSubtitle: 'Real Estate',
+                    industryImmoFocus: 'Tenant management & maintenance triage',
+                    industryTreuName: 'Fiduciary, Legal & Finance',
+                    industryTreuSubtitle: 'Fiduciary, Legal & Finance',
+                    industryTreuFocus: 'Compliance automation & data classification',
+                    industryHandelName: 'Retail & E-commerce',
+                    industryHandelSubtitle: 'Retail & E-commerce',
+                    industryHandelFocus: 'Inventory forecasting & CRM AI',
+                    industryDienstName: 'Services & Consulting',
+                    industryDienstSubtitle: 'Professional Services',
+                    industryDienstFocus: 'Knowledge retrieval & insight extraction',
+                    industryMarketingName: 'Marketing & Web Agencies',
+                    industryMarketingSubtitle: 'Marketing Agencies',
+                    industryMarketingFocus: 'Content pipelines & performance checking',
+                    industryIndustrieName: 'Industry & Manufacturing',
+                    industryIndustrieSubtitle: 'Manufacturing',
+                    industryIndustrieFocus: 'Supply chain logistics & quality AI',
+                    industryLogistikName: 'Logistics & Transport',
+                    industryLogistikSubtitle: 'Logistics & Transport',
+                    industryLogistikFocus: 'Dynamic route planning & fleet optimization',
+                    industryGesundName: 'Healthcare & Social',
+                    industryGesundSubtitle: 'Healthcare & Social',
+                    industryGesundFocus: 'Documentation & resource allocation',
+                    managedAgentLabel: 'Managed Agent',
+                    focusLabel: 'Focus'
+                }
+            }
+        };
+
+        // Use cases data with translations
+        const useCasesData = {
+            'immobilien': {
+                de: [
+                    { id: 'mieter-triage', name: 'Mieter-Anfragen Triage', icon: 'assignment_turned_in', managed: true, description: '24/7 Klassifizierung von Mieteranfragen mit automatischem Ticketing' },
+                    { id: 'besichtigungs-koord', name: 'Besichtigungs-Koordinator', icon: 'calendar_month', managed: false, description: 'Automatisierte Terminplanung und Interessenten-Qualifizierung' },
+                    { id: 'vermarktungs-agent', name: 'Objekt-Vermarktungs Agent', icon: 'campaign', managed: false, description: 'Multi-Plattform-Veröffentlichung und Lead-Generierung' },
+                    { id: 'hauswart-dispatcher', name: 'Hauswart-Dispatcher', icon: 'engineering', managed: false, description: 'Direkte Zuweisung von Wartungsaufträgen an lokales Personal' },
+                    { id: 'reporting-assistent', name: 'Reporting-Assistent', icon: 'analytics', managed: false, description: 'Aggregierte Performance-Berichte zu Belegung und Kosten' }
+                ],
+                fr: [
+                    { id: 'mieter-triage', name: 'Triage Demandes Locataires', icon: 'assignment_turned_in', managed: true, description: 'Classification 24/7 des demandes locataires avec ticketing automatique' },
+                    { id: 'besichtigungs-koord', name: 'Coordinateur Visites', icon: 'calendar_month', managed: false, description: 'Planification automatisée des visites et qualification des prospects' },
+                    { id: 'vermarktungs-agent', name: 'Agent Commercialisation', icon: 'campaign', managed: false, description: 'Publication multi-plateforme et génération de leads' },
+                    { id: 'hauswart-dispatcher', name: 'Dispatcher Concierge', icon: 'engineering', managed: false, description: 'Assignation directe des tâches de maintenance au personnel local' },
+                    { id: 'reporting-assistent', name: 'Assistant Reporting', icon: 'analytics', managed: false, description: 'Rapports de performance agrégés sur occupation et coûts' }
+                ],
+                it: [
+                    { id: 'mieter-triage', name: 'Triage Richieste Inquilini', icon: 'assignment_turned_in', managed: true, description: 'Classificazione 24/7 delle richieste inquilini con ticketing automatico' },
+                    { id: 'besichtigungs-koord', name: 'Coordinatore Visite', icon: 'calendar_month', managed: false, description: 'Pianificazione automatizzata visite e qualificazione interessati' },
+                    { id: 'vermarktungs-agent', name: 'Agent Commercializzazione', icon: 'campaign', managed: false, description: 'Pubblicazione multi-piattaforma e generazione lead' },
+                    { id: 'hauswart-dispatcher', name: 'Dispatcher Custode', icon: 'engineering', managed: false, description: 'Assegnazione diretta incarichi manutenzione al personale locale' },
+                    { id: 'reporting-assistent', name: 'Assistente Reporting', icon: 'analytics', managed: false, description: 'Report performance aggregati su occupazione e costi' }
+                ],
+                en: [
+                    { id: 'mieter-triage', name: 'Tenant Request Triage', icon: 'assignment_turned_in', managed: true, description: '24/7 classification of tenant requests with automatic ticketing' },
+                    { id: 'besichtigungs-koord', name: 'Viewing Coordinator', icon: 'calendar_month', managed: false, description: 'Automated appointment scheduling and prospect qualification' },
+                    { id: 'vermarktungs-agent', name: 'Property Marketing Agent', icon: 'campaign', managed: false, description: 'Multi-platform publishing and lead generation' },
+                    { id: 'hauswart-dispatcher', name: 'Caretaker Dispatcher', icon: 'engineering', managed: false, description: 'Direct assignment of maintenance orders to local staff' },
+                    { id: 'reporting-assistent', name: 'Reporting Assistant', icon: 'analytics', managed: false, description: 'Aggregated performance reports on occupancy and costs' }
+                ]
+            },
+            'bau': {
+                de: [
+                    { id: 'bauleiter-koord', name: 'Bauleiter-Koordinator', icon: 'construction', managed: true, description: 'Planänderungs-Monitoring und Subunternehmer-Benachrichtigung' },
+                    { id: 'offerten-profi', name: 'Offerten-Profi', icon: 'description', managed: false, description: 'Personalisierte Angebote aus technischen Spezifikationen' },
+                    { id: 'material-disponent', name: 'Material-Disponent', icon: 'inventory', managed: false, description: 'Lagerverwaltung und automatische Nachbestellung' },
+                    { id: 'baufuehrer-assist', name: 'Bauführer-Assistent', icon: 'architecture', managed: false, description: 'Meilenstein-Koordination und Budget-Monitoring' },
+                    { id: 'service-planer', name: 'Service-Einsatzplaner', icon: 'schedule', managed: false, description: 'Planung mobiler Techniker-Teams mit Routenoptimierung' }
+                ],
+                fr: [
+                    { id: 'bauleiter-koord', name: 'Coordinateur Chantier', icon: 'construction', managed: true, description: 'Monitoring des changements de plans et notification sous-traitants' },
+                    { id: 'offerten-profi', name: 'Expert Offres', icon: 'description', managed: false, description: 'Devis personnalisés à partir des spécifications techniques' },
+                    { id: 'material-disponent', name: 'Planificateur Matériel', icon: 'inventory', managed: false, description: 'Gestion des stocks et réapprovisionnement automatique' },
+                    { id: 'baufuehrer-assist', name: 'Assistant Conducteur', icon: 'architecture', managed: false, description: 'Coordination des jalons et monitoring budgétaire' },
+                    { id: 'service-planer', name: 'Planificateur Service', icon: 'schedule', managed: false, description: 'Planification des équipes de techniciens mobiles avec optimisation des routes' }
+                ],
+                it: [
+                    { id: 'bauleiter-koord', name: 'Coordinatore Cantiere', icon: 'construction', managed: true, description: 'Monitoraggio modifiche piani e notifica subappaltatori' },
+                    { id: 'offerten-profi', name: 'Esperto Offerte', icon: 'description', managed: false, description: 'Preventivi personalizzati da specifiche tecniche' },
+                    { id: 'material-disponent', name: 'Pianificatore Materiali', icon: 'inventory', managed: false, description: 'Gestione scorte e riordino automatico' },
+                    { id: 'baufuehrer-assist', name: 'Assistente Caposquadra', icon: 'architecture', managed: false, description: 'Coordinazione milestones e monitoraggio budget' },
+                    { id: 'service-planer', name: 'Pianificatore Servizio', icon: 'schedule', managed: false, description: 'Pianificazione team tecnici mobili con ottimizzazione percorsi' }
+                ],
+                en: [
+                    { id: 'bauleiter-koord', name: 'Site Manager Coordinator', icon: 'construction', managed: true, description: 'Plan change monitoring and subcontractor notification' },
+                    { id: 'offerten-profi', name: 'Quoting Pro', icon: 'description', managed: false, description: 'Personalized quotes from technical specifications' },
+                    { id: 'material-disponent', name: 'Materials Planner', icon: 'inventory', managed: false, description: 'Inventory management and automatic reordering' },
+                    { id: 'baufuehrer-assist', name: 'Foreman Assistant', icon: 'architecture', managed: false, description: 'Milestone coordination and budget monitoring' },
+                    { id: 'service-planer', name: 'Service Scheduler', icon: 'schedule', managed: false, description: 'Mobile technician team planning with route optimization' }
+                ]
+            },
+            'treuhand': {
+                de: [
+                    { id: 'beleg-manager', name: 'Beleg-Manager', icon: 'receipt_long', managed: true, description: 'QR-Bill-Extraktion und automatische Kategorisierung' },
+                    { id: 'mwst-vorbereiter', name: 'MwSt-Vorbereiter', icon: 'calculate', managed: false, description: 'Quartalsweise MwSt-Erklärungsvorbereitung' },
+                    { id: 'kreditoren-buchhalter', name: 'Kreditoren-Buchhalter', icon: 'account_balance_wallet', managed: false, description: 'Rechnungsabgleich und Differenzenmarkierung' },
+                    { id: 'spesen-abrechner', name: 'Spesen-Abrechner', icon: 'payments', managed: false, description: 'Spesenabrechnung mit Compliance-Prüfung' },
+                    { id: 'dokument-archivar', name: 'Dokument-Archivator', icon: 'folder_open', managed: false, description: 'Sortierung und Archivierung gescannter Post' }
+                ],
+                fr: [
+                    { id: 'beleg-manager', name: 'Gestionnaire Reçus', icon: 'receipt_long', managed: true, description: 'Extraction QR-Bill et catégorisation automatique' },
+                    { id: 'mwst-vorbereiter', name: 'Préparateur TVA', icon: 'calculate', managed: false, description: 'Préparation trimestrielle de la déclaration TVA' },
+                    { id: 'kreditoren-buchhalter', name: 'Comptable Fournisseurs', icon: 'account_balance_wallet', managed: false, description: 'Rapprochement factures et marquage des écarts' },
+                    { id: 'spesen-abrechner', name: 'Liquidateur Dépenses', icon: 'payments', managed: false, description: 'Remboursement frais avec vérification compliance' },
+                    { id: 'dokument-archivar', name: 'Archiviste Documents', icon: 'folder_open', managed: false, description: 'Tri et archivage du courrier scanné' }
+                ],
+                it: [
+                    { id: 'beleg-manager', name: 'Gestore Ricevute', icon: 'receipt_long', managed: true, description: 'Estrazione QR-Bill e categorizzazione automatica' },
+                    { id: 'mwst-vorbereiter', name: 'Preparatore IVA', icon: 'calculate', managed: false, description: 'Preparazione trimestrale dichiarazione IVA' },
+                    { id: 'kreditoren-buchhalter', name: 'Contabile Fornitori', icon: 'account_balance_wallet', managed: false, description: 'Riconciliazione fatture e marcatura differenze' },
+                    { id: 'spesen-abrechner', name: 'Liquidatore Spese', icon: 'payments', managed: false, description: 'Rimborso spese con verifica compliance' },
+                    { id: 'dokument-archivar', name: 'Archivista Documenti', icon: 'folder_open', managed: false, description: 'Smistamento e archiviazione posta scannerizzata' }
+                ],
+                en: [
+                    { id: 'beleg-manager', name: 'Receipt Manager', icon: 'receipt_long', managed: true, description: 'QR-Bill extraction and automatic categorization' },
+                    { id: 'mwst-vorbereiter', name: 'VAT Preparer', icon: 'calculate', managed: false, description: 'Quarterly VAT return preparation' },
+                    { id: 'kreditoren-buchhalter', name: 'Accounts Payable Accountant', icon: 'account_balance_wallet', managed: false, description: 'Invoice reconciliation and variance marking' },
+                    { id: 'spesen-abrechner', name: 'Expense Reimbursement', icon: 'payments', managed: false, description: 'Expense claims with compliance checking' },
+                    { id: 'dokument-archivar', name: 'Document Archivist', icon: 'folder_open', managed: false, description: 'Sorting and archiving of scanned mail' }
+                ]
+            }
         };
 
         // Default use cases for other industries
-        const defaultUseCases = [
-            { id: 'general-1', name: 'Prozess-Automatisierung', icon: 'automation', managed: true, description: 'Automatisierung wiederkehrender administrativer Aufgaben' },
-            { id: 'general-2', name: 'Dokumenten-Verarbeitung', icon: 'description', managed: false, description: 'Extraktion und Klassifizierung von Dokumenten' },
-            { id: 'general-3', name: 'Kundenkommunikation', icon: 'chat', managed: false, description: '24/7 mehrsprachige Kundenbetreuung' },
-            { id: 'general-4', name: 'Berichtswesen', icon: 'analytics', managed: false, description: 'Automatisierte Berichterstattung und Analysen' },
-            { id: 'general-5', name: 'Daten-Integration', icon: 'sync', managed: false, description: 'Verbindung verteilter Systeme und Datenquellen' }
+        const defaultUseCasesData = {
+            de: [
+                { id: 'general-1', name: 'Prozess-Automatisierung', icon: 'automation', managed: true, description: 'Automatisierung wiederkehrender administrativer Aufgaben' },
+                { id: 'general-2', name: 'Dokumenten-Verarbeitung', icon: 'description', managed: false, description: 'Extraktion und Klassifizierung von Dokumenten' },
+                { id: 'general-3', name: 'Kundenkommunikation', icon: 'chat', managed: false, description: '24/7 mehrsprachige Kundenbetreuung' },
+                { id: 'general-4', name: 'Berichtswesen', icon: 'analytics', managed: false, description: 'Automatisierte Berichterstattung und Analysen' },
+                { id: 'general-5', name: 'Daten-Integration', icon: 'sync', managed: false, description: 'Verbindung verteilter Systeme und Datenquellen' }
+            ],
+            fr: [
+                { id: 'general-1', name: 'Automatisation Processus', icon: 'automation', managed: true, description: 'Automatisation des tâches administratives récurrentes' },
+                { id: 'general-2', name: 'Traitement Documents', icon: 'description', managed: false, description: 'Extraction et classification des documents' },
+                { id: 'general-3', name: 'Communication Clients', icon: 'chat', managed: false, description: 'Service client multilingue 24/7' },
+                { id: 'general-4', name: 'Reporting', icon: 'analytics', managed: false, description: 'Rapports et analyses automatisés' },
+                { id: 'general-5', name: 'Intégration Données', icon: 'sync', managed: false, description: 'Connexion des systèmes et sources de données dispersés' }
+            ],
+            it: [
+                { id: 'general-1', name: 'Automazione Processi', icon: 'automation', managed: true, description: 'Automazione compiti amministrativi ricorrenti' },
+                { id: 'general-2', name: 'Elaborazione Documenti', icon: 'description', managed: false, description: 'Estrazione e classificazione documenti' },
+                { id: 'general-3', name: 'Comunicazione Clienti', icon: 'chat', managed: false, description: 'Assistenza clienti multilingue 24/7' },
+                { id: 'general-4', name: 'Reporting', icon: 'analytics', managed: false, description: 'Reportistica e analisi automatizzate' },
+                { id: 'general-5', name: 'Integrazione Dati', icon: 'sync', managed: false, description: 'Connessione sistemi e fonti dati distribuiti' }
+            ],
+            en: [
+                { id: 'general-1', name: 'Process Automation', icon: 'automation', managed: true, description: 'Automation of recurring administrative tasks' },
+                { id: 'general-2', name: 'Document Processing', icon: 'description', managed: false, description: 'Document extraction and classification' },
+                { id: 'general-3', name: 'Customer Communication', icon: 'chat', managed: false, description: '24/7 multilingual customer support' },
+                { id: 'general-4', name: 'Reporting', icon: 'analytics', managed: false, description: 'Automated reporting and analytics' },
+                { id: 'general-5', name: 'Data Integration', icon: 'sync', managed: false, description: 'Connecting distributed systems and data sources' }
+            ]
+        };
+
+        // Industry definitions (with translation keys)
+        const industryDefs = [
+            { id: 'bau', icon: 'construction', nameKey: 'industryBauName', subtitleKey: 'industryBauSubtitle', focusKey: 'industryBauFocus' },
+            { id: 'immobilien', icon: 'domain', nameKey: 'industryImmoName', subtitleKey: 'industryImmoSubtitle', focusKey: 'industryImmoFocus' },
+            { id: 'treuhand', icon: 'account_balance', nameKey: 'industryTreuName', subtitleKey: 'industryTreuSubtitle', focusKey: 'industryTreuFocus' },
+            { id: 'handel', icon: 'shopping_cart', nameKey: 'industryHandelName', subtitleKey: 'industryHandelSubtitle', focusKey: 'industryHandelFocus' },
+            { id: 'dienstleistung', icon: 'clinical_notes', nameKey: 'industryDienstName', subtitleKey: 'industryDienstSubtitle', focusKey: 'industryDienstFocus' },
+            { id: 'marketing', icon: 'campaign', nameKey: 'industryMarketingName', subtitleKey: 'industryMarketingSubtitle', focusKey: 'industryMarketingFocus' },
+            { id: 'industrie', icon: 'factory', nameKey: 'industryIndustrieName', subtitleKey: 'industryIndustrieSubtitle', focusKey: 'industryIndustrieFocus' },
+            { id: 'logistik', icon: 'local_shipping', nameKey: 'industryLogistikName', subtitleKey: 'industryLogistikSubtitle', focusKey: 'industryLogistikFocus' },
+            { id: 'gesundheit', icon: 'volunteer_activism', nameKey: 'industryGesundName', subtitleKey: 'industryGesundSubtitle', focusKey: 'industryGesundFocus' }
         ];
 
+        let currentLang = 'de';
         let currentStep = 1;
         let selectedIndustry = null;
         let selectedUseCases = [];
 
-        // Render industry grid
+        // ============================================
+        // I18N FUNCTIONS
+        // ============================================
+
+        function getTranslation(key) {
+            const keys = key.split('.');
+            let value = translations[currentLang];
+            for (const k of keys) {
+                value = value?.[k];
+            }
+            return value || key;
+        }
+
+        function setLanguage(lang) {
+            if (!translations[lang]) return;
+
+            currentLang = lang;
+            document.documentElement.lang = lang;
+
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                let value = getTranslation(key);
+
+                // Handle placeholders in values
+                if (key === 'contact.stepLabel') {
+                    value = value.replace('{current}', currentStep).replace('{total}', '3');
+                }
+
+                if (value) {
+                    // Handle HTML line breaks for titles
+                    if (value.includes('\\n')) {
+                        el.innerHTML = value.replace(/\\n/g, '<br/>');
+                    } else {
+                        el.textContent = value;
+                    }
+                }
+            });
+
+            // Update placeholder attributes
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.dataset.i18nPlaceholder;
+                const value = getTranslation(key);
+                if (value) el.placeholder = value;
+            });
+
+            // Update select options
+            updateSelectOptions();
+
+            // Update active state on language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            // Store preference
+            localStorage.setItem('cla-contact-lang', lang);
+
+            // Re-render dynamic content
+            renderIndustries();
+            if (currentStep >= 2 && selectedIndustry) {
+                renderUseCases();
+            }
+
+            // Update step label with current step
+            updateStepLabel();
+
+            // Update document title
+            const titleEl = document.querySelector('title[data-i18n]');
+            if (titleEl) {
+                const titleText = getTranslation('contact.metaTitle');
+                document.title = titleText;
+            }
+        }
+
+        function updateSelectOptions() {
+            // Update company size options
+            const sizeSelect = document.getElementById('companySize');
+            if (sizeSelect) {
+                const options = sizeSelect.querySelectorAll('option');
+                options[0].textContent = getTranslation('contact.selectOption');
+                options[1].textContent = getTranslation('contact.sizeUnder10');
+                options[2].textContent = getTranslation('contact.size10to50');
+                options[3].textContent = getTranslation('contact.size50to200');
+                options[4].textContent = getTranslation('contact.size200to500');
+                options[5].textContent = getTranslation('contact.sizeOver500');
+            }
+
+            // Update callback time options
+            const callbackSelect = document.getElementById('callbackTime');
+            if (callbackSelect) {
+                const options = callbackSelect.querySelectorAll('option');
+                options[0].textContent = getTranslation('contact.selectOption');
+                options[1].textContent = getTranslation('contact.callbackMorning');
+                options[2].textContent = getTranslation('contact.callbackAfternoon');
+                options[3].textContent = getTranslation('contact.callbackEvening');
+                options[4].textContent = getTranslation('contact.callbackAnytime');
+            }
+
+            // Update budget options
+            const budgetSelect = document.getElementById('budget');
+            if (budgetSelect) {
+                const options = budgetSelect.querySelectorAll('option');
+                options[0].textContent = getTranslation('contact.selectOption');
+                options[1].textContent = getTranslation('contact.budgetUnder1k');
+                options[2].textContent = getTranslation('contact.budget1to2k');
+                options[3].textContent = getTranslation('contact.budget2to5k');
+                options[4].textContent = getTranslation('contact.budgetOver5k');
+                options[5].textContent = getTranslation('contact.budgetUnsure');
+            }
+
+            // Update timeline options
+            const timelineSelect = document.getElementById('timeline');
+            if (timelineSelect) {
+                const options = timelineSelect.querySelectorAll('option');
+                options[0].textContent = getTranslation('contact.selectOption');
+                options[1].textContent = getTranslation('contact.timelineASAP');
+                options[2].textContent = getTranslation('contact.timeline1Month');
+                options[3].textContent = getTranslation('contact.timeline3Months');
+                options[4].textContent = getTranslation('contact.timeline6Months');
+                options[5].textContent = getTranslation('contact.timelineExploring');
+            }
+        }
+
+        function updateStepLabel() {
+            const stepLabel = document.getElementById('stepLabel');
+            if (stepLabel) {
+                const template = getTranslation('contact.stepLabel');
+                stepLabel.textContent = template.replace('{current}', currentStep).replace('{total}', '3');
+            }
+
+            // Update next button text based on step
+            const nextBtn = document.getElementById('nextBtn');
+            if (nextBtn) {
+                if (currentStep === 1) {
+                    nextBtn.innerHTML = '<span>' + getTranslation('contact.nextButtonStep1') + '</span>';
+                } else if (currentStep === 2) {
+                    nextBtn.innerHTML = '<span>' + getTranslation('contact.nextButtonStep2') + '</span>';
+                }
+            }
+        }
+
+        function initI18n() {
+            // Check URL param first
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlLang = urlParams.get('lang');
+
+            // Then check localStorage
+            const storedLang = localStorage.getItem('cla-contact-lang');
+
+            // Then check browser language
+            const browserLang = navigator.language?.slice(0, 2);
+
+            // Determine language priority: URL > localStorage > browser > default
+            const lang = (urlLang && translations[urlLang]) ? urlLang :
+                        (storedLang && translations[storedLang]) ? storedLang :
+                        (translations[browserLang]) ? browserLang : 'en';
+
+            setLanguage(lang);
+        }
+
+        // ============================================
+        // RENDER FUNCTIONS
+        // ============================================
+
         function renderIndustries() {
             const grid = document.getElementById('industryGrid');
-            grid.innerHTML = industries.map(industry => `
+            grid.innerHTML = industryDefs.map(industry => `
                 <button type="button"
-                        class="industry-card group flex flex-col p-8 text-left bg-surface-container-low hover:bg-surface-container transition-all duration-300 rounded-lg border border-transparent hover:border-outline-variant/30 relative"
+                        class="industry-card group flex flex-col p-8 text-left bg-surface-container-low hover:bg-surface-container transition-all duration-300 rounded-lg border border-transparent hover:border-outline-variant/30 relative ${selectedIndustry === industry.id ? 'selected' : ''}"
                         data-industry="${industry.id}"
                         onclick="selectIndustry('${industry.id}')">
                     <div class="mb-8 text-on-surface-variant group-hover:text-primary transition-colors">
                         <span class="material-symbols-outlined text-4xl">${industry.icon}</span>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">${industry.name}</h3>
-                    <p class="text-on-surface-variant text-sm leading-relaxed mb-4">${industry.subtitle}</p>
+                    <h3 class="text-xl font-semibold mb-3">${getTranslation('contact.' + industry.nameKey)}</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed mb-4">${getTranslation('contact.' + industry.subtitleKey)}</p>
                     <div class="mt-auto pt-6 border-t border-outline-variant/10">
-                        <span class="text-[0.7rem] font-bold uppercase tracking-[0.1em] text-on-tertiary-fixed-variant">Fokus</span>
-                        <p class="text-xs text-on-surface-variant mt-1 italic">${industry.focus}</p>
+                        <span class="text-[0.7rem] font-bold uppercase tracking-[0.1em] text-on-tertiary-fixed-variant">${getTranslation('contact.focusLabel')}</span>
+                        <p class="text-xs text-on-surface-variant mt-1 italic">${getTranslation('contact.' + industry.focusKey)}</p>
                     </div>
                 </button>
             `).join('');
         }
 
-        // Select industry
         function selectIndustry(industryId) {
             selectedIndustry = industryId;
 
@@ -463,19 +1113,18 @@
             });
         }
 
-        // Render use cases
         function renderUseCases() {
-            const useCases = useCasesByIndustry[selectedIndustry] || defaultUseCases;
+            const useCases = useCasesData[selectedIndustry]?.[currentLang] || defaultUseCasesData[currentLang];
             const grid = document.getElementById('useCaseGrid');
 
             grid.innerHTML = useCases.map((useCase, index) => `
-                <div class="${index === 0 ? 'md:col-span-8' : 'md:col-span-4'} use-case-card group cursor-pointer bg-surface-container-low rounded-xl p-8 hover:bg-surface-container transition-colors duration-300 relative ${useCase.managed ? 'border-2 border-primary' : ''}"
+                <div class="${index === 0 ? 'md:col-span-8' : 'md:col-span-4'} use-case-card group cursor-pointer bg-surface-container-low rounded-xl p-8 hover:bg-surface-container transition-colors duration-300 relative ${useCase.managed ? 'border-2 border-primary' : ''} ${selectedUseCases.includes(useCase.id) ? 'selected' : ''}"
                      data-use-case="${useCase.id}"
                      onclick="toggleUseCase('${useCase.id}')">
                     ${useCase.managed ? `
                         <div class="absolute top-6 right-8 flex items-center gap-2">
                             <span class="agent-pulse-dot"></span>
-                            <span class="text-[10px] uppercase tracking-[0.05em] font-bold">Managed Agent</span>
+                            <span class="text-[10px] uppercase tracking-[0.05em] font-bold">${getTranslation('contact.managedAgentLabel')}</span>
                         </div>
                     ` : ''}
                     <div class="mb-8">
@@ -490,7 +1139,6 @@
             `).join('');
         }
 
-        // Toggle use case selection
         function toggleUseCase(useCaseId) {
             const index = selectedUseCases.indexOf(useCaseId);
             if (index > -1) {
@@ -507,12 +1155,15 @@
             });
         }
 
-        // Navigation
+        // ============================================
+        // NAVIGATION & EVENT HANDLERS
+        // ============================================
+
         document.getElementById('nextBtn').addEventListener('click', () => {
             if (currentStep === 1) {
                 // Validate step 1 - only industry required
                 if (!selectedIndustry) {
-                    alert('Bitte wählen Sie eine Branche aus.');
+                    alert(getTranslation('contact.errorSelectIndustry'));
                     return;
                 }
 
@@ -520,15 +1171,15 @@
                 currentStep = 2;
                 document.getElementById('step1').classList.remove('active');
                 document.getElementById('step2').classList.add('active');
-                document.getElementById('stepLabel').textContent = 'Schritt 2 von 3';
                 document.getElementById('progressBar').style.width = '66%';
                 document.getElementById('backBtn').classList.remove('hidden');
 
+                updateStepLabel();
                 renderUseCases();
             } else if (currentStep === 2) {
                 // Validate step 2 - use case and consent
                 if (selectedUseCases.length === 0) {
-                    alert('Bitte wählen Sie mindestens einen Anwendungsfall aus.');
+                    alert(getTranslation('contact.errorSelectUseCase'));
                     return;
                 }
 
@@ -536,11 +1187,11 @@
                 const dataConsent = document.getElementById('dataConsent').checked;
 
                 if (!companySize) {
-                    alert('Bitte wählen Sie eine Unternehmensgrösse aus.');
+                    alert(getTranslation('contact.errorSelectSize'));
                     return;
                 }
                 if (!dataConsent) {
-                    alert('Bitte stimmen Sie der Datenverarbeitung zu.');
+                    alert(getTranslation('contact.errorConsentRequired'));
                     return;
                 }
 
@@ -548,10 +1199,11 @@
                 currentStep = 3;
                 document.getElementById('step2').classList.remove('active');
                 document.getElementById('step3').classList.add('active');
-                document.getElementById('stepLabel').textContent = 'Schritt 3 von 3';
                 document.getElementById('progressBar').style.width = '100%';
                 document.getElementById('nextBtn').classList.add('hidden');
                 document.getElementById('submitBtn').classList.remove('hidden');
+
+                updateStepLabel();
             }
         });
 
@@ -561,38 +1213,70 @@
                 currentStep = 1;
                 document.getElementById('step2').classList.remove('active');
                 document.getElementById('step1').classList.add('active');
-                document.getElementById('stepLabel').textContent = 'Schritt 1 von 3';
                 document.getElementById('progressBar').style.width = '33%';
                 document.getElementById('backBtn').classList.add('hidden');
+                selectedUseCases = [];
             } else if (currentStep === 3) {
                 // Back from step 3 to step 2
                 currentStep = 2;
                 document.getElementById('step3').classList.remove('active');
                 document.getElementById('step2').classList.add('active');
-                document.getElementById('stepLabel').textContent = 'Schritt 2 von 3';
                 document.getElementById('progressBar').style.width = '66%';
                 document.getElementById('nextBtn').classList.remove('hidden');
                 document.getElementById('submitBtn').classList.add('hidden');
             }
+            updateStepLabel();
         });
 
         // Form submission
         document.getElementById('submitBtn').addEventListener('click', async () => {
+            // Validate required fields
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const company = document.getElementById('company').value.trim();
+            const callbackTime = document.getElementById('callbackTime').value;
             const dataConsent = document.getElementById('dataConsent').checked;
+
+            if (!fullName) {
+                alert(getTranslation('contact.errorEnterName'));
+                document.getElementById('fullName').focus();
+                return;
+            }
+            if (!email || !email.includes('@')) {
+                alert(getTranslation('contact.errorEnterEmail'));
+                document.getElementById('email').focus();
+                return;
+            }
+            if (!company) {
+                alert(getTranslation('contact.errorEnterCompany'));
+                document.getElementById('company').focus();
+                return;
+            }
+            if (!callbackTime) {
+                alert(getTranslation('contact.errorSelectCallback'));
+                document.getElementById('callbackTime').focus();
+                return;
+            }
             if (!dataConsent) {
-                alert('Bitu2026e stimmen Sie der Datenverarbeitung zu.');
+                alert(getTranslation('contact.errorConsentRequired'));
                 return;
             }
 
             const formData = {
-                name: document.getElementById('fullName').value,
-                email: document.getElementById('email').value,
-                company: document.getElementById('company').value,
+                name: fullName,
+                email: email,
+                company: company,
+                position: document.getElementById('position').value,
                 phone: document.getElementById('phone').value,
+                callbackTime: callbackTime,
                 industry: selectedIndustry,
                 useCases: selectedUseCases,
                 companySize: document.getElementById('companySize').value,
                 challenge: document.getElementById('challenge').value,
+                budget: document.getElementById('budget').value,
+                timeline: document.getElementById('timeline').value,
+                marketingConsent: document.getElementById('marketingConsent').checked,
+                language: currentLang,
                 timestamp: new Date().toISOString()
             };
 
@@ -604,17 +1288,25 @@
                 });
 
                 if (response.ok) {
-                    window.location.href = '/danke.html';
+                    window.location.href = '/danke.html?lang=' + currentLang;
                 } else {
-                    alert('Ein Fehler ist aufgetreten. Bitte versuchen Sie es später nochmals.');
+                    alert(getTranslation('contact.errorSubmit'));
                 }
             } catch (error) {
-                console.error('Fehler:', error);
-                alert('Ein Fehler ist aufgetreten. Bitte versuchen Sie es später nochmals.');
+                console.error('Error:', error);
+                alert(getTranslation('contact.errorSubmit'));
             }
         });
 
+        // Language button handlers
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLanguage(btn.dataset.lang);
+            });
+        });
+
         // Initialize
+        initI18n();
         renderIndustries();
 
         // Always scroll to top on page load
