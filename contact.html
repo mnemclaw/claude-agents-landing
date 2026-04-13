@@ -1,316 +1,593 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="light" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="contact.metaTitle">Contact — Claude Agents Switzerland</title>
-    <meta name="description" data-i18n="contact.metaDesc" content="Get in touch to discuss autonomous AI agents for your Swiss KMU.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Kontakt | Claude Agents Switzerland</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-tint": "#865300",
+                        "secondary-container": "#dd3123",
+                        "on-tertiary-fixed-variant": "#474745",
+                        "tertiary": "#5f5e5d",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#ffdad5",
+                        "on-tertiary-container": "#4e4d4b",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#c9c6c4",
+                        "secondary": "#b8120b",
+                        "primary": "#865300",
+                        "on-background": "#1b1c1a",
+                        "on-surface-variant": "#524436",
+                        "surface-bright": "#faf9f5",
+                        "outline-variant": "#d6c3b1",
+                        "on-primary": "#ffffff",
+                        "surface": "#faf9f5",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#663e00",
+                        "primary-fixed-dim": "#ffb962",
+                        "on-secondary-fixed": "#410000",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#6e4300",
+                        "surface-variant": "#e3e2df",
+                        "surface-container-low": "#f4f4f0",
+                        "on-secondary-fixed-variant": "#930001",
+                        "surface-container-highest": "#e3e2df",
+                        "primary-container": "#faaf4f",
+                        "error": "#ba1a1a",
+                        "background": "#faf9f5",
+                        "surface-container": "#efeeea",
+                        "inverse-primary": "#ffb962",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#ffddb9",
+                        "on-surface": "#1b1c1a",
+                        "on-secondary-container": "#fffbff",
+                        "on-primary-fixed": "#2b1700",
+                        "surface-dim": "#dbdad6",
+                        "outline": "#847464",
+                        "on-tertiary-fixed": "#1c1c1a",
+                        "inverse-on-surface": "#f2f1ed",
+                        "tertiary-fixed": "#e5e2e0",
+                        "tertiary-container": "#c0bebc",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#2f312e",
+                        "secondary-fixed-dim": "#ffb4a8",
+                        "surface-container-high": "#e9e8e4"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "0.75rem"
+                    },
+                    fontFamily: {
+                        headline: ["Inter"],
+                        body: ["Inter"],
+                        label: ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
     <style>
-        .contact-page { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem 6rem; }
-        .form-header { text-align: center; margin-bottom: 3rem; }
-        .form-header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .form-header p { color: var(--text-muted); }
-
-        .step-indicator { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
-        .step { width: 40px; height: 40px; border-radius: 50%; background: var(--bg-alt); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.875rem; }
-        .step.active { background: var(--primary); }
-        .step.completed { background: var(--text); color: white; }
-
-        .form-step { display: none; }
-        .form-step.active { display: block; }
-
-        .form-group { margin-bottom: 1.5rem; }
-        .form-group label { display: block; font-weight: 500; margin-bottom: 0.5rem; font-size: 0.9375rem; }
-        .form-group label .required { color: var(--accent-red); margin-left: 0.25rem; }
-
-        .form-control { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; background: white; transition: border-color 0.2s; }
-        .form-control:focus { outline: none; border-color: var(--primary); }
-        .form-control::placeholder { color: var(--text-muted); }
-
-        select.form-control { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
-
-        textarea.form-control { min-height: 120px; resize: vertical; }
-
-        .checkbox-group { display: flex; flex-direction: column; gap: 0.75rem; }
-        .checkbox-item { display: flex; align-items: flex-start; gap: 0.75rem; }
-        .checkbox-item input[type="checkbox"] { width: 20px; height: 20px; margin-top: 0.125rem; accent-color: var(--primary); }
-        .checkbox-item label { font-weight: normal; font-size: 0.9375rem; line-height: 1.5; margin-bottom: 0; }
-        .checkbox-item label small { display: block; color: var(--text-muted); font-size: 0.875rem; margin-top: 0.25rem; }
-
-        .form-navigation { display: flex; justify-content: space-between; margin-top: 2rem; gap: 1rem; }
-        .btn { padding: 0.875rem 1.5rem; border-radius: 9999px; font-weight: 600; cursor: pointer; transition: all 0.2s; border: none; font-size: 1rem; }
-        .btn-primary { background: var(--primary); color: var(--text); }
-        .btn-primary:hover { background: var(--primary-hover); }
-        .btn-secondary { background: var(--bg-alt); color: var(--text); }
-        .btn-secondary:hover { background: var(--border); }
-
-        .error-message { color: var(--accent-red); font-size: 0.875rem; margin-top: 0.25rem; display: none; }
-        .form-group.error .form-control { border-color: var(--accent-red); }
-        .form-group.error .error-message { display: block; }
-
-        .success-page { text-align: center; padding: 4rem 2rem; display: none; }
-        .success-page.active { display: block; }
-        .success-icon { width: 80px; height: 80px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
-        .success-icon i { width: 40px; height: 40px; color: var(--text); }
-
-        @media (max-width: 640px) {
-            .form-header h1 { font-size: 1.5rem; }
-            .step-indicator { gap: 0.5rem; }
-            .step { width: 32px; height: 32px; font-size: 0.75rem; }
-            .form-navigation { flex-direction: column-reverse; }
-            .btn { width: 100%; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            font-size: 1.5rem;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .agent-pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #D52B1E;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .step-content { display: none; }
+        .step-content.active { display: block; }
+        .industry-card.selected {
+            border: 2px solid #865300;
+            background: #efeeea;
+        }
+        .use-case-card.selected {
+            border: 2px solid #faaf4f;
+            background: #efeeea;
         }
     </style>
 </head>
-<body>
-    <nav class="nav" id="nav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">claude-agents.ch</a>
-            <div class="lang-switcher">
-                <button class="lang-btn" data-lang="de">DE</button>
-                <button class="lang-btn" data-lang="fr">FR</button>
-                <button class="lang-btn" data-lang="it">IT</button>
-                <button class="lang-btn active" data-lang="en">EN</button>
+<body class="bg-surface text-on-surface antialiased">
+    <!-- Top Navigation -->
+    <header class="w-full top-0 sticky z-50 bg-[#FAF9F5]">
+        <div class="flex justify-between items-center px-8 py-6 max-w-[1440px] mx-auto">
+            <div class="text-xl font-semibold tracking-[-0.02em] text-[#141413]">
+                claude-agents.ch
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="text-[#141413]/60 hover:text-[#141413] text-sm font-medium transition-colors">Zurück zur Startseite</a>
             </div>
         </div>
-    </nav>
+        <div class="bg-[#F4F4F0] h-[1px] w-full"></div>
+    </header>
 
-    <main class="contact-page">
-        <div class="form-header">
-            <h1 data-i18n="contact.title">Let's Discuss Your Agent</h1>
-            <p data-i18n="contact.subtitle">4 quick steps to get started with autonomous AI for your business</p>
+    <main class="max-w-[1440px] mx-auto px-8 pt-16 pb-24">
+        <!-- Progress Bar Section -->
+        <div class="mb-16 max-w-xl">
+            <div class="flex items-center justify-between mb-4">
+                <span class="text-[0.75rem] font-bold uppercase tracking-[0.05em] text-primary" id="stepLabel">Schritt 1 von 2</span>
+                <span class="text-[0.75rem] font-semibold text-on-surface-variant">Kontaktformular</span>
+            </div>
+            <div class="h-1 w-full bg-surface-container-low overflow-hidden rounded-full">
+                <div class="h-full w-1/2 bg-primary transition-all duration-500 ease-out" id="progressBar"></div>
+            </div>
         </div>
 
-        <div class="step-indicator" id="stepIndicator">
-            <div class="step active" data-step="1">1</div>
-            <div class="step" data-step="2">2</div>
-            <div class="step" data-step="3">3</div>
-            <div class="step" data-step="4">4</div>
-        </div>
-
-        <form id="contactForm">
-            <!-- Step 1: Contact Info -->
-            <div class="form-step active" data-step="1">
-                <div class="form-group">
-                    <label data-i18n="contact.nameLabel">Full Name <span class="required">*</span></label>
-                    <input type="text" class="form-control" name="name" data-i18n-placeholder="contact.namePlaceholder" placeholder="John Doe" required>
-                    <span class="error-message" data-i18n="contact.nameError">Please enter your full name</span>
+        <!-- Step 1: Industry Selection -->
+        <div class="step-content active" id="step1">
+            <div class="grid grid-cols-12 mb-16">
+                <div class="col-span-12 lg:col-span-8">
+                    <h1 class="text-[3.5rem] leading-[1.1] font-semibold tracking-[-0.02em] text-on-surface mb-6">
+                        In welcher Branche<br/>sind Sie tätig?
+                    </h1>
+                    <p class="text-[1.375rem] text-on-surface-variant max-w-2xl leading-relaxed">
+                        Wählen Sie Ihre Branche, um spezialisierte Agenten-Workflows für Ihr Schweizer KMU zu sehen.
+                    </p>
                 </div>
-                <div class="form-group">
-                    <label data-i18n="contact.emailLabel">Email Address <span class="required">*</span></label>
-                    <input type="email" class="form-control" name="email" data-i18n-placeholder="contact.emailPlaceholder" placeholder="name@company.ch" required>
-                    <span class="error-message" data-i18n="contact.emailError">Please enter a valid email address</span>
-                </div>
-                <div class="form-group">
-                    <label data-i18n="contact.companyLabel">Company <span class="required">*</span></label>
-                    <input type="text" class="form-control" name="company" data-i18n-placeholder="contact.companyPlaceholder" placeholder="Acme Corp" required>
-                    <span class="error-message" data-i18n="contact.companyError">Please enter your company name</span>
-                </div>
-            </div>
-
-            <!-- Step 2: Industry & Size -->
-            <div class="form-step" data-step="2">
-                <div class="form-group">
-                    <label data-i18n="contact.industryLabel">Industry <span class="required">*</span></label>
-                    <select class="form-control" name="industry" required>
-                        <option value="" data-i18n="contact.selectOption">— Select —</option>
-                        <option value="fiduciary" data-i18n="contact.industryFiduciary">Fiduciary / Financial Services</option>
-                        <option value="construction" data-i18n="contact.industryConstruction">Construction / Real Estate</option>
-                        <option value="retail" data-i18n="contact.industryRetail">Trade / Retail</option>
-                        <option value="manufacturing" data-i18n="contact.industryManufacturing">Manufacturing</option>
-                        <option value="technology" data-i18n="contact.industryTechnology">IT / Software</option>
-                        <option value="consulting" data-i18n="contact.industryConsulting">Consulting / Services</option>
-                        <option value="other" data-i18n="contact.industryOther">Other</option>
-                    </select>
-                    <span class="error-message" data-i18n="contact.industryError">Please select your industry</span>
-                </div>
-                <div class="form-group">
-                    <label data-i18n="contact.sizeLabel">Company Size (Employees) <span class="required">*</span></label>
-                    <select class="form-control" name="companySize" required>
-                        <option value="" data-i18n="contact.selectOption">— Select —</option>
-                        <option value="under-10" data-i18n="contact.sizeUnder10">Fewer than 10</option>
-                        <option value="10-50" data-i18n="contact.size10to50">10–50</option>
-                        <option value="50-200" data-i18n="contact.size50to200">50–200</option>
-                        <option value="200-500" data-i18n="contact.size200to500">200–500</option>
-                        <option value="over-500" data-i18n="contact.sizeOver500">More than 500</option>
-                    </select>
-                    <span class="error-message" data-i18n="contact.sizeError">Please select your company size</span>
-                </div>
-            </div>
-
-            <!-- Step 3: Problem & Use Cases -->
-            <div class="form-step" data-step="3">
-                <div class="form-group">
-                    <label data-i18n="contact.problemLabel">Your Biggest Challenge (optional)</label>
-                    <textarea class="form-control" name="problem" data-i18n-placeholder="contact.problemPlaceholder" placeholder="Briefly describe where you need support..."></textarea>
-                </div>
-                <div class="form-group">
-                    <label data-i18n="contact.useCasesLabel">Which Solutions Interest You? (Select all that apply)</label>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" name="useCases" value="fiduciary" id="uc-fiduciary">
-                            <label for="uc-fiduciary" data-i18n="contact.useCaseFiduciary">Digital Fiduciary — Automate accounting</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" name="useCases" value="construction" id="uc-construction">
-                            <label for="uc-construction" data-i18n="contact.useCaseConstruction">Construction Hub — Coordinate sites</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" name="useCases" value="sdr" id="uc-sdr">
-                            <label for="uc-sdr" data-i18n="contact.useCaseSDR">Multilingual SDR — Qualify leads 24/7</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" name="useCases" value="supply" id="uc-supply">
-                            <label for="uc-supply" data-i18n="contact.useCaseSupply">Supply Chain Watchdog — Monitor inventory</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" name="useCases" value="unsure" id="uc-unsure">
-                            <label for="uc-unsure" data-i18n="contact.useCaseUnsure">Unsure / Advice requested</label>
-                        </div>
+                <div class="hidden lg:flex col-span-4 justify-end items-start">
+                    <div class="flex items-center gap-3 bg-surface-container-highest px-4 py-2 rounded-full border border-outline-variant/15">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+                        </span>
+                        <span class="text-[0.75rem] font-semibold uppercase tracking-[0.05em]">Orchestrator Online</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Step 4: Budget & Consent -->
-            <div class="form-step" data-step="4">
-                <div class="form-group">
-                    <label data-i18n="contact.budgetLabel">Expected Budget Range <span class="required">*</span></label>
-                    <select class="form-control" name="budget" required>
-                        <option value="" data-i18n="contact.selectOption">— Select —</option>
-                        <option value="under-500" data-i18n="contact.budgetUnder500">Under CHF 500/month</option>
-                        <option value="500-1200" data-i18n="contact.budget500to1200">CHF 500–1,200/month</option>
-                        <option value="1200-5000" data-i18n="contact.budget1200to5000">CHF 1,200–5,000/month</option>
-                        <option value="over-5000" data-i18n="contact.budgetOver5000">CHF 5,000+/month</option>
-                        <option value="unclear" data-i18n="contact.budgetUnclear">Unclear — Advice requested</option>
+            <!-- 3x3 Industry Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8" id="industryGrid">
+                <!-- Industries will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Step 2: Use Case Selection -->
+        <div class="step-content" id="step2">
+            <div class="mb-12">
+                <h1 class="text-[3rem] leading-[1.1] font-semibold tracking-[-0.02em] text-on-surface mb-4">
+                    Welchen Fokusbereich<br/>sollen wir automatisieren?
+                </h1>
+                <p class="text-lg text-on-surface-variant max-w-2xl">
+                    Wählen Sie die spezifische Rolle, die am besten zu Ihrem aktuellen Engpass passt.
+                </p>
+            </div>
+
+            <!-- Use Case Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-16" id="useCaseGrid">
+                <!-- Use cases populated by JavaScript -->
+            </div>
+
+            <!-- Additional Details -->
+            <div class="bg-surface-container-low rounded-lg p-8 mb-8">
+                <h2 class="text-xl font-semibold mb-6">Zus��tzliche Informationen</h2>
+                <div class="grid grid-cols-1 gap-6">
+                    <div>
+                        <label class="text-sm font-medium text-on-surface-variant mb-2 block">Unternehmensgrösse</label>
+                        <select id="companySize" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary">
+                            <option value="">Bitte wählen</option>
+                            <option value="under-10">Weniger als 10</option>
+                            <option value="10-50">10–50</option>
+                            <option value="50-200">50–200</option>
+                            <option value="200-500">200–500</option>
+                            <option value="over-500">Mehr als 500</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="text-sm font-medium text-on-surface-variant mb-2 block">Ihre grösste Herausforderung</label>
+                        <textarea id="challenge" rows="4" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary" placeholder="Beschreiben Sie kurz, wo Sie Unterstützung brauchen..."></textarea>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <input type="checkbox" id="dataConsent" class="mt-1 w-4 h-4 accent-primary">
+                        <label for="dataConsent" class="text-sm text-on-surface-variant">
+                            Ich stimme zu, dass meine Daten gemäss der Datenschutzerklärung verarbeitet werden. Dies umfasst die Speicherung meiner Kontaktdaten und die Kontaktaufnahme per E-Mail oder Telefon bezüglich KI-Agenten-Lösungen von Claude Agents.ch. *
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3: Contact Details -->
+        <div class="step-content" id="step3">
+            <div class="mb-12">
+                <h1 class="text-[3rem] leading-[1.1] font-semibold tracking-[-0.02em] text-on-surface mb-4">
+                    Wie erreichen wir Sie?<br/>
+                    <span class="text-primary">Schritt 3 von 3</span>
+                </h1>
+                <p class="text-lg text-on-surface-variant max-w-2xl">
+                    Ihre Kontaktdaten und Rückrufpräferenz für die Besprechung.
+                </p>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div>
+                    <label class="text-sm font-medium text-on-surface-variant mb-2 block">Vollständiger Name *</label>
+                    <input type="text" id="fullName" required class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary" placeholder="Max Mustermann">
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-on-surface-variant mb-2 block">E-Mail-Adresse *</label>
+                    <input type="email" id="email" required class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary" placeholder="max@firma.ch">
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-on-surface-variant mb-2 block">Unternehmen *</label>
+                    <input type="text" id="company" required class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary" placeholder="Musterfirma AG">
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-on-surface-variant mb-2 block">Position</label>
+                    <input type="text" id="position" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary" placeholder="Geschäftsführer">
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-on-surface-variant mb-2 block">Telefon (optional)</label>
+                    <input type="tel" id="phone" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary" placeholder="+41 44 123 45 67">
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-on-surface-variant mb-2 block">Bevorzugte Rückrufzeit *</label>
+                    <select id="callbackTime" required class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary">
+                        <option value="">Bitte wählen</option>
+                        <option value="morning">Vormittag (9:00–12:00)</option>
+                        <option value="afternoon">Nachmittag (13:00–17:00)</option>
+                        <option value="evening">Abend (17:00–19:00)</option>
+                        <option value="anytime">Jederzeit</option>
                     </select>
-                    <span class="error-message" data-i18n="contact.budgetError">Please select a budget range</span>
                 </div>
-                <div class="form-group">
-                    <div class="checkbox-item">
-                        <input type="checkbox" name="dataConsent" id="dataConsent" required>
-                        <label for="dataConsent" data-i18n="contact.dataConsentLabel">I agree that my data will be processed in accordance with the privacy policy...</label>
+            </div>
+
+            <!-- Budget & Timeline -->
+            <div class="bg-surface-container-low rounded-lg p-8 mb-8">
+                <h2 class="text-xl font-semibold mb-6">Projektumfang</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="text-sm font-medium text-on-surface-variant mb-2 block">Geschätztes Budget</label>
+                        <select id="budget" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary">
+                            <option value="">Bitte wählen</option>
+                            <option value="under-1k">Unter CHF 1'000/Monat</option>
+                            <option value="1k-2k">CHF 1'000–2'000/Monat</option>
+                            <option value="2k-5k">CHF 2'000–5'000/Monat</option>
+                            <option value="over-5k">Über CHF 5'000/Monat</option>
+                            <option value="unsure">Noch unklar</option>
+                        </select>
                     </div>
-                    <span class="error-message" data-i18n="contact.consentError">You must consent to data processing to continue</span>
-                </div>
-                <div class="form-group">
-                    <div class="checkbox-item">
-                        <input type="checkbox" name="marketingConsent" id="marketingConsent">
-                        <label for="marketingConsent" data-i18n="contact.marketingLabel">I would like to receive occasional updates on AI developments...</label>
+                    <div>
+                        <label class="text-sm font-medium text-on-surface-variant mb-2 block">Gewünschter Start</label>
+                        <select id="timeline" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary">
+                            <option value="">Bitte wählen</option>
+                            <option value="asap">So schnell wie möglich</option>
+                            <option value="1-month">Innerhalb 1 Monat</option>
+                            <option value="3-months">Innerhalb 3 Monate</option>
+                            <option value="6-months">Innerhalb 6 Monate</option>
+                            <option value="exploring">Nur am Erkunden</option>
+                        </select>
                     </div>
                 </div>
             </div>
 
-            <div class="form-navigation">
-                <button type="button" class="btn btn-secondary" id="prevBtn" style="display: none;" data-i18n="contact.prevButton">Back</button>
-                <button type="button" class="btn btn-primary" id="nextBtn" data-i18n="contact.nextButton">Next</button>
-                <button type="submit" class="btn btn-primary" id="submitBtn" style="display: none;" data-i18n="contact.submitButton">Send Request</button>
+            <!-- Additional Consent -->
+            <div class="flex items-start gap-3 mb-8">
+                <input type="checkbox" id="marketingConsent" class="mt-1 w-4 h-4 accent-primary">
+                <label for="marketingConsent" class="text-sm text-on-surface-variant">
+                    Ich möchte über KI-Agenten-News, Case Studies und Angebote von Claude Agents.ch informiert werden. (Optional)
+                </label>
             </div>
-        </form>
+        </div>
 
-        <div class="success-page" id="successPage">
-            <div class="success-icon"><i data-lucide="check"></i></div>
-            <h2 data-i18n="contact.successTitle">Thank You!</h2>
-            <p data-i18n="contact.successMessage">We'll contact you within 24 hours to discuss your agent.</p>
-            <a href="index.html" class="btn btn-primary" style="margin-top: 1.5rem;" data-i18n="contact.backHome">Back to Home</a>
+        <!-- Action Footer -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8 pt-12 border-t border-outline-variant/15">
+            <div class="flex items-center gap-4 text-on-surface-variant">
+                <span class="material-symbols-outlined text-sm">lock</span>
+                <p class="text-xs font-medium tracking-wide">Datenverarbeitung in Schweizer Servern. DSGVO & nFADP konform.</p>
+            </div>
+            <div class="flex items-center gap-6">
+                <button type="button" id="backBtn" class="text-on-surface-variant hover:text-on-surface text-sm font-semibold flex items-center gap-2 group hidden">
+                    <span class="material-symbols-outlined group-hover:-translate-x-1 transition-transform">arrow_back</span>
+                    Zurück
+                </button>
+                <button type="button" id="nextBtn" class="bg-primary text-on-primary px-12 py-4 rounded-lg font-bold text-sm tracking-wide hover:opacity-90 transition-all active:scale-95 shadow-sm">
+                    Weiter: Agent auswählen
+                </button>
+                <button type="submit" id="submitBtn" class="bg-primary text-on-primary px-12 py-4 rounded-lg font-bold text-sm tracking-wide hover:opacity-90 transition-all active:scale-95 shadow-sm hidden">
+                    Anfrage senden
+                </button>
+            </div>
         </div>
     </main>
 
-    <script src="i18n.js"></script>
-    <script src="contact-i18n.js"></script>
+    <!-- Footer -->
+    <footer class="w-full border-t border-[#D6C3B1]/15 bg-[#FAF9F5]">
+        <div class="flex flex-col md:flex-row justify-between items-center px-12 py-10 gap-6 max-w-[1440px] mx-auto">
+            <div class="text-[0.75rem] font-semibold uppercase tracking-[0.05em] text-[#141413]/40">
+                © 2025 Claude Agents Switzerland. Präzisionsverwaltete KI.
+            </div>
+            <div class="flex gap-8">
+                <a class="text-[0.75rem] font-semibold uppercase tracking-[0.05em] text-[#141413]/40 hover:text-[#FAAF4F] transition-colors" href="#">Datenschutz</a>
+                <a class="text-[0.75rem] font-semibold uppercase tracking-[0.05em] text-[#141413]/40 hover:text-[#FAAF4F] transition-colors" href="#">Impressum</a>
+                <a class="text-[0.75rem] font-semibold uppercase tracking-[0.05em] text-[#141413]/40 hover:text-[#FAAF4F] transition-colors" href="#">Kontakt</a>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        // Multi-step form logic
-        let currentStep = 1;
-        const totalSteps = 4;
-        const form = document.getElementById('contactForm');
-        const steps = document.querySelectorAll('.form-step');
-        const indicators = document.querySelectorAll('.step');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const submitBtn = document.getElementById('submitBtn');
-
-        function showStep(step) {
-            steps.forEach(s => s.classList.remove('active'));
-            document.querySelector(`.form-step[data-step="${step}"]`).classList.add('active');
-
-            indicators.forEach((ind, i) => {
-                ind.classList.remove('active', 'completed');
-                if (i + 1 < step) ind.classList.add('completed');
-                else if (i + 1 === step) ind.classList.add('active');
-            });
-
-            prevBtn.style.display = step === 1 ? 'none' : 'block';
-            if (step === totalSteps) {
-                nextBtn.style.display = 'none';
-                submitBtn.style.display = 'block';
-            } else {
-                nextBtn.style.display = 'block';
-                submitBtn.style.display = 'none';
+        // Industry data
+        const industries = [
+            {
+                id: 'bau',
+                name: 'Bau & Handwerk',
+                subtitle: 'Construction & Trades',
+                icon: 'construction',
+                focus: 'Automatisierte Offertenerstellung & Terminplanung'
+            },
+            {
+                id: 'immobilien',
+                name: 'Immobilien & Liegenschaften',
+                subtitle: 'Real Estate',
+                icon: 'domain',
+                focus: 'Mieter-Management & Wartungs-Triage'
+            },
+            {
+                id: 'treuhand',
+                name: 'Treuhand, Recht & Finanzen',
+                subtitle: 'Fiduciary, Legal & Finance',
+                icon: 'account_balance',
+                focus: 'Compliance-Automatisierung & Datenklassifizierung'
+            },
+            {
+                id: 'handel',
+                name: 'Handel & E-Commerce',
+                subtitle: 'Retail & E-commerce',
+                icon: 'shopping_cart',
+                focus: 'Bestandsprognosen & CRM-KI'
+            },
+            {
+                id: 'dienstleistung',
+                name: 'Dienstleistung & Beratung',
+                subtitle: 'Professional Services',
+                icon: 'clinical_notes',
+                focus: 'Wissensabruf & Erkenntnisgewinnung'
+            },
+            {
+                id: 'marketing',
+                name: 'Marketing & Web-Agenturen',
+                subtitle: 'Marketing Agencies',
+                icon: 'campaign',
+                focus: 'Content-Pipelines & Performance-Prüfung'
+            },
+            {
+                id: 'industrie',
+                name: 'Industrie & Fertigung',
+                subtitle: 'Manufacturing',
+                icon: 'factory',
+                focus: 'Lieferkettenlogistik & Qualitäts-KI'
+            },
+            {
+                id: 'logistik',
+                name: 'Logistik & Transport',
+                subtitle: 'Logistics & Transport',
+                icon: 'local_shipping',
+                focus: 'Dynamische Routenplanung & Flottenoptimierung'
+            },
+            {
+                id: 'gesundheit',
+                name: 'Gesundheit & Soziales',
+                subtitle: 'Healthcare & Social',
+                icon: 'volunteer_activism',
+                focus: 'Dokumentation & Ressourcenallokation'
             }
+        ];
+
+        // Use cases data by industry
+        const useCasesByIndustry = {
+            'immobilien': [
+                { id: 'mieter-triage', name: 'Mieter-Anfragen Triage', icon: 'assignment_turned_in', managed: true, description: '24/7 Klassifizierung von Mieteranfragen mit automatischem Ticketing' },
+                { id: 'besichtigungs-koord', name: 'Besichtigungs-Koordinator', icon: 'calendar_month', managed: false, description: 'Automatisierte Terminplanung und Interessenten-Qualifizierung' },
+                { id: 'vermarktungs-agent', name: 'Objekt-Vermarktungs Agent', icon: 'campaign', managed: false, description: 'Multi-Plattform-Veröffentlichung und Lead-Generierung' },
+                { id: 'hauswart-dispatcher', name: 'Hauswart-Dispatcher', icon: 'engineering', managed: false, description: 'Direkte Zuweisung von Wartungsaufträgen an lokales Personal' },
+                { id: 'reporting-assistent', name: 'Reporting-Assistent', icon: 'analytics', managed: false, description: 'Aggregierte Performance-Berichte zu Belegung und Kosten' }
+            ],
+            'bau': [
+                { id: 'bauleiter-koord', name: 'Bauleiter-Koordinator', icon: 'construction', managed: true, description: 'Planänderungs-Monitoring und Subunternehmer-Benachrichtigung' },
+                { id: 'offerten-profi', name: 'Offerten-Profi', icon: 'description', managed: false, description: 'Personalisierte Angebote aus technischen Spezifikationen' },
+                { id: 'material-disponent', name: 'Material-Disponent', icon: 'inventory', managed: false, description: 'Lagerverwaltung und automatische Nachbestellung' },
+                { id: 'baufuehrer-assist', name: 'Bauführer-Assistent', icon: 'architecture', managed: false, description: 'Meilenstein-Koordination und Budget-Monitoring' },
+                { id: 'service-planer', name: 'Service-Einsatzplaner', icon: 'schedule', managed: false, description: 'Planung mobiler Techniker-Teams mit Routenoptimierung' }
+            ],
+            'treuhand': [
+                { id: 'beleg-manager', name: 'Beleg-Manager', icon: 'receipt_long', managed: true, description: 'QR-Bill-Extraktion und automatische Kategorisierung' },
+                { id: 'mwst-vorbereiter', name: 'MwSt-Vorbereiter', icon: 'calculate', managed: false, description: 'Quartalsweise MwSt-Erklärungsvorbereitung' },
+                { id: 'kreditoren-buchhalter', name: 'Kreditoren-Buchhalter', icon: 'account_balance_wallet', managed: false, description: 'Rechnungsabgleich und Differenzenmarkierung' },
+                { id: 'spesen-abrechner', name: 'Spesen-Abrechner', icon: 'payments', managed: false, description: 'Spesenabrechnung mit Compliance-Prüfung' },
+                { id: 'dokument-archivar', name: 'Dokument-Archivator', icon: 'folder_open', managed: false, description: 'Sortierung und Archivierung gescannter Post' }
+            ]
+        };
+
+        // Default use cases for other industries
+        const defaultUseCases = [
+            { id: 'general-1', name: 'Prozess-Automatisierung', icon: 'automation', managed: true, description: 'Automatisierung wiederkehrender administrativer Aufgaben' },
+            { id: 'general-2', name: 'Dokumenten-Verarbeitung', icon: 'description', managed: false, description: 'Extraktion und Klassifizierung von Dokumenten' },
+            { id: 'general-3', name: 'Kundenkommunikation', icon: 'chat', managed: false, description: '24/7 mehrsprachige Kundenbetreuung' },
+            { id: 'general-4', name: 'Berichtswesen', icon: 'analytics', managed: false, description: 'Automatisierte Berichterstattung und Analysen' },
+            { id: 'general-5', name: 'Daten-Integration', icon: 'sync', managed: false, description: 'Verbindung verteilter Systeme und Datenquellen' }
+        ];
+
+        let currentStep = 1;
+        let selectedIndustry = null;
+        let selectedUseCases = [];
+
+        // Render industry grid
+        function renderIndustries() {
+            const grid = document.getElementById('industryGrid');
+            grid.innerHTML = industries.map(industry => `
+                <button type="button"
+                        class="industry-card group flex flex-col p-8 text-left bg-surface-container-low hover:bg-surface-container transition-all duration-300 rounded-lg border border-transparent hover:border-outline-variant/30 relative"
+                        data-industry="${industry.id}"
+                        onclick="selectIndustry('${industry.id}')">
+                    <div class="mb-8 text-on-surface-variant group-hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined text-4xl">${industry.icon}</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">${industry.name}</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed mb-4">${industry.subtitle}</p>
+                    <div class="mt-auto pt-6 border-t border-outline-variant/10">
+                        <span class="text-[0.7rem] font-bold uppercase tracking-[0.1em] text-on-tertiary-fixed-variant">Fokus</span>
+                        <p class="text-xs text-on-surface-variant mt-1 italic">${industry.focus}</p>
+                    </div>
+                </button>
+            `).join('');
         }
 
-        function validateStep(step) {
-            const currentStepEl = document.querySelector(`.form-step[data-step="${step}"]`);
-            const requiredFields = currentStepEl.querySelectorAll('[required]');
-            let valid = true;
+        // Select industry
+        function selectIndustry(industryId) {
+            selectedIndustry = industryId;
 
-            requiredFields.forEach(field => {
-                const group = field.closest('.form-group');
-                if (!field.value || (field.type === 'checkbox' && !field.checked)) {
-                    group.classList.add('error');
-                    valid = false;
-                } else {
-                    group.classList.remove('error');
+            // Update UI
+            document.querySelectorAll('.industry-card').forEach(card => {
+                card.classList.remove('selected');
+                if (card.dataset.industry === industryId) {
+                    card.classList.add('selected');
                 }
             });
-
-            return valid;
         }
 
-        nextBtn.addEventListener('click', () => {
-            if (validateStep(currentStep) && currentStep < totalSteps) {
-                currentStep++;
-                showStep(currentStep);
+        // Render use cases
+        function renderUseCases() {
+            const useCases = useCasesByIndustry[selectedIndustry] || defaultUseCases;
+            const grid = document.getElementById('useCaseGrid');
+
+            grid.innerHTML = useCases.map((useCase, index) => `
+                <div class="${index === 0 ? 'md:col-span-8' : 'md:col-span-4'} use-case-card group cursor-pointer bg-surface-container-low rounded-xl p-8 hover:bg-surface-container transition-colors duration-300 relative ${useCase.managed ? 'border-2 border-primary' : ''}"
+                     data-use-case="${useCase.id}"
+                     onclick="toggleUseCase('${useCase.id}')">
+                    ${useCase.managed ? `
+                        <div class="absolute top-6 right-8 flex items-center gap-2">
+                            <span class="agent-pulse-dot"></span>
+                            <span class="text-[10px] uppercase tracking-[0.05em] font-bold">Managed Agent</span>
+                        </div>
+                    ` : ''}
+                    <div class="mb-8">
+                        <span class="material-symbols-outlined ${useCase.managed ? 'filled' : ''} text-primary text-4xl mb-6">${useCase.icon}</span>
+                        <h3 class="text-[1.75rem] font-medium tracking-[-0.01em] mb-3">${useCase.name}</h3>
+                        <p class="text-tertiary leading-relaxed ${index === 0 ? 'max-w-md' : ''}">${useCase.description}</p>
+                    </div>
+                    <div class="w-full flex justify-end">
+                        <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-primary">arrow_forward</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Toggle use case selection
+        function toggleUseCase(useCaseId) {
+            const index = selectedUseCases.indexOf(useCaseId);
+            if (index > -1) {
+                selectedUseCases.splice(index, 1);
+            } else {
+                selectedUseCases.push(useCaseId);
             }
-        });
 
-        prevBtn.addEventListener('click', () => {
-            if (currentStep > 1) {
-                currentStep--;
-                showStep(currentStep);
-            }
-        });
-
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            if (validateStep(currentStep)) {
-                // Submit form data
-                const formData = new FormData(form);
-                console.log('Form submitted:', Object.fromEntries(formData));
-
-                // Show success
-                form.style.display = 'none';
-                document.getElementById('stepIndicator').style.display = 'none';
-                document.querySelector('.form-header').style.display = 'none';
-                document.getElementById('successPage').classList.add('active');
-
-                if (typeof lucide !== 'undefined') lucide.createIcons();
-            }
-        });
-
-        // Clear errors on input
-        form.querySelectorAll('input, select, textarea').forEach(field => {
-            field.addEventListener('input', () => {
-                field.closest('.form-group')?.classList.remove('error');
+            document.querySelectorAll('.use-case-card').forEach(card => {
+                card.classList.remove('selected');
+                if (selectedUseCases.includes(card.dataset.useCase)) {
+                    card.classList.add('selected');
+                }
             });
+        }
+
+        // Navigation
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            if (currentStep === 1) {
+                // Validate step 1
+                const name = document.getElementById('fullName').value;
+                const email = document.getElementById('email').value;
+                const company = document.getElementById('company').value;
+
+                if (!name || !email || !company) {
+                    alert('Bitte füllen Sie alle Pflichtfelder aus.');
+                    return;
+                }
+                if (!selectedIndustry) {
+                    alert('Bitte wählen Sie eine Branche aus.');
+                    return;
+                }
+
+                // Go to step 2
+                currentStep = 2;
+                document.getElementById('step1').classList.remove('active');
+                document.getElementById('step2').classList.add('active');
+                document.getElementById('stepLabel').textContent = 'Schritt 2 von 2';
+                document.getElementById('progressBar').style.width = '100%';
+                document.getElementById('backBtn').classList.remove('hidden');
+                document.getElementById('nextBtn').classList.add('hidden');
+                document.getElementById('submitBtn').classList.remove('hidden');
+
+                renderUseCases();
+            }
+        });
+
+        document.getElementById('backBtn').addEventListener('click', () => {
+            currentStep = 1;
+            document.getElementById('step2').classList.remove('active');
+            document.getElementById('step1').classList.add('active');
+            document.getElementById('stepLabel').textContent = 'Schritt 1 von 2';
+            document.getElementById('progressBar').style.width = '50%';
+            document.getElementById('backBtn').classList.add('hidden');
+            document.getElementById('nextBtn').classList.remove('hidden');
+            document.getElementById('submitBtn').classList.add('hidden');
+        });
+
+        // Form submission
+        document.getElementById('submitBtn').addEventListener('click', async () => {
+            const dataConsent = document.getElementById('dataConsent').checked;
+            if (!dataConsent) {
+                alert('Bitu2026e stimmen Sie der Datenverarbeitung zu.');
+                return;
+            }
+
+            const formData = {
+                name: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                company: document.getElementById('company').value,
+                phone: document.getElementById('phone').value,
+                industry: selectedIndustry,
+                useCases: selectedUseCases,
+                companySize: document.getElementById('companySize').value,
+                challenge: document.getElementById('challenge').value,
+                timestamp: new Date().toISOString()
+            };
+
+            try {
+                const response = await fetch('/api/kontakt', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    window.location.href = '/danke.html';
+                } else {
+                    alert('Ein Fehler ist aufgetreten. Bitu2026e versuchen Sie es späu2026er nochmals.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Ein Fehler ist aufgetreten. Bitu2026e versuchen Sie es späu2026er nochmals.');
+            }
         });
 
         // Initialize
-        if (typeof lucide !== 'undefined') lucide.createIcons();
+        renderIndustries();
     </script>
 </body>
 </html>
