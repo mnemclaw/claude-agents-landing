@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.Y.O. — Agent You Own | ASCII Edition</title>
+    <meta name="description" content="Autonomous 24/7 AI agents that handle repetitive tasks for Swiss KMUs. Interactive ASCII water background.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ASCII Water Background Layer */
+        #ascii-water-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        #ascii-water-bg canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        /* Ensure content stays readable over ASCII */
+        .hero {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-container {
+            background: rgba(20, 20, 19, 0.85);
+            backdrop-filter: blur(8px);
+            padding: 3rem;
+            border-radius: 24px;
+            border: 1px solid rgba(250, 175, 79, 0.2);
+        }
+
+        /* Other sections need background to cover ASCII */
+        .value-props,
+        .services,
+        .compliance,
+        .pricing,
+        .process,
+        .trust,
+        .cta-section {
+            position: relative;
+            z-index: 1;
+            background: var(--bg-main);
+        }
+
+        /* Make hero transparent to show ASCII */
+        body {
+            background: #141413;
+        }
+
+        .hero {
+            background: transparent !important;
+            min-height: 100vh;
+        }
+
+        /* Interactive hint */
+        .water-hint {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            font-size: 0.75rem;
+            color: rgba(250, 175, 79, 0.5);
+            z-index: 100;
+            pointer-events: none;
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+<body>
+    <!-- ASCII Water Background -->
+    <div id="ascii-water-bg"></div>
+    <div class="water-hint">Move mouse to ripple · Klick to splash</div>
+
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><img src="logo.svg" alt="A.Y.O." class="logo-img"><span class="logo-text">A.Y.O.</span></a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#compliance">Compliance</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <button class="lang-btn" data-lang="de">DE</button>
+                <button class="lang-btn" data-lang="fr">FR</button>
+                <button class="lang-btn" data-lang="it">IT</button>
+                <button class="lang-btn active" data-lang="en">EN</button>
+            </div>
+            <a href="contact.html" class="btn btn-primary nav-cta"><span>Agent anfragen</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <i data-lucide="menu" class="icon-menu"></i>
+                <i data-lucide="x" class="icon-close"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero" id="hero">
+        <div class="hero-container">
+            <div class="hero-badge">
+                <i data-lucide="sparkles" class="icon-sm"></i>
+                <span>Interactive ASCII Edition</span>
+            </div>
+            <h1 class="hero-title">A.Y.O. Agent You Own</h1>
+            <p class="hero-subtitle">Autonomous AI for Swiss KMUs. 24/7 active — you focus on what matters. CHF 500/month.</p>
+            <div class="hero-ctas">
+                <a href="contact.html" class="btn btn-primary btn-lg"><span>Agent anfragen</span></a>
+                <a href="index.html" class="btn btn-secondary btn-lg">Standard Site</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="value-props" id="value-props">
+        <div class="container">
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i data-lucide="waves" class="icon-lg"></i></div>
+                    <h3>Fluid AI</h3>
+                    <p>Adapts like water. Ripples through your workflows.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i data-lucide="shield-check" class="icon-lg"></i></div>
+                    <h3>Swiss nFADP</h3>
+                    <p>Encrypted. Basel-based. Swiss precision.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i data-lucide="zap" class="icon-lg"></i></div>
+                    <h3>Always On</h3>
+                    <p>24/7 execution. No sick days. No weekends.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 A.Y.O. (Agent You Own) · Basel, Switzerland</p>
+                <p><a href="imprint.html">Impressum</a> · <a href="privacy.html">Privacy</a> · <a href="index.html">Standard Site</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+
+    <!-- Three.js Water Ripples -->
+    <script type="module">
+        import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
+        import { AsciiEffect } from 'https://unpkg.com/three@0.160.0/examples/jsm/effects/AsciiEffect.js';
+
+        // Scene setup
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x141413);
+
+        const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+        camera.position.z = 0;
+
+        const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(1);
+
+        // ASCII Effect with water characters
+        const effect = new AsciiEffect(renderer, ' .:-~+=#%@', {
+            resolution: 0.12,
+            scale: 1,
+            color: false,
+            alpha: false
+        });
+        effect.setSize(window.innerWidth, window.innerHeight);
+        effect.domElement.style.color = '#3a3a38';
+        effect.domElement.style.backgroundColor = 'transparent';
+        document.getElementById('ascii-water-bg').appendChild(effect.domElement);
+
+        // Water plane geometry
+        const geometry = new THREE.PlaneGeometry(2, 2, 128, 128);
+
+        // Custom shader material for water
+        const material = new THREE.ShaderMaterial({
+            uniforms: {
+                uTime: { value: 0 },
+                uMouse: { value: new THREE.Vector2(0.5, 0.5) },
+                uRipples: { value: [] }
+            },
+            vertexShader: `
+                uniform float uTime;
+                uniform vec2 uMouse;
+                varying float vElevation;
+                varying vec2 vUv;
+
+                void main() {
+                    vec3 pos = position;
+                    vUv = uv;
+
+                    // Base wave
+                    float wave1 = sin(pos.x * 8.0 + uTime * 0.5) * 0.08;
+                    float wave2 = sin(pos.y * 6.0 + uTime * 0.3) * 0.06;
+                    float wave3 = sin((pos.x + pos.y) * 4.0 + uTime * 0.4) * 0.04;
+
+                    // Mouse interaction ripple
+                    vec2 mousePos = uMouse * 2.0 - 1.0;
+                    float dist = length(pos.xy - mousePos);
+                    float ripple = sin(dist * 15.0 - uTime * 3.0) * exp(-dist * 2.0) * 0.15;
+
+                    pos.z = wave1 + wave2 + wave3 + ripple;
+                    vElevation = pos.z;
+
+                    gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+                }
+            `,
+            fragmentShader: `
+                varying float vElevation;
+                varying vec2 vUv;
+
+                void main() {
+                    // Map elevation to brightness
+                    float brightness = (vElevation + 0.5) * 0.5 + 0.25;
+                    gl_FragColor = vec4(vec3(brightness), 1.0);
+                }
+            `,
+            side: THREE.DoubleSide
+        });
+
+        const mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+
+        // Lighting for depth perception
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+        scene.add(ambientLight);
+
+        const directionalLight = new THREE.DirectionalLight(0xFAAF4F, 0.4);
+        directionalLight.position.set(1, 1, 1);
+        scene.add(directionalLight);
+
+        // Mouse tracking
+        let mouse = { x: 0.5, y: 0.5 };
+        let targetMouse = { x: 0.5, y: 0.5 };
+
+        function onMouseMove(event) {
+            targetMouse.x = event.clientX / window.innerWidth;
+            targetMouse.y = 1.0 - (event.clientY / window.innerHeight);
+        }
+
+        function onTouchMove(event) {
+            if (event.touches.length === 1) {
+                targetMouse.x = event.touches[0].clientX / window.innerWidth;
+                targetMouse.y = 1.0 - (event.touches[0].clientY / window.innerHeight);
+            }
+        }
+
+        // Click creates splash
+        function onClick(event) {
+            const splash = {
+                x: event.clientX / window.innerWidth * 2 - 1,
+                y: -(event.clientY / window.innerHeight * 2 - 1),
+                strength: 0.5,
+                decay: 0.96
+            };
+            // Add ripple intensity to shader
+            material.uniforms.uRipples.value.push(splash);
+        }
+
+        document.addEventListener('mousemove', onMouseMove, { passive: true });
+        document.addEventListener('touchmove', onTouchMove, { passive: true });
+        document.addEventListener('click', onClick);
+
+        // Animation
+        let time = 0;
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            time += 0.016;
+            material.uniforms.uTime.value = time;
+
+            // Smooth mouse follow
+            mouse.x += (targetMouse.x - mouse.x) * 0.05;
+            mouse.y += (targetMouse.y - mouse.y) * 0.05;
+            material.uniforms.uMouse.value.set(mouse.x, mouse.y);
+
+            // Cleanup decayed ripples
+            material.uniforms.uRipples.value = material.uniforms.uRipples.value.filter(
+                r => r.strength > 0.01
+            );
+            material.uniforms.uRipples.value.forEach(r => {
+                r.strength *= r.decay;
+            });
+
+            effect.render(scene, camera);
+        }
+
+        // Resize
+        function onResize() {
+            effect.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        window.addEventListener('resize', onResize, { passive: true });
+
+        animate();
+    </script>
+</body>
+</html>
