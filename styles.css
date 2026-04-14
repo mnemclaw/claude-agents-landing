@@ -436,8 +436,8 @@ p {
 }
 
 .hero-graphic {
-  margin-top: 3rem;
-  margin-bottom: -3rem;
+  margin-top: 5rem;
+  margin-bottom: -1rem;
   display: flex;
   justify-content: center;
 }
@@ -483,6 +483,7 @@ p {
 .orbit-1 {
   width: 80px;
   height: 80px;
+  animation: rotate 12s linear infinite;
 }
 
 .orbit-2 {
@@ -495,6 +496,18 @@ p {
   width: 180px;
   height: 180px;
   animation: rotate 30s linear infinite reverse;
+}
+
+.orbit-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--primary);
+  border-radius: 50%;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px rgba(250, 175, 79, 0.6);
 }
 
 .node-dots {
@@ -549,7 +562,7 @@ p {
    Value Props Section
    ============================================ */
 .value-props {
-  padding: 1rem 0 var(--section-padding);
+  padding: 0 0 var(--section-padding);
 }
 .value-grid {
   display: grid;
