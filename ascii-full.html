@@ -806,14 +806,12 @@
                     // Scrolled to content - light theme
                     nav.classList.remove('nav--dark');
                     nav.classList.add('nav--light');
-                    // Swap logo if needed (light version)
-                    if (navLogo) navLogo.style.filter = 'invert(1)';
+                    // Logo stays normal (no invert)
                 } else {
                     // At top showing ASCII - dark theme
                     nav.classList.remove('nav--light');
                     nav.classList.add('nav--dark');
-                    // Reset logo
-                    if (navLogo) navLogo.style.filter = 'none';
+                    // Logo stays normal (no invert)
                 }
             });
         }, {
