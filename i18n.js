@@ -574,7 +574,7 @@ function setLanguage(lang) {
     de: 'Claude Agents Schweiz — KI-Agenten für Ihr KMU',
     fr: 'Claude Agents Suisse — Agents IA pour Votre PME',
     it: 'Claude Agents Svizzera — Agenti IA per la Sua PMI',
-    en: 'Claude Agents Switzerland — Swiss AI Agents for Your KMU'
+    en: 'A.Y.O. (Agent You Own) — Swiss AI Agents for Your KMU'
   };
   document.title = titleMap[lang];
 }

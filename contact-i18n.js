@@ -4,7 +4,7 @@
 const contactI18n = {
     de: {
         contact: {
-            metaTitle: 'Kontakt — Claude Agents Switzerland',
+            metaTitle: 'Kontakt — A.Y.O. (Agent You Own)',
             metaDesc: 'Vereinbaren Sie ein Gespräch über autonome KI-Agenten für Ihr KMU.',
             title: 'Lassen Sie uns über Ihren Agenten sprechen',
             subtitle: '4 schnelle Schritte zu autonomer KI für Ihr Unternehmen',
@@ -66,7 +66,7 @@ const contactI18n = {
 
     fr: {
         contact: {
-            metaTitle: 'Contact — Claude Agents Switzerland',
+            metaTitle: 'Contact — A.Y.O. (Agent You Own)',
             metaDesc: 'Prenez rendez-vous pour discuter des agents IA autonomes pour votre PME.',
             title: 'Parlons de votre agent',
             subtitle: '4 étapes rapides vers l\'IA autonome pour votre entreprise',
@@ -128,7 +128,7 @@ const contactI18n = {
 
     it: {
         contact: {
-            metaTitle: 'Contatto — Claude Agents Switzerland',
+            metaTitle: 'Contatto — A.Y.O. (Agent You Own)',
             metaDesc: 'Fissate un appuntamento per discutere degli agenti IA autonomi per la vostra PMI.',
             title: 'Parliamo del vostro agente',
             subtitle: '4 passaggi rapidi verso l\'IA autonoma per la vostra azienda',
@@ -190,7 +190,7 @@ const contactI18n = {
 
     en: {
         contact: {
-            metaTitle: 'Contact — Claude Agents Switzerland',
+            metaTitle: 'Contact — A.Y.O. (Agent You Own)',
             metaDesc: 'Get in touch to discuss autonomous AI agents for your business.',
             title: 'Let\'s Discuss Your Agent',
             subtitle: '4 quick steps to autonomous AI for your business',
