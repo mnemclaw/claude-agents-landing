@@ -229,6 +229,7 @@ p {
 }
 
 .nav-container {
+  position: relative;
   height: 100%;
   display: flex;
   align-items: center;
@@ -279,8 +280,11 @@ p {
   display: none;
 }
 
-/* Language Switcher */
+/* Language Switcher - Centered, doesn't affect layout */
 .lang-switcher {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   gap: 0.25rem;
   align-items: center;
