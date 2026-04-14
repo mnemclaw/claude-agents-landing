@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.Y.O. — ASCII Edition | (Agent You Own) — Swiss AI Agents for Your KMU</title>
+    <meta name="description" content="Autonomous 24/7 AI agents that handle repetitive tasks for Swiss KMUs. Augment your team, don't replace it. Basel-based, nFADP compliant. From CHF 500/month.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ASCII Water Background */
+        #ascii-water-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        #ascii-water-bg canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+        
+        .water-hint {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            font-size: 0.75rem;
+            color: rgba(250, 175, 79, 0.5);
+            z-index: 100;
+            pointer-events: none;
+        }
+        
+        /* Ensure hero text is readable on dark background */
+        .hero {
+            background: rgba(20, 20, 19, 0.75) !important;
+            backdrop-filter: blur(4px);
+        }
+        
+        .hero-container {
+            background: rgba(20, 20, 19, 0.6);
+            backdrop-filter: blur(8px);
+            padding: 3rem;
+            border-radius: 24px;
+            border: 1px solid rgba(250, 175, 79, 0.15);
+        }
+        
+        /* Add subtle glow to hero text */
+        .hero-title {
+            text-shadow: 0 0 40px rgba(250, 175, 79, 0.3);
+        }
+        
+        /* Make sure sections have solid backgrounds */
+        .value-props,
+        .services,
+        .pricing,
+        .process,
+        .trust {
+            background: var(--bg-main);
+        }
+        
+        body {
+            background: #141413;
+        }
+    </style>
+</head>
+<body>
+    <!-- ASCII Water Background -->
+    <div id="ascii-water-bg"></div>
+    <div class="water-hint">Move mouse to ripple · Click to splash</div>
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo"><img src="logo.svg" alt="Claude Agents" class="logo-img"><span class="logo-text">Claude-Agents</span></a>
+            <ul class="nav-links">
+                <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                <li><a href="#pricing" data-i18n="nav.pricing">Pricing</a></li>
+                <li><a href="#process" data-i18n="nav.process">Process</a></li>
+                <li><a href="#compliance" data-i18n="nav.compliance">Compliance</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <button class="lang-btn" data-lang="de" title="Deutsch">DE</button>
+                <button class="lang-btn" data-lang="fr" title="Français">FR</button>
+                <button class="lang-btn" data-lang="it" title="Italiano">IT</button>
+                <button class="lang-btn active" data-lang="en" title="English">EN</button>
+            </div>
+            <a href="contact.html" class="btn btn-primary nav-cta" data-i18n="nav.bookDemo"><span>Agent anfragen</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <i data-lucide="menu" class="icon-menu"></i>
+                <i data-lucide="x" class="icon-close"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero" id="hero">
+        <div class="hero-container">
+            <div class="hero-badge">
+                <i data-lucide="shield-check" class="icon-sm"></i>
+                <span data-i18n="hero.badge">Made in Switzerland nFADP <span data-i18n="compliance.compliant">Compliant</span></span>
+            </div>
+            <h1 class="hero-title" data-i18n="hero.title">Swiss AI Agents for Your KMU</h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">Our agents handle repetitive tasks for you. 24/7 active – you focus on what matters. From CHF 500/month. Basel-based.</p>
+            <div class="hero-ctas">
+                <a href="contact.html" class="btn btn-primary btn-lg" data-i18n="hero.ctaPrimary"><span>Agent anfragen</span></a>
+                <a href="#services" class="btn btn-secondary btn-lg" data-i18n="hero.ctaSecondary">View Use Cases</a>
+            </div>
+            <div class="hero-social">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span data-i18n="hero.socialProof">4.9/5 from Swiss KMUs · Basel-based</span>
+            </div>
+            <div class="hero-graphic">
+                <div class="neural-node">
+                    <div class="node-core"></div>
+                    <div class="node-orbits">
+                        <div class="orbit orbit-1">
+                            <span class="orbit-dot"></span>
+                        </div>
+                        <div class="orbit orbit-2">
+                            <span class="orbit-dot"></span>
+                        </div>
+                        <div class="orbit orbit-3">
+                            <span class="orbit-dot"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="value-props" id="value-props">
+        <div class="container">
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i data-lucide="mountain" class="icon-lg"></i></div>
+                    <h3 data-i18n="values.swissBased">Swiss-Based</h3>
+                    <p data-i18n="values.swissBasedDesc">Basel offices. nFADP and CH-Dat compliant. Your data stays in Switzerland.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i data-lucide="settings" class="icon-lg"></i></div>
+                    <h3 data-i18n="values.autonomous">Autonomous</h3>
+                    <p data-i18n="values.autonomousDesc">24/7 active – you focus on what matters.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i data-lucide="wallet" class="icon-lg"></i></div>
+                    <h3 data-i18n="values.flatPricing">Flat Pricing</h3>
+                    <p data-i18n="values.flatPricingDesc">CHF 500–5,000 per month. Setup fee once. No surprises no hourly billing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="services.title">What Our Agents Do For You</h2>
+                <p data-i18n="services.subtitle">Outcome-as-a-Service: autonomous 24/7 execution for Swiss industries</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon"><i data-lucide="file-text" class="icon-md"></i></div>
+                        <div class="service-tag" data-i18n="services.forTreuhander">For Treuhänder</div>
+                    </div>
+                    <h3 data-i18n="services.digitalFiduciary">Digital Fiduciary</h3>
+                    <ul class="service-features">
+                        <li data-i18n="services.dfFeature1"><i data-lucide="check"></i> PDF Receipt → Ready-to-Post Summaries</li>
+                        <li data-i18n="services.dfFeature2"><i data-lucide="check"></i> Automated Zefix entity lookup</li>
+                        <li data-i18n="services.dfFeature3"><i data-lucide="check"></i> Daily reconciliation batching</li>
+                    </ul>
+                    <div class="metric-badge">
+                        <span class="metric-number">70-85%</span>
+                        <span class="metric-label" data-i18n="services.dfMetricLabel">Time Saved</span>
+                    </div>
+                    <a href="#cta" class="service-link"><span data-i18n="services.learnMore">Learn More →</span></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon"><i data-lucide="building-2" class="icon-md"></i></div>
+                        <div class="service-tag" data-i18n="services.forPM">For Project Managers</div>
+                    </div>
+                    <h3 data-i18n="services.constructionHub">Construction Hub</h3>
+                    <ul class="service-features">
+                        <li data-i18n="services.chFeature1"><i data-lucide="check"></i> Plan change → Auto notify subcontractors</li>
+                        <li data-i18n="services.chFeature2"><i data-lucide="check"></i> Photo metadata reports</li>
+                        <li data-i18n="services.chFeature3"><i data-lucide="check"></i> Progress dashboard updates</li>
+                    </ul>
+                    <div class="metric-badge">
+                        <span class="metric-number">12-16 hrs</span>
+                        <span class="metric-label" data-i18n="services.chMetricLabel">Weekly Recovery</span>
+                    </div>
+                    <a href="#cta" class="service-link"><span data-i18n="services.learnMore">Learn More →</span></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon"><i data-lucide="message-square" class="icon-md"></i></div>
+                        <div class="service-tag" data-i18n="services.forSales">For Sales Teams</div>
+                    </div>
+                    <h3 data-i18n="services.multilingualSDR">Multilingual SDR</h3>
+                    <ul class="service-features">
+                        <li data-i18n="services.sdrFeature1"><i data-lucide="check"></i> DE/FR/IT lead triage</li>
+                        <li data-i18n="services.sdrFeature2"><i data-lucide="check"></i> Auto-qualification scoring</li>
+                        <li data-i18n="services.sdrFeature3"><i data-lucide="check"></i> Calendar booking integration</li>
+                    </ul>
+                    <div class="metric-badge">
+                        <span class="metric-number">80%</span>
+                        <span class="metric-label" data-i18n="services.sdrMetricLabel">Faster Response</span>
+                    </div>
+                    <a href="#cta" class="service-link"><span data-i18n="services.learnMore">Learn More →</span></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon"><i data-lucide="package" class="icon-md"></i></div>
+                        <div class="service-tag" data-i18n="services.forOps">For Operations</div>
+                    </div>
+                    <h3 data-i18n="services.supplyChain">Supply Chain Watchdog</h3>
+                    <ul class="service-features">
+                        <li data-i18n="services.scFeature1"><i data-lucide="check"></i> Real-time stock monitoring</li>
+                        <li data-i18n="services.scFeature2"><i data-lucide="check"></i> Seasonal forecasting alerts</li>
+                        <li data-i18n="services.scFeature3"><i data-lucide="check"></i> Procurement drafting</li>
+                    </ul>
+                    <div class="metric-badge">
+                        <span class="metric-number">10-25%</span>
+                        <span class="metric-label" data-i18n="services.scMetricLabel">Stock-Out Reduction</span>
+                    </div>
+                    <a href="#cta" class="service-link"><span data-i18n="services.learnMore">Learn More →</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="pricing.title">Simple Pricing</h2>
+                <p data-i18n="pricing.subtitle">Setup once. Scale infinitely. Swiss quality.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 data-i18n="pricing.foundation">Foundation</h3>
+                        <div class="pricing-price">
+                            <span class="currency">CHF</span>
+                            <span class="amount">500</span>
+                            <span class="period" data-i18n="pricing.perMonth">/month</span>
+                        </div>
+                        <p class="pricing-setup">+ <span data-i18n="pricing.setup">Setup</span> CHF 2,500</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li data-i18n="pricing.agent1"><i data-lucide="check"></i> 1 Agent</li>
+                        <li data-i18n="pricing.dataSource1"><i data-lucide="check"></i> 1 Data Source</li>
+                        <li data-i18n="pricing.emailSupport"><i data-lucide="check"></i> Email Support</li>
+                        <li data-i18n="compliance.nFADP"><i data-lucide="check"></i> nFADP <span data-i18n="compliance.compliant">Compliant</span></li>
+                    </ul>
+                    <a href="#cta" class="btn btn-outline"><span data-i18n="pricing.getStarted">Get Started</span></a>
+                </div>
+
+                <div class="pricing-card pricing-card--popular">
+                    <div class="popular-badge" data-i18n="pricing.mostPopular">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3 data-i18n="pricing.growth">Growth</h3>
+                        <div class="pricing-price">
+                            <span class="currency">CHF</span>
+                            <span class="amount">1,200</span>
+                            <span class="period" data-i18n="pricing.perMonth">/month</span>
+                        </div>
+                        <p class="pricing-setup">+ Setup CHF 5,000</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li data-i18n="pricing.agent3"><i data-lucide="check"></i> 3 Agents</li>
+                        <li data-i18n="pricing.multiLang"><i data-lucide="check"></i> Multi-language (DE/FR/IT)</li>
+                        <li data-i18n="pricing.apiAccess"><i data-lucide="check"></i> API Access</li>
+                        <li data-i18n="pricing.whatsapp"><i data-lucide="check"></i> WhatsApp Channel</li>
+                        <li data-i18n="pricing.slack"><i data-lucide="check"></i> Slack Connect</li>
+                        <li data-i18n="pricing.prioritySupport"><i data-lucide="check"></i> Priority Support</li>
+                    </ul>
+                    <a href="#cta" class="btn btn-primary"><span data-i18n="pricing.getStarted">Get Started</span></a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 data-i18n="pricing.enterprise">Enterprise</h3>
+                        <div class="pricing-price">
+                            <span class="currency">CHF</span>
+                            <span class="amount">5,000+</span>
+                            <span class="period" data-i18n="pricing.perMonth">/month</span>
+                        </div>
+                        <p class="pricing-setup"><span data-i18n="pricing.customSetup">Custom Setup</span> CHF 15,000+</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li data-i18n="pricing.agentsUnlimited"><i data-lucide="check"></i> Unlimited Agents</li>
+                        <li data-i18n="pricing.customIntegrations"><i data-lucide="check"></i> Custom Integrations</li>
+                        <li data-i18n="pricing.sla"><i data-lucide="check"></i> SLAs</li>
+                        <li data-i18n="pricing.successManager"><i data-lucide="check"></i> Dedicated Success Manager</li>
+                    </ul>
+                    <a href="#cta" class="btn btn-outline"><span data-i18n="pricing.contactSales">Contact Sales</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="process.title">How We Build Your Agent</h2>
+                <p data-i18n="process.subtitle">From idea to autonomous execution in 4 weeks</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4 data-i18n="process.step1">Discovery</h4>
+                        <p data-i18n="process.step1Desc">We understand your pain points and map data sources</p>
+                        <span class="step-timeline" data-i18n="process.step1Time">Week 1</span>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4 data-i18n="process.step2">Strategy</h4>
+                        <p data-i18n="process.step2Desc">We design your agent architecture and workflows</p>
+                        <span class="step-timeline" data-i18n="process.step1Time">Week 1</span>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4 data-i18n="process.step3">Implementation</h4>
+                        <p data-i18n="process.step3Desc">We build test and deploy in days not months</p>
+                        <span class="step-timeline" data-i18n="process.step3Time">Week 2-3</span>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4 data-i18n="process.step4">Support</h4>
+                        <p data-i18n="process.step4Desc">24/7 monitoring optimization and human backup</p>
+                        <span class="step-timeline" data-i18n="process.step4Time">Ongoing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trust" id="trust">
+        <div class="container">
+            <div class="trust-header">
+                <h2 data-i18n="trust.title">Built for Swiss KMUs Like</h2>
+            </div>
+            <div class="logo-marquee">
+                <div class="logo-track">
+                    <div class="logo-item">BE Digital Basel</div>
+                    <div class="logo-item">Treuhand Basel</div>
+                    <div class="logo-item">Swissco Construction</div>
+                    <div class="logo-item">Basel Pharma</div>
+                    <div class="logo-item">Swiss Trade GmbH</div>
+                    <div class="logo-item">Basel Advisory</div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <blockquote data-i18n="trust.testimonialQuote">"Claude Agents reduced our invoice processing time by 80%. It's like having a full-time employee that never sleeps at a fraction of the cost."</blockquote>
+                <cite>
+                    <span class="testimonial-name"><span data-i18n="trust.testimonialAuthor">Managing Director</span></span>
+                    <span class="testimonial-company"><span data-i18n="trust.testimonialRole">Treuhand GmbH Basel</span></span>
+                </cite>
+            </div>
+        </div>
+    </section>
+    <section class="compliance" id="compliance">
+        <div class="container">
+            <div class="section-header section-header--light">
+                <h2 data-i18n="compliance.title">Swiss Standards Swiss Trust</h2>
+                <p data-i18n="compliance.nFADP">Your data stays in Switzerland. Period.</p>
+            </div>
+            <div class="compliance-badges">
+                <div class="compliance-badge">
+                    <div class="badge-icon"><i data-lucide="shield" class="icon-md"></i></div>
+                    <span class="badge-name" data-i18n="compliance.nFADP">nFADP</span>
+                    <span class="badge-desc"><span data-i18n="compliance.compliant">Compliant</span></span>
+                </div>
+                <div class="compliance-badge">
+                    <div class="badge-icon"><i data-lucide="flag" class="icon-md"></i></div>
+                    <span class="badge-name" data-i18n="compliance.chDat">CH-Dat</span>
+                    <span class="badge-desc"><span data-i18n="compliance.verified">Verified</span></span>
+                </div>
+                <div class="compliance-badge">
+                    <div class="badge-icon"><i data-lucide="globe" class="icon-md"></i></div>
+                    <span class="badge-name" data-i18n="compliance.gdpr">GDPR</span>
+                    <span class="badge-desc"><span data-i18n="compliance.compliant">Compliant</span></span>
+                </div>
+                <div class="compliance-badge">
+                    <div class="badge-icon"><i data-lucide="lock" class="icon-md"></i></div>
+                    <span class="badge-name" data-i18n="compliance.iso">ISO 27001</span>
+                    <span class="badge-desc"><span data-i18n="compliance.aligned">Aligned</span></span>
+                </div>
+            </div>
+            <div class="compliance-footer">
+                <p><span data-i18n="compliance.baselCH">Basler Treuhand</span> · Basel-Stadt Handelsregister</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 data-i18n="cta.title">Ready to Augment Your Team?</h2>
+                <p data-i18n="cta.subtitle">Start your custom AI agent in 3 easy steps.</p>
+                <a href="contact.html" class="btn btn-cta-dark"><span>Jetzt Agent anfragen</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo"><img src="logo.svg" alt="Claude Agents" class="footer-logo-img"><span>Claude-Agents</span></a>
+                    <p data-i18n="footer.tagline">Swiss AI Agents for KMUs</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer.product">Services</h4>
+                    <ul>
+                        <li data-i18n="footer.useCases"><a href="#services">Use Cases</a></li>
+                        <li data-i18n="footer.pricing"><a href="#pricing">Pricing</a></li>
+                        <li data-i18n="footer.compliance"><a href="#compliance">Compliance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer.company">Company</h4>
+                    <ul>
+                        <li data-i18n="footer.about"><a href="#">About</a></li>
+                        <li data-i18n="footer.contact"><a href="#cta">Contact</a></li>
+                        <li data-i18n="footer.process"><a href="#process">Process</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer.legal">Legal</h4>
+                    <ul>
+                        <li><a href="imprint.html">Impressum</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="#compliance">nFADP</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 A.Y.O. (Agent You Own) · Basel, Switzerland · Handelsregister Basel-Stadt</p>
+                <p>Made with Swiss precision · claude-agents.ch ist ein unabhängiger Implementierungspartner und steht in keiner Verbindung zu Anthropic PBC</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="i18n.js">
+    </script>
+    <script src="main.js"></script>
+    <script>
+        // Always scroll to top on page load
+        if (history.scrollRestoration) history.scrollRestoration = 'manual';
+        window.scrollTo(0, 0);
+    </script>
+    <!-- Three.js Water Ripples -->
+    <script type="module">
+        import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
+        import { AsciiEffect } from 'https://unpkg.com/three@0.160.0/examples/jsm/effects/AsciiEffect.js';
+
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x141413);
+
+        const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+        const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(1);
+
+        const effect = new AsciiEffect(renderer, ' .:-~+=#%@', {
+            resolution: 0.12,
+            scale: 1,
+            color: false,
+            alpha: false
+        });
+        effect.setSize(window.innerWidth, window.innerHeight);
+        effect.domElement.style.color = '#2a2a28';
+        effect.domElement.style.backgroundColor = 'transparent';
+        document.getElementById('ascii-water-bg').appendChild(effect.domElement);
+
+        const geometry = new THREE.PlaneGeometry(2, 2, 128, 128);
+        const material = new THREE.ShaderMaterial({
+            uniforms: {
+                uTime: { value: 0 },
+                uMouse: { value: new THREE.Vector2(0.5, 0.5) }
+            },
+            vertexShader: `
+                uniform float uTime;
+                uniform vec2 uMouse;
+                varying float vElevation;
+                varying vec2 vUv;
+                void main() {
+                    vec3 pos = position;
+                    vUv = uv;
+                    float wave1 = sin(pos.x * 8.0 + uTime * 0.5) * 0.08;
+                    float wave2 = sin(pos.y * 6.0 + uTime * 0.3) * 0.06;
+                    float wave3 = sin((pos.x + pos.y) * 4.0 + uTime * 0.4) * 0.04;
+                    vec2 mousePos = uMouse * 2.0 - 1.0;
+                    float dist = length(pos.xy - mousePos);
+                    float ripple = sin(dist * 15.0 - uTime * 3.0) * exp(-dist * 2.0) * 0.15;
+                    pos.z = wave1 + wave2 + wave3 + ripple;
+                    vElevation = pos.z;
+                    gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+                }
+            `,
+            fragmentShader: `
+                varying float vElevation;
+                varying vec2 vUv;
+                void main() {
+                    float brightness = (vElevation + 0.5) * 0.5 + 0.25;
+                    gl_FragColor = vec4(vec3(brightness), 1.0);
+                }
+            `,
+            side: THREE.DoubleSide
+        });
+
+        const mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+        scene.add(ambientLight);
+
+        const directionalLight = new THREE.DirectionalLight(0xFAAF4F, 0.4);
+        directionalLight.position.set(1, 1, 1);
+        scene.add(directionalLight);
+
+        let mouse = { x: 0.5, y: 0.5 };
+        let targetMouse = { x: 0.5, y: 0.5 };
+
+        function onMouseMove(event) {
+            targetMouse.x = event.clientX / window.innerWidth;
+            targetMouse.y = 1.0 - (event.clientY / window.innerHeight);
+        }
+        
+        function onTouchMove(event) {
+            if (event.touches.length === 1) {
+                targetMouse.x = event.touches[0].clientX / window.innerWidth;
+                targetMouse.y = 1.0 - (event.touches[0].clientY / window.innerHeight);
+            }
+        }
+
+        document.addEventListener('mousemove', onMouseMove, { passive: true });
+        document.addEventListener('touchmove', onTouchMove, { passive: true });
+
+        let time = 0;
+        function animate() {
+            requestAnimationFrame(animate);
+            time += 0.016;
+            material.uniforms.uTime.value = time;
+            mouse.x += (targetMouse.x - mouse.x) * 0.05;
+            mouse.y += (targetMouse.y - mouse.y) * 0.05;
+            material.uniforms.uMouse.value.set(mouse.x, mouse.y);
+            effect.render(scene, camera);
+        }
+
+        function onResize() {
+            effect.setSize(window.innerWidth, window.innerHeight);
+        }
+        window.addEventListener('resize', onResize, { passive: true });
+        animate();
+    </script>
+</body>
+</html>
