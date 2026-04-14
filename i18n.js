@@ -15,7 +15,7 @@ const i18n = {
     },
     hero: {
       badge: 'Made in Switzerland nFADP-konform',
-      title: 'Schweizer KI-Agenten für Ihr KMU',
+      title: 'Swiss Managed AI Solutions für KMUs',
       subtitle: 'Unsere Agenten übernehmen repetitive Aufgaben für Sie. 24/7 aktiv – Sie konzentrieren sich auf das Wesentliche. Ab CHF 500/Monat. Basel-basiert.',
       ctaPrimary: 'Agent anfragen',
       ctaSecondary: 'Anwendungsfälle',
@@ -147,7 +147,7 @@ const i18n = {
     },
     hero: {
       badge: 'Fabriqué en Suisse Conforme nFADP',
-      title: 'Agents IA Suisses pour Votre PME',
+      title: 'Swiss Managed AI Solutions for SMEs',
       subtitle: 'Nos agents prennent en charge les tâches répétitives pour vous. 24/7 actifs – vous vous concentrez sur l\'essentiel. Dès CHF 500/mois. Basés à Bâle.',
       ctaPrimary: 'Demander un agent',
       ctaSecondary: 'Voir les cas d\'usage',
@@ -408,7 +408,7 @@ const i18n = {
     },
     hero: {
       badge: 'Made in Switzerland nFADP Compliant',
-      title: 'Swiss AI Agents for Your KMU',
+      title: 'Swiss Managed AI Solutions for SMEs',
       subtitle: 'Our agents handle repetitive tasks for you. 24/7 active – you focus on what matters. From CHF 500/month. Basel-based.',
       ctaPrimary: 'Request Agent',
       ctaSecondary: 'View Use Cases',
