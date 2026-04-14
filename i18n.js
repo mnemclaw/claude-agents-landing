@@ -23,7 +23,7 @@ const i18n = {
     },
     values: {
       swissBased: 'Schweizer-basiert',
-      swissBasedDesc: 'Basler Büros. nFADP- und CH-Dat-konform. Ihre Daten bleiben in der Schweiz.',
+      swissBasedDesc: 'Basler Büros. Verarbeitung gemäss DSG/Anthropic Acceptable Use Policy. Datentransparenz und keine Weitergabe an Dritte.',
       autonomous: 'Autonom',
       autonomousDesc: '24/7 aktiv – Sie konzentrieren sich auf das Wesentliche.',
       flatPricing: 'Pauschalpreis',
@@ -111,11 +111,11 @@ const i18n = {
       testimonialRole: 'Geschäftsführer, Treuhand Weber GmbH, Basel'
     },
     compliance: {
-      title: 'Swiss-Grade Compliance',
-      nFADP: 'nFADP-konform',
-      chDat: 'CH-Dat zertifiziert',
-      gdpr: 'DSGVO-ready',
-      iso: 'ISO 27001'
+      title: 'Compliance & Datenschutz',
+      nFADP: 'DSG-konform',
+      chDat: 'Transparenz first',
+      gdpr: 'Datenschutz by Design',
+      iso: 'Sichere Infrastruktur'
     },
     cta: {
       title: 'Bereit, Ihr Team zu verstärken?',
@@ -125,11 +125,14 @@ const i18n = {
       privacy: 'Kein Spam. Swiss-Datenschutz.'
     },
     footer: {
-      tagline: 'Swiss AI Agents für KMUs',
+      tagline: 'KI-Automation für Schweizer Unternehmen — mit Anthropic Technologie',
       product: 'Produkt',
       company: 'Unternehmen',
       legal: 'Rechtliches',
-      copyright: '© 2025 claude-agents.ch · Basel, Switzerland'
+      poweredBy: 'Powered by Claude',
+      imprint: 'Impressum',
+      privacy: 'Datenschutz',
+      copyright: '© 2026 Claude Agent · Basel, Switzerland'
     }
   },
 
@@ -152,7 +155,7 @@ const i18n = {
     },
     values: {
       swissBased: 'Basé en Suisse',
-      swissBasedDesc: 'Bureaux à Bâle. Conforme nFADP et CH-Dat. Vos données restent en Suisse.',
+      swissBasedDesc: 'Bureaux à Bâle. Traitement selon LPD/Anthropic Acceptable Use Policy. Transparence des données et pas de partage avec des tiers.',
       autonomous: 'Autonome',
       autonomousDesc: '24/7 actifs – vous vous concentrez sur l\'essentiel.',
       flatPricing: 'Tarif fixe',
@@ -240,11 +243,11 @@ const i18n = {
       testimonialRole: 'DG, Fiduciaire Weber Sàrl, Bâle'
     },
     compliance: {
-      title: 'Conformité Niveau Suisse',
-      nFADP: 'Conforme nFADP',
-      chDat: 'Certifié CH-Dat',
-      gdpr: 'RGPD-ready',
-      iso: 'ISO 27001'
+      title: 'Conformité & Protection des données',
+      nFADP: 'Conforme LPD',
+      chDat: 'Transparence first',
+      gdpr: 'Privacy by Design',
+      iso: 'Infrastructure sécurisée'
     },
     cta: {
       title: 'Prêt à renforcer votre équipe?',
@@ -254,11 +257,14 @@ const i18n = {
       privacy: 'Pas de spam. Protection suisse des données.'
     },
     footer: {
-      tagline: 'Agents IA Suisses pour PME',
+      tagline: 'Automatisation IA pour entreprises suisses — avec technologie Anthropic',
       product: 'Produit',
       company: 'Entreprise',
       legal: 'Mentions légales',
-      copyright: '© 2025 claude-agents.ch · Bâle, Suisse'
+      poweredBy: 'Powered by Claude',
+      imprint: 'Mentions légales',
+      privacy: 'Confidentialité',
+      copyright: '© 2026 Claude Agent · Bâle, Suisse'
     }
   },
 
@@ -281,7 +287,7 @@ const i18n = {
     },
     values: {
       swissBased: 'Basato in Svizzera',
-      swissBasedDesc: 'Uffici a Basilea. Conforme nFADP e CH-Dat. I suoi dati rimangono in Svizzera.',
+      swissBasedDesc: 'Uffici a Basilea. Elaborazione secondo LPD/Anthropic Acceptable Use Policy. Trasparenza dati e nessuna condivisione con terzi.',
       autonomous: 'Autonomo',
       autonomousDesc: '24/7 attivi – lei si concentra sull\'essenziale.',
       flatPricing: 'Prezzo fisso',
@@ -369,11 +375,11 @@ const i18n = {
       testimonialRole: 'CEO, Fiduciaria Weber SA, Basilea'
     },
     compliance: {
-      title: 'Compliance Livello Svizzero',
-      nFADP: 'Conforme nFADP',
-      chDat: 'Certificato CH-Dat',
-      gdpr: 'GDPR-ready',
-      iso: 'ISO 27001'
+      title: 'Conformità & Protezione dati',
+      nFADP: 'Conforme LPD',
+      chDat: 'Trasparenza first',
+      gdpr: 'Privacy by Design',
+      iso: 'Infrastruttura sicura'
     },
     cta: {
       title: 'Pronto a potenziare il suo team?',
@@ -410,7 +416,7 @@ const i18n = {
     },
     values: {
       swissBased: 'Swiss-Based',
-      swissBasedDesc: 'Basel offices. nFADP and CH-Dat compliant. Your data stays in Switzerland.',
+      swissBasedDesc: 'Basel offices. Processing per Swiss Data Protection Act/Anthropic Acceptable Use Policy. Data transparency and no third-party sharing.',
       autonomous: 'Autonomous',
       autonomousDesc: '24/7 active – you focus on what matters.',
       flatPricing: 'Flat Pricing',
@@ -498,11 +504,11 @@ const i18n = {
       testimonialRole: 'CEO, Treuhand Weber GmbH, Basel'
     },
     compliance: {
-      title: 'Swiss-Grade Compliance',
-      nFADP: 'nFADP Compliant',
-      chDat: 'CH-Dat Certified',
-      gdpr: 'GDPR-ready',
-      iso: 'ISO 27001'
+      title: 'Compliance & Data Protection',
+      nFADP: 'FADP Compliant',
+      chDat: 'Transparency First',
+      gdpr: 'Privacy by Design',
+      iso: 'Secure Infrastructure'
     },
     cta: {
       title: 'Ready to Empower Your Team?',

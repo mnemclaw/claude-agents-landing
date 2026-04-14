@@ -497,6 +497,18 @@ p {
   animation: rotate 30s linear infinite reverse;
 }
 
+.orbit-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--primary);
+  border-radius: 50%;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px rgba(250, 175, 79, 0.6);
+}
+
 .node-dots {
   position: absolute;
   top: 50%;
