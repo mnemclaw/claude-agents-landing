@@ -185,8 +185,8 @@
         // Create abstract "face" using combined geometries (low poly, optimized)
         const headGroup = new THREE.Group();
 
-        // Main head sphere (low poly for smaller file and better ASCII effect)
-        const headGeometry = new THREE.IcosahedronGeometry(1.5, 1);
+        // Main head sphere - smooth, no holes
+        const headGeometry = new THREE.SphereGeometry(1.5, 24, 24);
         const headMaterial = new THREE.MeshStandardMaterial({
             color: 0xFAF9F5,
             roughness: 0.3,
