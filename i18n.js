@@ -125,14 +125,14 @@ const i18n = {
       privacy: 'Kein Spam. Swiss-Datenschutz.'
     },
     footer: {
-      tagline: 'KI-Automation für Schweizer Unternehmen — mit Anthropic Technologie',
+      company: 'A.Y.O. (Agent You Own)',
+      tagline: 'Swiss Managed AI Solutions für KMUs',
       product: 'Produkt',
-      company: 'Unternehmen',
       legal: 'Rechtliches',
       poweredBy: 'Powered by Claude',
       imprint: 'Impressum',
       privacy: 'Datenschutz',
-      copyright: '© 2026 Claude Agent · Basel, Switzerland'
+      copyright: '© 2026 A.Y.O. (Agent You Own) · Basel, Switzerland'
     }
   },
 
