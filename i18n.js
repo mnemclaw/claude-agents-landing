@@ -126,7 +126,7 @@ const i18n = {
     },
     footer: {
       company: 'A.Y.O. (Agent You Own)',
-      tagline: 'Swiss Managed AI Solutions für KMUs',
+      tagline: 'Managed AI Agents für Schweizer KMUs',
       product: 'Produkt',
       legal: 'Rechtliches',
       poweredBy: 'Powered by Claude',
@@ -257,7 +257,7 @@ const i18n = {
       privacy: 'Pas de spam. Protection suisse des données.'
     },
     footer: {
-      tagline: 'Automatisation IA pour entreprises suisses — avec technologie Anthropic',
+      tagline: 'Agents IA managés pour PME suisses',
       product: 'Produit',
       company: 'Entreprise',
       legal: 'Mentions légales',
@@ -389,7 +389,7 @@ const i18n = {
       privacy: 'Nessuno spam. Protezione dati svizzera.'
     },
     footer: {
-      tagline: 'Agenti IA Svizzeri per PMI',
+      tagline: 'Agenti IA gestiti per PMI svizzere',
       product: 'Prodotto',
       company: 'Azienda',
       legal: 'Legale',
